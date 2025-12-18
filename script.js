@@ -1,4 +1,4 @@
-// Email form submission
+﻿// Email form submission
 document.getElementById('emailForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -29,7 +29,7 @@ document.getElementById('emailForm').addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
-            showMessage('Thank you! We\'ll notify you when we launch.', 'success');
+            showMessage('Thank you! We will notify you when we launch.', 'success');
             emailInput.value = '';
         } else {
             throw new Error('Submission failed');
@@ -59,33 +59,29 @@ function showMessage(text, type) {
 
     // Create new message
     const message = document.createElement('div');
-    message.className = message ;
+    message.className = 'message ' + type;
     message.textContent = text;
 
     // Style based on type
-    message.style.cssText = 
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        animation: slideIn 0.3s ease;
-        
-    ;
+    const bgColor = type === 'success' ? '#d1fae5' : '#fee2e2';
+    const textColor = type === 'success' ? '#065f46' : '#991b1b';
+    
+    message.style.cssText = 'margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center; animation: slideIn 0.3s ease; background: ' + bgColor + '; color: ' + textColor + ';';
 
     // Insert after form
     const form = document.getElementById('emailForm');
     form.parentNode.insertBefore(message, form.nextSibling);
 
     // Remove after 5 seconds
-    setTimeout(() => {
+    setTimeout(function() {
         message.style.opacity = '0';
         message.style.transition = 'opacity 0.3s ease';
-        setTimeout(() => message.remove(), 300);
+        setTimeout(function() { message.remove(); }, 300);
     }, 5000);
 }
 
 // Add smooth scrolling for any future links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
