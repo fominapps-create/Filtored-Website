@@ -16,13 +16,16 @@ document.getElementById('emailForm').addEventListener('submit', function(e) {
     submitButton.disabled = true;
     submitButton.textContent = 'Submitting...';
 
-    // Send to Formspree
+    // Send to Formspree with custom subject
     fetch('https://formspree.io/f/mgowevrg', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ 
+            email: email,
+            _subject: 'Notify when launch'
+        })
     })
     .then(response => {
         if (response.ok) {
