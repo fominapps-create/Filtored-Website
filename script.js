@@ -1,45 +1,45 @@
 // Email form submission
 document.getElementById('emailForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const emailInput = document.getElementById('emailInput');
     const email = emailInput.value;
-    
+    const submitButton = this.querySelector('button[type="submit"]');
+
     // Basic email validation
     if (!isValidEmail(email)) {
         showMessage('Please enter a valid email address', 'error');
         return;
     }
-    
-    // Here you would typically send this to your backend
-    // For now, we'll just show a success message
-    console.log('Email submitted:', email);
-    
-    // Show success message
-    showMessage('Thank you! We\'ll notify you when we launch.', 'success');
-    
-    // Clear the form
-    emailInput.value = '';
-    
-    // Optional: Send to a service like Mailchimp, ConvertKit, or your own backend
-    // Example with fetch:
-    /*
-    fetch('YOUR_API_ENDPOINT', {
+
+    // Disable button during submission
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+
+    // Send to Formspree
+    fetch('https://formspree.io/f/mgowevrg', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email: email })
     })
-    .then(response => response.json())
-    .then(data => {
-        showMessage('Thank you! We\'ll notify you when we launch.', 'success');
-        emailInput.value = '';
+    .then(response => {
+        if (response.ok) {
+            showMessage('Thank you! We\'ll notify you when we launch.', 'success');
+            emailInput.value = '';
+        } else {
+            throw new Error('Submission failed');
+        }
     })
     .catch(error => {
+        console.error('Error:', error);
         showMessage('Something went wrong. Please try again.', 'error');
+    })
+    .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Notify Me';
     });
-    */
 });
 
 function isValidEmail(email) {
@@ -53,28 +53,26 @@ function showMessage(text, type) {
     if (existingMessage) {
         existingMessage.remove();
     }
-    
+
     // Create new message
     const message = document.createElement('div');
-    message.className = `message ${type}`;
+    message.className = message ;
     message.textContent = text;
-    
+
     // Style based on type
-    message.style.cssText = `
+    message.style.cssText = 
         margin-top: 1rem;
         padding: 1rem;
         border-radius: 8px;
         text-align: center;
         animation: slideIn 0.3s ease;
-        ${type === 'success' 
-            ? 'background: #d1fae5; color: #065f46;' 
-            : 'background: #fee2e2; color: #991b1b;'}
-    `;
-    
+        
+    ;
+
     // Insert after form
     const form = document.getElementById('emailForm');
     form.parentNode.insertBefore(message, form.nextSibling);
-    
+
     // Remove after 5 seconds
     setTimeout(() => {
         message.style.opacity = '0';
