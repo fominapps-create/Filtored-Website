@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Filtored - Beta Testing</title>
+    <title>Download Filtored - ALPHA TESTING</title>
     <style>
         * {
             margin: 0;
@@ -54,7 +54,7 @@
             font-size: 28px;
         }
 
-        .beta-badge {
+        .Alpha-badge {
             display: inline-block;
             background: #ff6b6b;
             color: white;
@@ -248,11 +248,11 @@
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
         </div>
         <h1>Filtored</h1>
-        <span class="beta-badge">BETA TESTING</span>
+        <span class="Alpha-badge">ALPHA TESTING</span>
 
         <!-- Password Section -->
         <div id="passwordSection" class="password-section">
-            <p>Enter the beta access code to download the app. Contact us if you don't have one!</p>
+            <p>Enter the Alpha access code to download the app. Contact us if you don't have one!</p>
             <label for="password">Access Code</label>
             <input type="password" id="password" class="password-input" placeholder="Enter access code..." onkeypress="if(event.key==='Enter') checkPassword()">
             <p id="errorMsg" class="error-message">Incorrect access code. Please try again.</p>
@@ -262,9 +262,9 @@
 
         <!-- Download Section (Hidden until correct password) -->
         <div id="downloadSection" class="download-section">
-            <p>Thank you for being a beta tester!<br>Download the app below and help us improve it.</p>
+            <p>Thank you for being a Alpha tester!<br>Download the app below and help us improve it.</p>
 
-            <a href="filtored-0.2.3-beta.apk" class="download-btn" download>
+            <a href="filtored-0.2.4-alpha.apk" class="download-btn" download>
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 Download APK
             </a>
@@ -295,18 +295,18 @@
                 </ul>
             </div>
 
-            <p class="version-info">Version 0.2.3 (Beta) - Last updated: December 30, 2025</p>
+            <p class="version-info">Version 0.2.4 (Alpha) - Last updated: December 30, 2025</p>
         </div>
     </div>
 
     <script>
-        const BETA_PASSWORD = 'filtored2025';
+        const Alpha_PASSWORD = 'filtored2025';
 
         function checkPassword() {
             const input = document.getElementById('password').value;
             const errorMsg = document.getElementById('errorMsg');
 
-            if (input === BETA_PASSWORD) {
+            if (input === Alpha_PASSWORD) {
                 document.getElementById('passwordSection').style.display = 'none';
                 document.getElementById('downloadSection').style.display = 'block';
             } else {
