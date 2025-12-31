@@ -156,25 +156,26 @@
         <p class="subtitle">Internal testing build - not for distribution</p>
 
         <div class="version-box">
-            <div class="version-number">v0.3.0-dev.4.8</div>
-            <div class="scan-version">Build 4, Scan Logic 8</div>
+            <div class="version-number">v0.3.0-dev.5.9</div>
+            <div class="scan-version">Build 5, Scan Logic 9</div>
         </div>
 
         <div class="changes">
             <h3>Changes in this build:</h3>
             <ul>
-                <li>Low-confidence tags (&lt;65%) now hidden from search</li>
-                <li>Flower/plant labels never classified as Food</li>
-                <li>Trash "Empty" now permanently deletes files</li>
-                <li>Search dropdown: "Frequent Tags" + "Other" category</li>
-                <li>Fullscreen: icon+text buttons, black navbar hides on tap</li>
-                <li>Dog requires 0.85+ confidence (fix over-detection)</li>
-                <li>Room/furniture  Other (not Document)</li>
-                <li>Baby in costume  still People</li>
+                <li>Pedestrian/walker/jogger  now detected as People</li>
+                <li>2+ clothing items (sweater+pants)  People</li>
+                <li>Screenshots with text  Other (not Scenery)</li>
+                <li>Search threshold raised to 72% confidence</li>
+                <li>Round orange search button in search bar</li>
+                <li>Search button moves with keyboard</li>
+                <li>Removed "Filto" label under search button</li>
+                <li>"Preparing scan..." shown at 0%</li>
+                <li>Deleting tags status visible during rescan</li>
             </ul>
         </div>
 
-        <a href="https://github.com/fominapps-create/Photo-Organizer-Flutter/raw/main/filtored-0.3.0-dev.4.8.apk" class="download-btn">
+        <a href="https://github.com/fominapps-create/Photo-Organizer-Flutter/raw/main/filtored-0.3.0-dev.5.9.apk" class="download-btn">
              Download APK
         </a>
 
