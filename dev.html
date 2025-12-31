@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -21,7 +21,7 @@
             justify-content: center;
             padding: 20px;
         }
-        
+
         .container {
             background: #1a1a2e;
             border-radius: 20px;
@@ -32,7 +32,7 @@
             text-align: center;
             color: #fff;
         }
-        
+
         .dev-badge {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             color: white;
@@ -45,19 +45,19 @@
             display: inline-block;
             margin-bottom: 20px;
         }
-        
+
         h1 {
             color: #fff;
             margin-bottom: 10px;
             font-size: 28px;
         }
-        
+
         .subtitle {
             color: #aaa;
             margin-bottom: 30px;
             font-size: 14px;
         }
-        
+
         .version-box {
             background: rgba(255, 107, 53, 0.2);
             border: 1px solid rgba(255, 107, 53, 0.5);
@@ -65,19 +65,19 @@
             padding: 20px;
             margin-bottom: 25px;
         }
-        
+
         .version-number {
             font-size: 32px;
             font-weight: bold;
             color: #ff6b35;
         }
-        
+
         .scan-version {
             font-size: 14px;
             color: #888;
             margin-top: 5px;
         }
-        
+
         .changes {
             text-align: left;
             background: rgba(255, 255, 255, 0.05);
@@ -85,34 +85,34 @@
             padding: 20px;
             margin-bottom: 25px;
         }
-        
+
         .changes h3 {
             color: #ff6b35;
             margin-bottom: 15px;
             font-size: 16px;
         }
-        
+
         .changes ul {
             list-style: none;
             padding: 0;
         }
-        
+
         .changes li {
             padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 13px;
             color: #ccc;
         }
-        
+
         .changes li:last-child {
             border-bottom: none;
         }
-        
+
         .changes li::before {
-            content: "→ ";
+            content: " ";
             color: #ff6b35;
         }
-        
+
         .download-btn {
             display: inline-block;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -125,12 +125,12 @@
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
         }
-        
+
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
         }
-        
+
         .warning {
             background: rgba(255, 193, 7, 0.2);
             border: 1px solid rgba(255, 193, 7, 0.5);
@@ -140,7 +140,7 @@
             font-size: 12px;
             color: #ffc107;
         }
-        
+
         .timestamp {
             margin-top: 20px;
             font-size: 11px;
@@ -150,38 +150,38 @@
 </head>
 <body>
     <div class="container">
-        <div class="dev-badge">🔧 Developer Build</div>
-        
+        <div class="dev-badge"> Developer Build</div>
+
         <h1>Filtored Dev</h1>
         <p class="subtitle">Internal testing build - not for distribution</p>
-        
+
         <div class="version-box">
-            <div class="version-number">v0.3.0-dev.3.7</div>
-            <div class="scan-version">Build 3, Scan Logic 7</div>
+            <div class="version-number">v0.3.0-dev.4.8</div>
+            <div class="scan-version">Build 4, Scan Logic 8</div>
         </div>
-        
+
         <div class="changes">
             <h3>Changes in this build:</h3>
             <ul>
-                <li>Show 'Deleting tags...' during tag deletion</li>
-                <li>Show 'Preparing scan...' at 0% (not stuck)</li>
-                <li>Orange arrow button for search (clearer)</li>
+                <li>Low-confidence tags (&lt;65%) now hidden from search</li>
+                <li>Flower/plant labels never classified as Food</li>
+                <li>Trash "Empty" now permanently deletes files</li>
+                <li>Search dropdown: "Frequent Tags" + "Other" category</li>
+                <li>Fullscreen: icon+text buttons, black navbar hides on tap</li>
                 <li>Dog requires 0.85+ confidence (fix over-detection)</li>
-                <li>Photos fit width in fullscreen</li>
-                <li>Unscanned filter only shown if needed</li>
-                <li>Orange buttons in selection mode</li>
-                <li>Room/furniture → Other (not Document)</li>
+                <li>Room/furniture  Other (not Document)</li>
+                <li>Baby in costume  still People</li>
             </ul>
         </div>
-        
-        <a href="https://github.com/fominapps-create/Photo-Organizer-Flutter/raw/main/filtored-0.3.0-dev.3.7.apk" class="download-btn">
-            ⬇️ Download APK
+
+        <a href="https://github.com/fominapps-create/Photo-Organizer-Flutter/raw/main/filtored-0.3.0-dev.4.8.apk" class="download-btn">
+             Download APK
         </a>
-        
+
         <div class="warning">
-            ⚠️ This build may have bugs. Do not share with alpha testers.
+             This build may have bugs. Do not share with alpha testers.
         </div>
-        
+
         <p class="timestamp">Built: December 31, 2025</p>
     </div>
 </body>
