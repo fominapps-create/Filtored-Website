@@ -18,6 +18,12 @@
             height: 48px;
             fill: currentColor;
         }
+        .feature-icon img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            display: block;
+        }
         .beta-btn svg {
             width: 18px;
             height: 18px;
@@ -33,6 +39,10 @@
                 <h1>Filtored</h1>
             </div>
             <nav>
+                <a href="/download/PhotoRenamer-v1.0.0-Setup.exe" class="beta-btn download-btn" download>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Photo Renamer
+                </a>
                 <a href="/download/" class="beta-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 11V3h-7v3H9V3H2v8h7V8h2v10h3v3h7v-8h-7v3h-1V8h1v3h8zM7 9H4V5h3v4zm10 6h3v4h-3v-4zm0-10h3v4h-3V5z"/></svg>
                     Alpha Testers
@@ -65,9 +75,9 @@
                     <h3>Smart Search</h3>
                     <p>Find any photo instantly with natural language search and intelligent filters</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="cross-platform">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                        <img src="assets/filto with smartphone.png" alt="Filto on smartphone">
                     </div>
                     <h3>Cross-Platform</h3>
                     <p>Access your organized photos on mobile, desktop, and web seamlessly</p>
