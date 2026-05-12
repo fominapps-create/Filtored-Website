@@ -13,12 +13,12 @@ The app does not require account sign-in for core functionality and does not col
 
 ## How Processing Works
 - On-device (default): Scanning, tagging, grouping, duplicate/similar detection, and face/object organization run locally.
-- No cloud upload pipeline: This version of the app does not upload your media to remote servers for processing.
+- On-device only: Media analysis runs locally on your device and does not require an internet connection.
 
 ## Storage and Retention
 - On your device: The app stores its metadata locally so features like search, organize, hidden, and trash work quickly.
 - Trash: Items you remove via organize flows are moved to trash and can be restored until permanently deleted.
-- No remote retention: The app does not keep a cloud copy of your media for analysis in this version.
+- No cloud copy for analysis: Your media is not uploaded to cloud services for processing in this version.
 
 ## Sharing
 - By default, your media is not shared with third parties.
