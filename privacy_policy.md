@@ -13,25 +13,25 @@ The app does not require account sign-in for core functionality and does not col
 
 ## How Processing Works
 - On-device (default): Scanning, tagging, grouping, duplicate/similar detection, and face/object organization run locally.
-- Optional server processing: If you explicitly enable server uploads/configure a server, selected photos may be sent to that server for additional analysis. You control this behavior in Settings.
+- No cloud upload pipeline: This version of the app does not upload your media to remote servers for processing.
 
 ## Storage and Retention
 - On your device: The app stores its metadata locally so features like search, organize, hidden, and trash work quickly.
 - Trash: Items you remove via organize flows are moved to trash and can be restored until permanently deleted.
-- Optional server: If enabled by you, storage/retention on that server is controlled by that server's operator and configuration.
+- No remote retention: The app does not keep a cloud copy of your media for analysis in this version.
 
 ## Sharing
 - By default, your media is not shared with third parties.
-- If you turn on optional server processing, data is shared with the server you configured.
+- The app does not provide public sharing or user-to-user media exchange features.
 
 ## Permissions and Controls
 - Media permission: Required to read/organize photos and videos.
 - Notification/foreground status (platform-dependent): May be used to show scan progress while long scans run.
 - Hidden/Safe: Sensitive items can be placed in hidden storage protected by device authentication where supported.
-- Reset controls: You can clear tags/rescan and disable optional server usage at any time in Settings.
+- Reset controls: You can clear tags/rescan at any time in Settings.
 
 ## Security
-- If you use optional remote processing, use trusted infrastructure and HTTPS where possible to protect data in transit.
+- Your media analysis is performed on-device in this version. Keep your device up to date and use device lock features for additional protection.
 
 ## Children's Privacy
 Filtored is intended for a general audience and is not directed to children under 13.
