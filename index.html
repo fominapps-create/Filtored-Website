@@ -3,127 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Filtored - Smart Photo Organization with AI-Powered Tagging">
-    <meta name="keywords" content="photo organizer, AI tagging, photo management, image organization">
-    <title>Filtored - Smart Photo Organization</title>
+    <meta name="description" content="Filtored — the smart AI gallery. Your photos, sorted by people, events and moments. Everything on your device, nothing in the cloud.">
+    <meta name="keywords" content="smart gallery, AI photo gallery, photo organizer, face recognition app, on-device AI, photo search">
+    <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .feature-icon svg {
-            width: 48px;
-            height: 48px;
-            fill: currentColor;
-        }
-        .feature-icon img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            display: block;
-        }
-        .beta-btn svg {
-            width: 18px;
-            height: 18px;
-            vertical-align: middle;
-            margin-right: 6px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h1>Filtored</h1>
-            </div>
-            <nav>
-                <a href="/download/" class="beta-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 11V3h-7v3H9V3H2v8h7V8h2v10h3v3h7v-8h-7v3h-1V8h1v3h8zM7 9H4V5h3v4zm10 6h3v4h-3v-4zm0-10h3v4h-3V5z"/></svg>
-                    Alpha Testers
-                </a>
-            </nav>
-        </header>
 
-        <main>
-            <div class="hero">
-                <div class="badge">Coming Soon</div>
-                <h2 class="title">Smart Photo Organization<br>Powered by AI</h2>
-                <p class="subtitle">
-                    Automatically organize and tag your photos with intelligent AI recognition.
-                    Never lose a memory again.
+    <header class="site-header" id="top">
+        <a class="brand" href="/">Filtored<span class="brand-dot">.</span></a>
+        <nav class="site-nav">
+            <a href="#people">People</a>
+            <a href="#search">Search</a>
+            <a href="#private">Private</a>
+            <a href="/download/" class="nav-cta">Get the alpha</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="kicker">The smart AI gallery</p>
+                <h1>Your camera roll,<br>finally <em>sorted.</em></h1>
+                <p class="lede">
+                    Filtored reads your photos so you don't have to scroll for them.
+                    People, events, food, pets, places — organized on your phone,
+                    by your phone. No accounts. No cloud.
                 </p>
-            </div>
-
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="12" cy="12" r="1"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg>
-                    </div>
-                    <h3>AI-Powered Tagging</h3>
-                    <p>Automatic detection and tagging of objects, people, and scenes in your photos</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                    </div>
-                    <h3>Smart Search</h3>
-                    <p>Find any photo instantly with natural language search and intelligent filters</p>
-                </div>
-                <div class="feature-card" data-feature="cross-platform">
-                    <div class="feature-icon">
-                        <img src="assets/filto with smartphone.png" alt="Filto on smartphone">
-                    </div>
-                    <h3>Cross-Platform</h3>
-                    <p>Access your organized photos on mobile, desktop, and web seamlessly</p>
+                <div class="hero-actions">
+                    <a href="/download/" class="btn btn-solid">Join the alpha</a>
+                    <a href="#people" class="btn btn-ghost">See how it works</a>
                 </div>
             </div>
+            <div class="hero-shot">
+                <!-- PHOTO NEEDED -->
+                <div class="ph ph-phone" data-label="PHOTO: main gallery screen with category chips visible — phone screenshot, 1080×2400 (shown ~300×650)"></div>
+            </div>
+        </section>
 
-            <div class="cta-section">
-                <h3>Be the first to know when we launch</h3>
-                <form class="email-form" id="emailForm">
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        class="email-input"
-                        id="emailInput"
-                        required
-                    >
-                    <button type="submit" class="cta-button">Notify Me</button>
-                </form>
-                <p class="privacy-note">We respect your privacy. No spam, ever.</p>
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>People</span><i>·</i><span>Events</span><i>·</i><span>Food</span><i>·</i><span>Animals</span><i>·</i><span>Scenery</span><i>·</i><span>Documents</span><i>·</i><span>Videos</span><i>·</i>
+                <span>People</span><i>·</i><span>Events</span><i>·</i><span>Food</span><i>·</i><span>Animals</span><i>·</i><span>Scenery</span><i>·</i><span>Documents</span><i>·</i><span>Videos</span><i>·</i>
             </div>
-        </main>
+        </div>
 
-        <footer>
-            <div class="social-links">
-                <a href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                    </svg>
-                </a>
-                <a href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
+        <!-- ============ PEOPLE ============ -->
+        <section class="feature" id="people">
+            <div class="feature-media">
+                <!-- PHOTO NEEDED -->
+                <div class="ph ph-phone" data-label="PHOTO: People screen — grid of named faces (use demo/consented faces), 1080×2400 (shown ~300×650)"></div>
             </div>
-            <p>&copy; 2025 Filtored. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="mailto:contact@filtored.com">Contact</a>
-                <span>&bull;</span>
-                <a href="/privacy/">Privacy</a>
-                <span>&bull;</span>
-                <a href="#">Terms</a>
+            <div class="feature-copy">
+                <p class="feature-num">01</p>
+                <h2>Every face gets a name</h2>
+                <p>
+                    Filtored recognizes the people in your life and gathers their photos
+                    into profiles. Name someone once and every shot of them — old and new —
+                    is one tap away. Mark family and friends and they stay front and center.
+                </p>
+                <ul class="perks">
+                    <li>All photos of one person, together</li>
+                    <li>Family &amp; friends pinned first</li>
+                    <li>Works on your entire library, even years back</li>
+                </ul>
             </div>
-        </footer>
-    </div>
+        </section>
+
+        <!-- ============ SEARCH ============ -->
+        <section class="feature flip" id="search">
+            <div class="feature-media">
+                <!-- PHOTO NEEDED -->
+                <div class="ph ph-phone" data-label="PHOTO: search/filter in action — e.g. 'food' filter showing results, 1080×2400 (shown ~300×650)"></div>
+            </div>
+            <div class="feature-copy">
+                <p class="feature-num">02</p>
+                <h2>Find it in seconds</h2>
+                <p>
+                    That one photo of the dog at the beach two summers ago? Just ask for it.
+                    Filter by what's in the picture, who's in it, or when it happened —
+                    and stop thumb-scrolling through thousands of screenshots.
+                </p>
+                <ul class="perks">
+                    <li>Search by what, who and when</li>
+                    <li>Combine filters to narrow instantly</li>
+                    <li>Surface photos you forgot you had</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ EVENTS ============ -->
+        <section class="feature" id="events">
+            <div class="feature-media">
+                <!-- PHOTO NEEDED -->
+                <div class="ph ph-phone" data-label="PHOTO: Events screen — timeline of grouped moments, 1080×2400 (shown ~300×650)"></div>
+            </div>
+            <div class="feature-copy">
+                <p class="feature-num">03</p>
+                <h2>Moments, not a mess</h2>
+                <p>
+                    Birthdays, trips, random perfect Tuesdays — Filtored groups your photos
+                    into events automatically, so your library reads like a story instead
+                    of a 15,000-item scroll of doom.
+                </p>
+                <ul class="perks">
+                    <li>Trips and celebrations grouped for you</li>
+                    <li>Jump to any point in your life in two taps</li>
+                    <li>See who was there, at a glance</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ PRIVACY ============ -->
+        <section class="private" id="private">
+            <div class="private-inner">
+                <p class="feature-num">04</p>
+                <h2>Your photos never leave your phone</h2>
+                <p class="lede">
+                    All the AI runs on your device. No uploads, no account, no
+                    "we value your privacy" asterisks. Airplane mode? Works exactly the same.
+                </p>
+                <div class="private-points">
+                    <div class="private-point">
+                        <h3>On-device AI</h3>
+                        <p>Recognition happens in your pocket, not on a server.</p>
+                    </div>
+                    <div class="private-point">
+                        <h3>No account needed</h3>
+                        <p>Install, scan, done. Nothing to sign up for.</p>
+                    </div>
+                    <div class="private-point">
+                        <h3>Offline by design</h3>
+                        <p>Your gallery stays smart with zero connection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ GALLERY STRIP ============ -->
+        <section class="strip">
+            <h2 class="strip-title">Built to feel fast</h2>
+            <p class="strip-sub">Pinch to zoom the grid, bulk-select with a long press, tag hundreds of photos at once. It's your gallery — just quicker.</p>
+            <div class="strip-shots">
+                <!-- PHOTOS NEEDED -->
+                <div class="ph ph-land" data-label="PHOTO: gallery grid zoomed out (5 columns), phone screenshot cropped to 800×600"></div>
+                <div class="ph ph-land" data-label="PHOTO: multi-select mode with photos checked, cropped to 800×600"></div>
+                <div class="ph ph-land" data-label="PHOTO: full-screen photo viewer with face labels, cropped to 800×600"></div>
+            </div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section class="cta" id="cta">
+            <h2>Be first in line</h2>
+            <p>Filtored is in alpha. Leave your email and we'll tell you the moment it's ready — nothing else, ever.</p>
+            <form class="email-form" id="emailForm">
+                <input type="email" placeholder="you@example.com" class="email-input" id="emailInput" required>
+                <button type="submit" class="btn btn-solid">Notify me</button>
+            </form>
+            <p class="cta-alt">Impatient? <a href="/download/">Grab the alpha build</a> and help us test.</p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="foot-left">
+            <span class="brand-sm">Filtored<span class="brand-dot">.</span></span>
+            <span>&copy; 2026 Filtored. All rights reserved.</span>
+        </div>
+        <div class="foot-links">
+            <a href="mailto:contact@filtored.com">Contact</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
