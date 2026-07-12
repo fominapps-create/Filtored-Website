@@ -218,6 +218,13 @@ h1, h2, h3, .brand, .brand-sm {
     border-radius: 36px;
 }
 
+.shot-search {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 28px;
+}
+
 .ph-land {
     width: 100%;
     aspect-ratio: 4 / 3;
