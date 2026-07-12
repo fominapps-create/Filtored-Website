@@ -195,37 +195,6 @@ h1, h2, h3, .brand, .brand-sm {
     aspect-ratio: 4 / 3;
 }
 
-/* ============ Marquee ============ */
-.marquee {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-    padding: 0.9rem 0;
-    background: var(--paper-deep);
-}
-
-.marquee-track {
-    display: flex;
-    gap: 2rem;
-    width: max-content;
-    animation: scroll 28s linear infinite;
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--ink-soft);
-    white-space: nowrap;
-}
-
-.marquee-track i {
-    font-style: normal;
-    color: var(--accent);
-}
-
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-
 /* ============ Feature sections ============ */
 .feature {
     max-width: var(--maxw);
@@ -432,7 +401,6 @@ h1, h2, h3, .brand, .brand-sm {
 
 @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
-    .marquee-track { animation: none; }
 }
 
 /* ============ Responsive ============ */
