@@ -197,6 +197,21 @@ h1, h2, h3, .brand, .brand-sm {
     border-radius: 28px;
 }
 
+/* Real images (replacing placeholders) */
+.shot {
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 16px 40px rgba(28, 25, 23, 0.14);
+}
+
+.shot-tall {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 9 / 11;
+    border-radius: 28px;
+}
+
 .ph-land {
     width: 100%;
     aspect-ratio: 4 / 3;
