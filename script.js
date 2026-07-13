@@ -1,6 +1,6 @@
 // Reveal-on-scroll for sections
 (function () {
-    const targets = document.querySelectorAll('.feature, .private-inner, .strip, .cta, .hero-copy, .hero-shot');
+    const targets = document.querySelectorAll('.private-inner, .strip, .cta, .hero-copy, .hero-shot');
     targets.forEach(function (el) { el.classList.add('reveal'); });
 
     if (!('IntersectionObserver' in window)) {
@@ -18,6 +18,35 @@
     }, { threshold: 0.12 });
 
     targets.forEach(function (el) { io.observe(el); });
+})();
+
+// Staggered slide-up for feature cards
+(function () {
+    const grid = document.querySelector('.cards');
+    if (!grid) return;
+    const cards = grid.querySelectorAll('.card');
+    cards.forEach(function (el) { el.classList.add('reveal'); });
+
+    function showAll() {
+        cards.forEach(function (el, i) {
+            setTimeout(function () {
+                el.classList.add('in');
+                // drop reveal classes once done so hover transitions stay snappy
+                setTimeout(function () { el.classList.remove('reveal', 'in'); }, 900);
+            }, i * 220);
+        });
+    }
+
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+    const io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+            showAll();
+            io.disconnect();
+        }
+    }, { threshold: 0.2 });
+
+    io.observe(grid);
 })();
 
 // Email form submission (Formspree)

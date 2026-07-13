@@ -8,7 +8,7 @@
     <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=13">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 <body>
 
     <header class="site-header" id="top">
-        <a class="brand" href="/">Filtored<span class="brand-dot">.</span></a>
+        <a class="brand" href="/">Filtored</a>
         <nav class="site-nav">
             <a href="#people">People</a>
             <a href="#search">Search</a>
@@ -33,9 +33,8 @@
                 <p class="kicker">The smart AI gallery</p>
                 <h1>Your camera roll,<br><em>filtered</em> and sorted.</h1>
                 <p class="lede">
-                    Filtored reads your photos so you don't have to scroll for them.
-                    People, events, food, pets, places — organized on your phone,
-                    by your phone. No accounts. No cloud.
+                    An AI-powered smart gallery designed to automatically clean,
+                    organize and tag your images.
                 </p>
                 <div class="hero-actions">
                     <a href="/download/" class="btn btn-solid">Join the alpha</a>
@@ -47,75 +46,65 @@
             </div>
         </section>
 
-        <!-- ============ PEOPLE ============ -->
-        <section class="feature" id="people">
-            <div class="feature-media">
-                <!-- PHOTOS NEEDED: 3 portraits of different people (inspirational/stock is fine) -->
-                <div class="collage">
-                    <div class="ph ph-polaroid tilt-l" data-label="PHOTO: portrait #1 — candid person smiling, 600×750"></div>
-                    <div class="ph ph-polaroid tilt-r" data-label="PHOTO: portrait #2 — friend/family candid, 600×750"></div>
-                    <div class="ph ph-polaroid tilt-c" data-label="PHOTO: portrait #3 — kid or grandparent candid, 600×750"></div>
-                </div>
-            </div>
-            <div class="feature-copy">
-                <p class="feature-num">01</p>
-                <h2>Every face gets a name</h2>
-                <p>
-                    Filtored recognizes the people in your life and gathers their photos
-                    into profiles. Name someone once and every shot of them — old and new —
-                    is one tap away. Mark family and friends and they stay front and center.
-                </p>
-                <ul class="perks">
-                    <li>All photos of one person, together</li>
-                    <li>Family &amp; friends pinned first</li>
-                    <li>Works on your entire library, even years back</li>
-                </ul>
-            </div>
-        </section>
+        <!-- ============ FEATURE CARDS ============ -->
+        <section class="cards-section">
+            <div class="cards">
 
-        <!-- ============ SEARCH ============ -->
-        <section class="feature flip" id="search">
-            <div class="feature-media">
-                <img class="shot shot-search" src="assets/search-couch-dog.jpg?v=2" alt="Person on a couch finding a photo of their dog at the beach" width="835" height="1069">
-            </div>
-            <div class="feature-copy">
-                <p class="feature-num">02</p>
-                <h2>Find it in seconds</h2>
-                <p>
-                    That one photo of the dog at the beach two summers ago? Just ask for it.
-                    Filter by what's in the picture, who's in it, or when it happened —
-                    and stop thumb-scrolling through thousands of screenshots.
-                </p>
-                <ul class="perks">
-                    <li>Search by what, who and when</li>
-                    <li>Combine filters to narrow instantly</li>
-                    <li>Surface photos you forgot you had</li>
-                </ul>
-            </div>
-        </section>
+                <!-- 01 PEOPLE -->
+                <article class="card" id="people">
+                    <div class="card-media media-accent">
+                        <img class="shot shot-search" src="assets/search-couch-dog.jpg?v=2" alt="Person on a couch finding a photo of their dog at the beach" width="835" height="1069">
+                    </div>
+                    <div class="card-body">
+                        <p class="feature-num">01</p>
+                        <h2>Every face gets a name</h2>
+                        <p>
+                            Filtored recognizes the people in your life and gathers their
+                            photos into profiles. Name someone once and every shot of them —
+                            old and new — is one tap away.
+                        </p>
+                    </div>
+                </article>
 
-        <!-- ============ EVENTS ============ -->
-        <section class="feature" id="events">
-            <div class="feature-media">
-                <!-- PHOTOS NEEDED: 2 landscape "moment" photos (inspirational/stock is fine) -->
-                <div class="stack">
-                    <div class="ph ph-wide stack-back" data-label="PHOTO: trip moment — beach/hike/roadtrip group shot, 800×500"></div>
-                    <div class="ph ph-wide stack-front" data-label="PHOTO: celebration — birthday cake / party candid, 800×500"></div>
-                </div>
-            </div>
-            <div class="feature-copy">
-                <p class="feature-num">03</p>
-                <h2>Moments, not a mess</h2>
-                <p>
-                    Birthdays, trips, random perfect Tuesdays — Filtored groups your photos
-                    into events automatically, so your library reads like a story instead
-                    of a 15,000-item scroll of doom.
-                </p>
-                <ul class="perks">
-                    <li>Trips and celebrations grouped for you</li>
-                    <li>Jump to any point in your life in two taps</li>
-                    <li>See who was there, at a glance</li>
-                </ul>
+                <!-- 02 SEARCH -->
+                <article class="card" id="search">
+                    <div class="card-media media-white">
+                        <!-- PHOTOS NEEDED: 3 portraits of different people (inspirational/stock is fine) -->
+                        <div class="collage">
+                            <div class="ph ph-polaroid tilt-l" data-label="PHOTO: portrait #1 — candid person smiling, 600×750"></div>
+                            <div class="ph ph-polaroid tilt-r" data-label="PHOTO: portrait #2 — friend/family candid, 600×750"></div>
+                            <div class="ph ph-polaroid tilt-c" data-label="PHOTO: portrait #3 — kid or grandparent candid, 600×750"></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="feature-num">02</p>
+                        <h2>Find it in seconds</h2>
+                        <p>
+                            That one photo of the dog at the beach two summers ago? Just ask.
+                            Filter by what's in the picture, who's in it, or when it happened.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 03 EVENTS -->
+                <article class="card" id="events">
+                    <div class="card-media media-taupe">
+                        <!-- PHOTOS NEEDED: 2 landscape "moment" photos (inspirational/stock is fine) -->
+                        <div class="stack">
+                            <div class="ph ph-wide stack-back" data-label="PHOTO: trip moment — beach/hike/roadtrip group shot, 800×500"></div>
+                            <div class="ph ph-wide stack-front" data-label="PHOTO: celebration — birthday cake / party candid, 800×500"></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="feature-num">03</p>
+                        <h2>Moments, not a mess</h2>
+                        <p>
+                            Birthdays, trips, random perfect Tuesdays — Filtored groups your
+                            photos into events automatically, so your library reads like a story.
+                        </p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
@@ -172,7 +161,7 @@
 
     <footer class="site-footer">
         <div class="foot-left">
-            <span class="brand-sm">Filtored<span class="brand-dot">.</span></span>
+            <span class="brand-sm">Filtored</span>
             <span>&copy; 2026 Filtored. All rights reserved.</span>
         </div>
         <div class="foot-links">
@@ -184,6 +173,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
