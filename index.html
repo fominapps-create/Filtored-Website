@@ -8,7 +8,7 @@
     <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=36">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,18 +27,38 @@
 
     <main>
 
-        <!-- ============ HERO ============ -->
-        <section class="hero">
-            <div class="hero-copy">
-                <p class="kicker">The smart AI gallery</p>
-                <h1>Your camera roll,<br><em>filtered</em> and sorted.</h1>
-                <p class="lede">
+        <!-- ============ TOP CTA BANNER ============ -->
+        <section class="cta-banner">
+            <div class="cta-slides">
+                <img class="cta-slide flip" src="assets/call%20to%20action%202.png" alt="Family enjoying a moment together">
+                <img class="cta-slide" src="assets/she%20holding%20cup%20with%20phone.jpg" alt="Woman holding a cup while browsing photos on her phone">
+                <img class="cta-slide zoom" src="assets/photographing%20bridge.jpg" alt="Person photographing a bridge with their phone">
+            </div>
+            <div class="cta-dots" id="ctaDots"></div>
+            <div class="cta-banner-inner">
+                <p class="kicker kicker-light">The smart AI gallery</p>
+                <h2>Your camera roll,<br><em>filtered</em> and sorted.</h2>
+                <p>
                     An AI-powered smart gallery designed to automatically clean,
                     organize and tag your images.
                 </p>
                 <div class="hero-actions">
                     <a href="/download/" class="btn btn-solid">Join the alpha</a>
-                    <a href="#people" class="btn btn-ghost">See how it works</a>
+                    <a href="#people" class="btn btn-light">See how it works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="hero-copy">
+                <h1>Be first in line</h1>
+                <p class="lede">
+                    Filtored is in alpha. Leave your email and we'll tell you the
+                    moment it's ready — nothing else, ever.
+                </p>
+                <div class="hero-actions">
+                    <a href="#cta" class="btn btn-solid">Get early access</a>
                 </div>
             </div>
             <div class="hero-shot">
@@ -46,27 +66,23 @@
             </div>
         </section>
 
+        <!-- ============ GALLERY STRIP ============ -->
+        <section class="strip">
+            <h2 class="strip-title">A cleaner gallery, automatically</h2>
+            <p class="strip-sub">Filtored spots duplicates, near-identical bursts, blurry shots and screenshot clutter — then helps you clear the junk in a couple of taps. Your library gets lighter without losing a single memory.</p>
+            <div class="strip-shots">
+                <!-- PHOTOS NEEDED: app screenshots, mosaic (1 big + 2 small) -->
+                <div class="ph mosaic-big" data-label="PHOTO: duplicate photos grouped for review — phone screenshot cropped to 900×1200"></div>
+                <div class="ph mosaic-sm" data-label="PHOTO: junk/screenshots flagged for cleanup — cropped to 800×580"></div>
+                <div class="ph mosaic-sm" data-label="PHOTO: blurry shots suggested for deletion — cropped to 800×580"></div>
+            </div>
+        </section>
+
         <!-- ============ FEATURE CARDS ============ -->
         <section class="cards-section">
             <div class="cards">
 
-                <!-- 01 PEOPLE -->
-                <article class="card" id="people">
-                    <div class="card-media media-accent">
-                        <img class="shot shot-search" src="assets/search-couch-dog.jpg?v=2" alt="Person on a couch finding a photo of their dog at the beach" width="835" height="1069">
-                    </div>
-                    <div class="card-body">
-                        <p class="feature-num">01</p>
-                        <h2>Every face gets a name</h2>
-                        <p>
-                            Filtored recognizes the people in your life and gathers their
-                            photos into profiles. Name someone once and every shot of them —
-                            old and new — is one tap away.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- 02 SEARCH -->
+                <!-- 01 SEARCH -->
                 <article class="card" id="search">
                     <div class="card-media media-white">
                         <!-- PHOTOS NEEDED: 3 portraits of different people (inspirational/stock is fine) -->
@@ -77,12 +93,27 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="feature-num">02</p>
+                        <p class="feature-num">01</p>
                         <h2>Find it in seconds</h2>
-                        <p>
-                            That one photo of the dog at the beach two summers ago? Just ask.
-                            Filter by what's in the picture, who's in it, or when it happened.
-                        </p>
+                        <ul class="card-list">
+                            <li>Search by what's actually in the photo</li>
+                            <li>Filter by who's in it</li>
+                            <li>Jump straight to when it happened</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 02 PEOPLE -->
+                <article class="card" id="people">
+                    <div class="card-media media-accent"></div>
+                    <div class="card-body">
+                        <p class="feature-num">02</p>
+                        <h2>Every face gets a name</h2>
+                        <ul class="card-list">
+                            <li>Recognizes the people in your life</li>
+                            <li>Gathers their photos into profiles</li>
+                            <li>Name them once — every shot is one tap away</li>
+                        </ul>
                     </div>
                 </article>
 
@@ -98,10 +129,11 @@
                     <div class="card-body">
                         <p class="feature-num">03</p>
                         <h2>Moments, not a mess</h2>
-                        <p>
-                            Birthdays, trips, random perfect Tuesdays — Filtored groups your
-                            photos into events automatically, so your library reads like a story.
-                        </p>
+                        <ul class="card-list">
+                            <li>Groups photos into events automatically</li>
+                            <li>Birthdays, trips and everyday moments</li>
+                            <li>Your library reads like a story</li>
+                        </ul>
                     </div>
                 </article>
 
@@ -134,18 +166,6 @@
             </div>
         </section>
 
-        <!-- ============ GALLERY STRIP ============ -->
-        <section class="strip">
-            <h2 class="strip-title">Built to feel fast</h2>
-            <p class="strip-sub">Pinch to zoom the grid, bulk-select with a long press, tag hundreds of photos at once. It's your gallery — just quicker.</p>
-            <div class="strip-shots">
-                <!-- PHOTOS NEEDED: app screenshots, mosaic (1 big + 2 small) -->
-                <div class="ph mosaic-big" data-label="PHOTO: gallery grid zoomed out (5 columns) — phone screenshot cropped to 900×1200"></div>
-                <div class="ph mosaic-sm" data-label="PHOTO: multi-select mode with photos checked — cropped to 800×580"></div>
-                <div class="ph mosaic-sm" data-label="PHOTO: full-screen viewer with face labels — cropped to 800×580"></div>
-            </div>
-        </section>
-
         <!-- ============ CTA ============ -->
         <section class="cta" id="cta">
             <h2>Be first in line</h2>
@@ -173,6 +193,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=7"></script>
 </body>
 </html>

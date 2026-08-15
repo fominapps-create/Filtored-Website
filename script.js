@@ -49,6 +49,70 @@
     io.observe(grid);
 })();
 
+// Hero banner slideshow with dots
+(function () {
+    const track = document.querySelector('.cta-slides');
+    const dotsWrap = document.getElementById('ctaDots');
+    if (!track || !dotsWrap) return;
+
+    const slides = Array.prototype.slice.call(track.querySelectorAll('.cta-slide'));
+    const count = slides.length;
+    if (count < 2) return;
+
+    // clone of the first photo, so the last one keeps sliding forward into it
+    const clone = slides[0].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.alt = '';
+    track.appendChild(clone);
+
+    const total = count + 1;
+    const step = 100 / total;
+    let index = 0;
+    let timer;
+
+    track.style.width = (total * 100) + '%';
+    slides.concat(clone).forEach(function (s) { s.style.width = step + '%'; });
+
+    const dots = slides.map(function (_, i) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'cta-dot';
+        dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
+        dot.addEventListener('click', function () { go(i); restart(); });
+        dotsWrap.appendChild(dot);
+        return dot;
+    });
+
+    function move(i, animate) {
+        track.style.transition = animate ? '' : 'none';
+        track.style.transform = 'translateX(-' + (i * step) + '%)';
+        if (!animate) void track.offsetWidth;
+    }
+
+    function go(i) {
+        index = i;
+        move(index, true);
+        const active = index % count;
+        dots.forEach(function (d, n) { d.setAttribute('aria-current', String(n === active)); });
+    }
+
+    track.addEventListener('transitionend', function () {
+        if (index === count) {
+            index = 0;
+            move(0, false);
+            track.style.transition = '';
+        }
+    });
+
+    function restart() {
+        clearInterval(timer);
+        timer = setInterval(function () { go(index + 1); }, 7000);
+    }
+
+    go(0);
+    restart();
+})();
+
 // Email form submission (Formspree)
 document.getElementById('emailForm').addEventListener('submit', function (e) {
     e.preventDefault();
