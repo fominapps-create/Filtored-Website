@@ -8,7 +8,7 @@
     <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=36">
+    <link rel="stylesheet" href="style.css?v=42">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,12 +16,11 @@
 <body>
 
     <header class="site-header" id="top">
-        <a class="brand" href="/">Filtored</a>
+        <a class="brand" href="#top">Filtored</a>
         <nav class="site-nav">
-            <a href="#people">People</a>
-            <a href="#search">Search</a>
-            <a href="#private">Private</a>
-            <a href="/download/" class="nav-cta">Get the alpha</a>
+            <a href="faq/index.html">FAQ</a>
+            <a href="contact/index.html">Contact</a>
+            <a href="download/index.html" class="nav-cta">Get the app</a>
         </nav>
     </header>
 
@@ -30,9 +29,9 @@
         <!-- ============ TOP CTA BANNER ============ -->
         <section class="cta-banner">
             <div class="cta-slides">
-                <img class="cta-slide" src="assets/friends%20selfie%20on%20grass.jpg" alt="Friends taking a selfie together on grass">
-                <img class="cta-slide" src="assets/she%20holding%20cup%20with%20phone.jpg" alt="Woman holding a cup while browsing photos on her phone">
                 <img class="cta-slide zoom" src="assets/photographing%20bridge.jpg" alt="Person photographing a bridge with their phone">
+                <img class="cta-slide" src="assets/she%20holding%20cup%20with%20phone%202.png" alt="Woman holding a cup while browsing photos on her phone">
+                <img class="cta-slide" src="assets/social%20selfie%20from%20side.jpg" alt="Person taking a selfie from the side">
             </div>
             <div class="cta-dots" id="ctaDots"></div>
             <div class="cta-banner-inner">
@@ -43,7 +42,7 @@
                     organize and tag your images.
                 </p>
                 <div class="hero-actions">
-                    <a href="#cta" class="btn btn-solid">Join the alpha</a>
+                    <a href="#cta" class="btn btn-solid">Get the app</a>
                     <a href="#next" class="btn btn-light">See how it works</a>
                 </div>
             </div>
@@ -52,13 +51,13 @@
         <!-- ============ HERO ============ -->
         <section class="hero" id="next">
             <div class="hero-copy">
-                <h1>Be first in line</h1>
+                <p class="kicker">How it works</p>
+                <h1>Your photos,<br>organized your way.</h1>
                 <p class="lede">
-                    Filtored is in alpha. Leave your email and we'll tell you the
-                    moment it's ready — nothing else, ever.
+                    Filtored uses on-device AI to automatically organize your camera roll into people, events, and moments. Find any photo in seconds without uploads or accounts — just install and scan.
                 </p>
                 <div class="hero-actions">
-                    <a href="#cta" class="btn btn-solid">Get early access</a>
+                    <a href="#strip" class="btn btn-solid">See the features</a>
                 </div>
             </div>
             <div class="hero-shot">
@@ -67,14 +66,30 @@
         </section>
 
         <!-- ============ GALLERY STRIP ============ -->
-        <section class="strip">
+        <section class="strip" id="strip">
             <h2 class="strip-title">A cleaner gallery, automatically</h2>
-            <p class="strip-sub">Filtored spots duplicates, near-identical bursts, blurry shots and screenshot clutter — then helps you clear the junk in a couple of taps. Your library gets lighter without losing a single memory.</p>
-            <div class="strip-shots">
-                <!-- PHOTOS NEEDED: app screenshots, mosaic (1 big + 2 small) -->
-                <div class="ph mosaic-big" data-label="PHOTO: duplicate photos grouped for review — phone screenshot cropped to 900×1200"></div>
-                <div class="ph mosaic-sm" data-label="PHOTO: junk/screenshots flagged for cleanup — cropped to 800×580"></div>
-                <div class="ph mosaic-sm" data-label="PHOTO: blurry shots suggested for deletion — cropped to 800×580"></div>
+            <div class="zigzag">
+                <div class="zig-row">
+                    <img class="zig-photo" src="assets/duplicates-held-web.jpg" alt="Hand holding a phone showing duplicate photos found by Filtored">
+                    <div class="zig-text">
+                        <h3>Duplicates, spotted for you</h3>
+                        <p>Filtored finds your duplicates and junk screenshots on its own — no digging required.</p>
+                    </div>
+                </div>
+                <div class="zig-row">
+                    <img class="zig-photo" src="assets/gallery-held-web.jpg" alt="Hand holding a phone showing the Filtored gallery with filters">
+                    <div class="zig-text">
+                        <h3>Junk shots, gone in a tap</h3>
+                        <p>Clear the clutter in a couple of taps. Review, tap, done.</p>
+                    </div>
+                </div>
+                <div class="zig-row">
+                    <img class="zig-photo" src="assets/holding-phone-web.jpg" alt="Person holding a phone with the Filtored app">
+                    <div class="zig-text">
+                        <h3>A library that stays clean</h3>
+                        <p>Your library stays organized on its own — without losing a single memory.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -85,15 +100,13 @@
                 <!-- 01 SEARCH -->
                 <article class="card" id="search">
                     <div class="card-media media-white">
-                        <!-- PHOTOS NEEDED: 3 portraits of different people (inspirational/stock is fine) -->
                         <div class="collage">
-                            <div class="ph ph-polaroid tilt-l" data-label="PHOTO: portrait #1 — candid person smiling, 600×750"></div>
-                            <div class="ph ph-polaroid tilt-r" data-label="PHOTO: portrait #2 — friend/family candid, 600×750"></div>
-                            <div class="ph ph-polaroid tilt-c" data-label="PHOTO: portrait #3 — kid or grandparent candid, 600×750"></div>
+                            <img class="ph-polaroid tilt-l" src="assets/card-selfie-cafe.jpg" alt="Two friends taking a selfie at a cafe">
+                            <img class="ph-polaroid tilt-r" src="assets/card-office-photo.jpg" alt="Person snapping a photo of a friend">
+                            <img class="ph-polaroid tilt-c" src="assets/card-friends-grass.jpg" alt="Friends taking a selfie on the grass">
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="feature-num">01</p>
                         <h2>Find it in seconds</h2>
                         <ul class="card-list">
                             <li>Search by what's actually in the photo</li>
@@ -105,9 +118,13 @@
 
                 <!-- 02 PEOPLE -->
                 <article class="card" id="people">
-                    <div class="card-media media-accent"></div>
+                    <div class="card-media media-accent">
+                        <div class="faces">
+                            <img class="faces-photo" src="assets/card-family-faces.jpg" alt="Family photo with several faces">
+                            <img class="faces-screen" src="assets/People%20screen.png" alt="Filtored People screen with named profiles">
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <p class="feature-num">02</p>
                         <h2>Every face gets a name</h2>
                         <ul class="card-list">
                             <li>Recognizes the people in your life</li>
@@ -120,14 +137,12 @@
                 <!-- 03 EVENTS -->
                 <article class="card" id="events">
                     <div class="card-media media-taupe">
-                        <!-- PHOTOS NEEDED: 2 landscape "moment" photos (inspirational/stock is fine) -->
                         <div class="stack">
-                            <div class="ph ph-wide stack-back" data-label="PHOTO: trip moment — beach/hike/roadtrip group shot, 800×500"></div>
-                            <div class="ph ph-wide stack-front" data-label="PHOTO: celebration — birthday cake / party candid, 800×500"></div>
+                            <img class="ph-wide stack-back" src="assets/card-camping.jpg" alt="Friends on a camping trip at night">
+                            <img class="ph-wide stack-front" src="assets/card-family.jpg" alt="Family cooking together at home">
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="feature-num">03</p>
                         <h2>Moments, not a mess</h2>
                         <ul class="card-list">
                             <li>Groups photos into events automatically</li>
@@ -143,7 +158,6 @@
         <!-- ============ PRIVACY ============ -->
         <section class="private" id="private">
             <div class="private-inner">
-                <p class="feature-num">04</p>
                 <h2>Your photos never leave your phone</h2>
                 <p class="lede">
                     All the AI runs on your device. No uploads, no account, no
@@ -168,13 +182,13 @@
 
         <!-- ============ CTA ============ -->
         <section class="cta" id="cta">
-            <h2>Be first in line</h2>
-            <p>Filtored is in alpha. Leave your email and we'll tell you the moment it's ready — nothing else, ever.</p>
-            <form class="email-form" id="emailForm">
-                <input type="email" placeholder="you@example.com" class="email-input" id="emailInput" required>
-                <button type="submit" class="btn btn-solid">Notify me</button>
-            </form>
-            <p class="cta-alt">Impatient? <a href="/download/">Grab the alpha build</a> and help us test.</p>
+            <h2>Filtored is here</h2>
+            <p>Free on Google Play. Your photos stay on your phone.</p>
+            <!-- PLACEHOLDER LINK: swap href for the real Play Store URL once the listing is live -->
+            <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                <span class="play-badge-text"><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
         </section>
 
     </main>
@@ -185,14 +199,15 @@
             <span>&copy; 2026 Filtored. All rights reserved.</span>
         </div>
         <div class="foot-links">
-            <a href="mailto:contact@filtored.com">Contact</a>
-            <a href="/privacy/">Privacy</a>
+            <a href="contact/index.html">Contact</a>
+            <a href="faq/index.html">FAQ</a>
+            <a href="privacy/index.html">Privacy</a>
             <a href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer">TikTok</a>
             <a href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer">YouTube</a>
         </div>
     </footer>
 
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>

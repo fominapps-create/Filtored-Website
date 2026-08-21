@@ -369,6 +369,12 @@ h1, h2, h3, .brand, .brand-sm {
     background-color: var(--paper-deep);
 }
 
+/* real photos dropped into the polaroid/stack slots */
+img.ph-polaroid, img.ph-wide {
+    object-fit: cover;
+    display: block;
+}
+
 .tilt-l { top: 0;    left: 0;   transform: rotate(-7deg); z-index: 1; }
 .tilt-r { top: 60px; right: 0;  transform: rotate(5deg);  z-index: 2; }
 .tilt-c { bottom: 0; left: 60px; transform: rotate(-2deg); z-index: 3; }
@@ -462,9 +468,9 @@ h1, h2, h3, .brand, .brand-sm {
 }
 
 .card-media .ph-polaroid { width: 44%; }
-.card-media .tilt-l { top: 4%;  left: 4%; }
-.card-media .tilt-r { top: 14%; right: 4%; }
-.card-media .tilt-c { bottom: 4%; left: 28%; }
+.card-media .tilt-l { top: 3%;  left: -4%; }
+.card-media .tilt-r { top: 20%; right: -4%; }
+.card-media .tilt-c { bottom: 3%; left: 31%; }
 
 /* scale the search shot into the card */
 .card-media .media-frame {
@@ -491,15 +497,45 @@ h1, h2, h3, .brand, .brand-sm {
     height: 100%;
 }
 
-.card-media .ph-wide { width: 72%; }
-.card-media .stack-back  { top: 6%; right: 3%; }
-.card-media .stack-front { bottom: 6%; left: 3%; }
+.card-media .ph-wide { width: 80%; }
+.card-media .stack-back  { top: -10%; right: -12%; }
+.card-media .stack-front { bottom: -12%; left: -11%; }
+
+/* faces card — family photo behind, People screen in front */
+.card-media .faces {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.faces-photo {
+    position: absolute;
+    top: 10%;
+    left: -8%;
+    width: 90%;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(28, 25, 23, 0.3);
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.faces-screen {
+    position: absolute;
+    top: calc(8% - 50px);
+    right: -4%;
+    height: 140%;
+    width: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(28, 25, 23, 0.35);
+    transform: rotate(2deg);
+    z-index: 2;
+}
 
 .card-body {
     padding: 1.5rem 1.6rem 1.9rem;
 }
-
-.card-body .feature-num { margin-bottom: 0.5rem; }
 
 .card-body h2 {
     font-size: 1.7rem;
@@ -646,16 +682,20 @@ h1, h2, h3, .brand, .brand-sm {
 
 /* ============ Strip ============ */
 .strip {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 5.5rem 1.5rem 3.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 5rem max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem)) 6rem;
+    background: linear-gradient(180deg, #eee4d7 0%, #f5ede3 100%);
+    border-top: 1px solid rgba(194, 65, 12, 0.08);
+    border-bottom: 1px solid rgba(194, 65, 12, 0.08);
     text-align: center;
 }
 
 .strip-title {
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 700;
-    margin-bottom: 0.8rem;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 .strip-sub {
@@ -664,22 +704,66 @@ h1, h2, h3, .brand, .brand-sm {
     margin: 0 auto 2.5rem;
 }
 
-.strip-shots {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1.4rem;
+.zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 9vw, 8rem);
     text-align: left;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
-.mosaic-big {
-    grid-row: 1 / 3;
-    aspect-ratio: auto;
-    min-height: 100%;
+.zig-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(2.5rem, 6vw, 5rem);
 }
 
-.mosaic-sm {
-    aspect-ratio: 8 / 5.8;
+/* mockup order: text left / photo right, then alternate */
+.zig-row:nth-child(odd) { flex-direction: row-reverse; }
+
+.zig-photo {
+    flex: 0 0 55%;
+    width: 55%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    border-radius: 28px;
+    box-shadow: 0 28px 56px -28px rgba(28, 25, 23, 0.3);
+}
+
+/* tall phone screenshot sits inside the card instead of filling it */
+.zig-contain {
+    object-fit: contain;
+    background: #fff;
+    padding: 1.5rem 0;
+}
+
+/* Gentle fade-up as each panel scrolls into view */
+.zig-row {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.zig-row.zig-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .zig-row { opacity: 1; transform: none; transition: none; }
+}
+
+.zig-text { flex: 1 1 40%; }
+
+.zig-text h3 {
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.zig-text p {
+    color: var(--ink-soft);
+    max-width: 26rem;
 }
 
 /* ============ CTA ============ */
@@ -698,30 +782,41 @@ h1, h2, h3, .brand, .brand-sm {
 
 .cta p { color: var(--ink-soft); margin-bottom: 1.8rem; }
 
-.email-form {
+.play-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1.8rem;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 18px 36px -18px rgba(28, 25, 23, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 44px -20px rgba(28, 25, 23, 0.5);
+}
+
+.play-badge svg { width: 30px; height: 30px; fill: currentColor; }
+
+.play-badge-text {
     display: flex;
-    gap: 0.7rem;
-    max-width: 460px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
 }
 
-.email-input {
-    flex: 1;
-    padding: 0.85rem 1.2rem;
-    font-size: 1rem;
-    font-family: inherit;
-    border: 1.5px solid var(--line);
-    border-radius: 999px;
-    background: #fff;
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s ease;
+.play-badge-text small {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
 }
 
-.email-input:focus { border-color: var(--accent); }
-
-.cta-alt { margin-top: 1.6rem; font-size: 0.95rem; }
-.cta-alt a { color: var(--accent-deep); font-weight: 600; }
+.play-badge-text strong { font-size: 1.3rem; font-weight: 700; }
 
 /* ============ Footer ============ */
 .site-footer {
@@ -741,8 +836,7 @@ h1, h2, h3, .brand, .brand-sm {
 
 @media (min-width: 1200px) {
     .hero,
-    .private-inner,
-    .strip {
+    .private-inner {
         max-width: min(1520px, calc(100vw - 3rem));
     }
 }
@@ -796,12 +890,16 @@ h1, h2, h3, .brand, .brand-sm {
 
     .private-points { grid-template-columns: 1fr; }
 
-    .strip-shots {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+    .zig-row, .zig-row:nth-child(odd) {
+        flex-direction: column;
+        gap: 1.6rem;
     }
 
-    .mosaic-big { grid-row: auto; aspect-ratio: 4 / 3; }
+    .zig-photo { flex: none; width: 100%; }
+
+    .zig-text { text-align: center; }
+
+    .zig-text p { margin: 0 auto; }
 
     .ph-phone { width: 260px; height: 560px; }
 
