@@ -1,3 +1,12 @@
+// Keep the fixed header compact after the page starts moving.
+(function () {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    function updateHeader() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+})();
+
 // Reveal-on-scroll for sections
 (function () {
     const targets = document.querySelectorAll('.private-inner, .strip, .cta, .hero-copy, .hero-shot');

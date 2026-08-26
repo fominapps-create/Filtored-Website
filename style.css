@@ -22,6 +22,7 @@ body {
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
+    padding-top: var(--header-h);
 }
 
 h1, h2, h3, .brand, .brand-sm {
@@ -33,13 +34,34 @@ h1, h2, h3, .brand, .brand-sm {
 
 /* ============ Header ============ */
 .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     width: 100%;
     max-width: none;
     margin: 0;
+    min-height: var(--header-h);
     padding: 0.7rem clamp(1.5rem, 3vw, 3rem);
+    background: rgba(250, 247, 242, 0.82);
+    border-bottom: 1px solid rgba(229, 221, 208, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: width 0.28s ease, left 0.28s ease, top 0.28s ease, min-height 0.28s ease, padding 0.28s ease, border-radius 0.28s ease, box-shadow 0.28s ease;
+}
+
+.site-header.is-scrolled {
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 64px;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    border-radius: 0;
+    box-shadow: 0 6px 20px rgba(28, 25, 23, 0.08);
 }
 
 .brand {
