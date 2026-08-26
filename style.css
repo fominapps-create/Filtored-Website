@@ -150,6 +150,33 @@ h1, h2, h3, .brand, .brand-sm {
     border-radius: 999px;
 }
 
+.hero-problem {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1.4rem;
+}
+
+.struggle-solution {
+    display: grid;
+    gap: 1rem;
+    max-width: 30rem;
+    margin-bottom: 2rem;
+}
+
+.struggle-solution strong {
+    display: block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.struggle-solution p {
+    color: var(--ink-soft);
+    margin: 0;
+}
+
 .lede {
     font-size: 1.15rem;
     color: var(--ink-soft);
@@ -316,7 +343,7 @@ h1, h2, h3, .brand, .brand-sm {
     width: 100%;
     max-width: 420px;
     aspect-ratio: 9 / 11;
-    border-radius: 28px;
+    border-radius: 0;
 }
 
 /* Real images (replacing placeholders) */
@@ -673,11 +700,27 @@ img.ph-polaroid, img.ph-wide {
 }
 
 .private-point {
-    border-top: 2px solid var(--accent);
-    padding-top: 1.1rem;
+    padding-top: 0;
 }
 
-.private-point h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.private-point-icon {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+}
+
+.private-point h3 {
+    border-top: 2px solid var(--accent);
+    padding-top: 1.1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
 .private-point p  { color: #c8c2b8; font-size: 0.95rem; }
 
 /* ============ Strip ============ */
@@ -729,7 +772,7 @@ img.ph-polaroid, img.ph-wide {
     aspect-ratio: 3 / 2;
     object-fit: cover;
     display: block;
-    border-radius: 28px;
+    border-radius: 0;
     box-shadow: 0 28px 56px -28px rgba(28, 25, 23, 0.3);
 }
 
@@ -764,6 +807,16 @@ img.ph-polaroid, img.ph-wide {
 .zig-text p {
     color: var(--ink-soft);
     max-width: 26rem;
+    font-weight: 400;
+}
+
+.zig-row:first-child .zig-text p:first-child {
+    color: var(--ink);
+    font-family: 'Sora', 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.7rem;
 }
 
 /* ============ CTA ============ */

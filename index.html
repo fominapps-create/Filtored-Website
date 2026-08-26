@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Filtored — the smart AI gallery. Your photos, sorted by people, events and moments. Everything on your device, nothing in the cloud.">
+    <meta name="description" content="Filtored is an AI photo organizer and offline photo gallery that finds duplicate photos, cleans up clutter, and sorts pictures by people, events, and moments on your device.">
     <meta name="keywords" content="smart gallery, AI photo gallery, photo organizer, face recognition app, on-device AI, photo search">
     <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=42">
+    <link rel="stylesheet" href="style.css?v=43">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
         <a class="brand" href="#top">Filtored</a>
         <nav class="site-nav">
             <a href="faq/index.html">FAQ</a>
+            <a href="pricing/index.html">Pricing</a>
             <a href="contact/index.html">Contact</a>
             <a href="download/index.html" class="nav-cta">Get the app</a>
         </nav>
@@ -40,19 +41,20 @@
                 <img class="cta-slide" src="assets/she%20holding%20cup%20with%20phone%202.png" alt="Woman holding a cup while browsing photos on her phone">
                 <img class="cta-slide" src="assets/friends-slide3-web.jpg" alt="Group of friends taking a photo together">
             </div>
-            <div class="cta-dots" id="ctaDots"></div>
             <div class="cta-banner-inner">
-                <p class="kicker kicker-light">The smart AI gallery</p>
+                <p class="kicker kicker-light">Smart AI gallery</p>
                 <h2>Your camera roll,<br><em>filtered</em> and sorted.</h2>
                 <p>
-                    An AI-powered smart gallery designed to automatically clean,
-                    organize and tag your images.
+                    An offline, AI-powered smart gallery designed for digital
+                    decluttering, with photo cleanup, face recognition,
+                    smart photo search, and organization by people, events, and moments.
                 </p>
                 <div class="hero-actions">
                     <a href="#cta" class="btn btn-solid">Get the app</a>
                     <a href="#next" class="btn btn-light">See how it works</a>
                 </div>
             </div>
+            <div class="cta-dots" id="ctaDots" aria-label="Banner photos"></div>
         </section>
 
         <!-- ============ HERO ============ -->
@@ -60,9 +62,11 @@
             <div class="hero-copy">
                 <p class="kicker">How it works</p>
                 <h1>Your photos,<br>organized your way.</h1>
-                <p class="lede">
-                    Filtored uses on-device AI to automatically organize your camera roll into people, events, and moments. Find any photo in seconds without uploads or accounts — just install and scan.
-                </p>
+                <div class="struggle-solution">
+                    <div>
+                        <p>Bring structure to the thousands of moments living on your phone. Find what matters, clear what doesn't, and make your gallery yours.</p>
+                    </div>
+                </div>
                 <div class="hero-actions">
                     <a href="#strip" class="btn btn-solid">See the features</a>
                 </div>
@@ -79,8 +83,10 @@
                 <div class="zig-row">
                     <img class="zig-photo" src="assets/duplicates-held-web.jpg" alt="Hand holding a phone showing duplicate photos found by Filtored">
                     <div class="zig-text">
-                        <h3>Duplicates, spotted for you</h3>
-                        <p>Filtored finds your duplicates and junk screenshots on its own — no digging required.</p>
+                        <p>A library that stays clean</p>
+                        <p>Does your camera roll feel impossible to keep up with?</p>
+                        <p>Tried cleaning it manually, only to spend hours deleting photos one by one?</p>
+                        <p>It finds the clutter for you, so you can clean up your gallery in a fraction of the time.</p>
                     </div>
                 </div>
                 <div class="zig-row">
@@ -95,6 +101,20 @@
                     <div class="zig-text">
                         <h3>A library that stays clean</h3>
                         <p>Your library stays organized on its own — without losing a single memory.</p>
+                    </div>
+                </div>
+                <div class="zig-row">
+                    <img class="zig-photo" src="assets/full family white.png" alt="Family photo organized by Filtored">
+                    <div class="zig-text">
+                        <h3>People, recognized instantly</h3>
+                        <p>Face recognition groups the people in your life, so their photos are always easy to find.</p>
+                    </div>
+                </div>
+                <div class="zig-row">
+                    <img class="zig-photo" src="assets/search-couch-dog.jpg" alt="Person searching photos on a phone">
+                    <div class="zig-text">
+                        <h3>Search by what you remember</h3>
+                        <p>Find photos by the people, places, and moments inside them — not just their filenames.</p>
                     </div>
                 </div>
             </div>
@@ -172,14 +192,25 @@
                 </p>
                 <div class="private-points">
                     <div class="private-point">
-                        <h3>On-device AI</h3>
-                        <p>Recognition happens in your pocket, not on a server.</p>
+                        <svg class="private-point-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                            <rect x="12" y="21" width="24" height="19" rx="3"></rect>
+                            <path d="M17 21v-5a7 7 0 0 1 14 0v5M24 29v4"></path>
+                        </svg>
+                        <h3>Privacy first</h3>
+                        <p>Your photos stay private, processed right on your phone.</p>
                     </div>
                     <div class="private-point">
+                        <svg class="private-point-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                            <circle cx="24" cy="17" r="6"></circle>
+                            <path d="M13 38c1.7-6.1 5.4-9 11-9s9.3 2.9 11 9M10 10l28 28"></path>
+                        </svg>
                         <h3>No account needed</h3>
                         <p>Install, scan, done. Nothing to sign up for.</p>
                     </div>
                     <div class="private-point">
+                        <svg class="private-point-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                            <path d="M8 19a23 23 0 0 1 32 0M14 25a14 14 0 0 1 20 0M20 31a6 6 0 0 1 8 0M24 38h.01M9 9l30 30"></path>
+                        </svg>
                         <h3>Offline by design</h3>
                         <p>Your gallery stays smart with zero connection.</p>
                     </div>

@@ -7,7 +7,7 @@
     <title>Download Filtored</title>
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    <link rel="stylesheet" href="../style.css?v=42">
+    <link rel="stylesheet" href="../style.css?v=43">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,8 +19,12 @@
         }
 
         .dl-panel {
-            background: linear-gradient(180deg, #eee4d7 0%, #f5ede3 100%);
-            border: 1px solid rgba(194, 65, 12, 0.08);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 610px;
+            background: linear-gradient(135deg, #fffaf4 0%, #f0af74 100%);
+            border: 1px solid rgba(194, 65, 12, 0.1);
             border-radius: 36px;
             padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem);
             display: flex;
@@ -29,10 +33,58 @@
             gap: clamp(2.5rem, 6vw, 5rem);
         }
 
+        .dl-copy,
+        .dl-phones {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dl-copy {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
         .dl-copy h1 {
-            font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+            color: var(--ink);
+        }
+
+        .dl-copy h1 {
+            margin-bottom: 1.2rem;
+            color: var(--ink);
+            font-size: clamp(2.5rem, 5.5vw, 4.6rem);
+            line-height: 1.03;
+        }
+
+        .dl-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 0 0 1.2rem;
+            color: var(--ink);
+            font-family: 'Sora', 'Inter', sans-serif;
+            font-size: clamp(1.5rem, 2.6vw, 2.2rem);
             font-weight: 800;
-            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .dl-lede {
+            max-width: 32rem;
+            margin-bottom: 1.8rem;
+            color: var(--ink-soft);
+            font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        }
+
+        .dl-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .dl-copy h1 {
+            font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 1.8rem;
         }
 
@@ -44,13 +96,85 @@
 
         /* CSS phone frame around the app screenshot */
         .dl-phone {
-            flex: 0 0 auto;
-            width: clamp(240px, 26vw, 320px);
+            position: relative;
+            flex: 0 0 300px;
+            width: 300px;
             border-radius: 44px;
             border: 10px solid var(--ink);
             background: var(--ink);
             box-shadow: 0 40px 80px -36px rgba(28, 25, 23, 0.45);
             overflow: hidden;
+        }
+
+        .dl-phones {
+            position: relative;
+            flex: 0 0 320px;
+            width: 320px;
+            height: 627px;
+            margin-right: clamp(0px, 8vw, 150px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dl-phones::before {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .dl-phones::before {
+            top: 50%;
+            left: 50%;
+            width: 540px;
+            height: 540px;
+            background: linear-gradient(180deg, rgba(194, 65, 12, 0.16) 0%, rgba(255, 250, 244, 0.58) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.6),
+                0 24px 50px -20px rgba(28, 25, 23, 0.25);
+            transform: translate(-50%, -50%);
+        }
+
+        .dl-phones .dl-phone {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        .dl-phones .dl-phone-back {
+            flex-basis: 255px;
+            z-index: 1;
+            bottom: -10px;
+            width: 255px;
+            filter: saturate(0.8) brightness(0.82);
+            box-shadow: 0 30px 60px -32px rgba(28, 25, 23, 0.5);
+        }
+
+        .dl-phone-back-left {
+            transform: translateX(calc(-50% - 120px)) rotate(-14deg);
+        }
+
+        .dl-phone-back-right {
+            transform: translateX(calc(-50% + 120px)) rotate(14deg);
+        }
+
+        .dl-phone-main::before {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            z-index: 3;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+            transform: translateX(-50%);
         }
 
         .dl-phone img {
@@ -65,7 +189,56 @@
                 flex-direction: column;
                 text-align: center;
             }
+            .dl-phones {
+                flex-basis: auto;
+                width: 320px;
+                height: 627px;
+                transform: scale(0.86);
+                transform-origin: top center;
+                margin-top: 2.5rem;
+                margin-right: 0;
+                margin-bottom: -85px;
+            }
             .dl-copy h1 { margin-bottom: 1.4rem; }
+            .dl-eyebrow,
+            .dl-actions { justify-content: center; }
+            .dl-features { justify-content: center; }
+        }
+
+        @media (max-width: 520px) {
+            .dl-phones {
+                margin-top: -1rem;
+            }
+        }
+
+        /* Entrance animations */
+        @keyframes dl-fade-up {
+            from { opacity: 0; transform: translateY(44px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes dl-phone-in {
+            from { opacity: 0; transform: translateX(-50%) translateY(70px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        @keyframes dl-circle-in {
+            from { opacity: 0; transform: translate(-50%, -38%) scale(0.82); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .dl-copy h1 { animation: dl-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
+        .dl-lede { animation: dl-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+        .dl-actions { animation: dl-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+        .dl-phones::before { animation: dl-circle-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+        .dl-phones .dl-phone { animation: dl-phone-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .dl-copy h1,
+            .dl-lede,
+            .dl-actions,
+            .dl-phones::before,
+            .dl-phones .dl-phone { animation: none; }
         }
     </style>
     <script>
@@ -83,6 +256,7 @@
         <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../faq/index.html">FAQ</a>
+            <a href="../pricing/index.html">Pricing</a>
             <a href="../contact/index.html">Contact</a>
         </nav>
     </header>
@@ -91,15 +265,19 @@
         <section class="dl-panel">
             <div class="dl-copy">
                 <h1>Download Filtored<br>on your phone</h1>
+                <p class="dl-lede">A cleaner gallery for the moments that matter, with smart organization that works right on your phone.</p>
                 <!-- PLACEHOLDER LINK: swap href for the real Play Store URL once the listing is live -->
-                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored.gallery" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-                    <span class="play-badge-text"><small>Get it on</small><strong>Google Play</strong></span>
-                </a>
-                <p class="dl-note">Free &middot; Android 5.0 or higher &middot; AI works offline</p>
+                <div class="dl-actions">
+                    <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored.gallery" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                        <span class="play-badge-text"><small>Get it on</small><strong>Google Play</strong></span>
+                    </a>
+                </div>
             </div>
-            <div class="dl-phone">
-                <img src="../assets/People%20screen.png" alt="Filtored People screen showing recognized faces" width="852" height="1846">
+            <div class="dl-phones">
+                <div class="dl-phone dl-phone-main">
+                    <img src="../assets/People%20screen.png" alt="Filtored People screen showing recognized faces" width="852" height="1846">
+                </div>
             </div>
         </section>
     </main>

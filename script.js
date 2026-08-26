@@ -131,6 +131,16 @@
         timer = setInterval(function () { go(index + 1); }, 7000);
     }
 
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            clearInterval(timer);
+            return;
+        }
+
+        go(index + 1);
+        restart();
+    });
+
     go(0);
     restart();
 })();
