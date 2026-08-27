@@ -7,6 +7,36 @@
     window.addEventListener('scroll', updateHeader, { passive: true });
 })();
 
+// Mobile navigation menu
+(function () {
+    const header = document.querySelector('.site-header');
+    const button = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!header || !button || !nav) return;
+
+    function setOpen(isOpen) {
+        header.classList.toggle('is-nav-open', isOpen);
+        button.setAttribute('aria-expanded', String(isOpen));
+        button.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    }
+
+    button.addEventListener('click', function () {
+        setOpen(!header.classList.contains('is-nav-open'));
+    });
+
+    nav.addEventListener('click', function (event) {
+        if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') setOpen(false);
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 860) setOpen(false);
+    });
+})();
+
 // Reveal-on-scroll for sections
 (function () {
     const targets = document.querySelectorAll('.private-inner, .strip, .cta, .hero-copy, .hero-shot');

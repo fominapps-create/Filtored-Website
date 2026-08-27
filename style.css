@@ -73,6 +73,32 @@ h1, h2, h3, .brand, .brand-sm {
 
 .brand-dot { color: var(--accent); }
 
+.nav-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.62);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-toggle span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--ink);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header.is-nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.site-header.is-nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.site-header.is-nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 .site-nav {
     display: flex;
     align-items: center;
@@ -947,6 +973,62 @@ img.ph-polaroid, img.ph-wide {
 
 /* ============ Responsive ============ */
 @media (max-width: 860px) {
+    .site-header {
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    .brand {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: calc(100% + 0.55rem);
+        left: clamp(1rem, 4vw, 1.5rem);
+        right: clamp(1rem, 4vw, 1.5rem);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.65rem;
+        border: 1px solid rgba(229, 221, 208, 0.86);
+        border-radius: 16px;
+        background: rgba(250, 247, 242, 0.98);
+        box-shadow: 0 24px 48px rgba(28, 25, 23, 0.14);
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .site-header.is-nav-open .site-nav {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .site-nav a {
+        display: block;
+        padding: 0.7rem 0.85rem;
+        border-radius: 10px;
+        color: var(--ink);
+    }
+
+    .site-nav a:hover { background: var(--paper-deep); }
+
+    .site-nav .nav-cta {
+        margin-top: 0.25rem;
+        text-align: center;
+        border-radius: 999px;
+    }
+
     .hero,
     .feature,
     .feature.flip {
@@ -987,8 +1069,6 @@ img.ph-polaroid, img.ph-wide {
     .stack { max-width: 380px; height: 360px; margin: 0 auto; }
 
     .email-form { flex-direction: column; }
-
-    .site-nav a:not(.nav-cta) { display: none; }
 
     /* Banner: shorter, centred text, darker veil so it stays readable */
     .cta-banner {

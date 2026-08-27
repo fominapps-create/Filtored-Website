@@ -8,7 +8,7 @@
     <title>Filtored — The Smart AI Gallery</title>
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=43">
+    <link rel="stylesheet" href="style.css?v=44">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,8 +23,13 @@
 <body>
 
     <header class="site-header" id="top">
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <a class="brand" href="#top">Filtored</a>
-        <nav class="site-nav">
+        <nav class="site-nav" id="site-nav">
             <a href="faq/index.html">FAQ</a>
             <a href="pricing/index.html">Pricing</a>
             <a href="contact/index.html">Contact</a>
@@ -244,6 +249,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>
