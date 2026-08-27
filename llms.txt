@@ -1,0 +1,31 @@
+# Filtored
+
+Filtored is a private AI photo gallery and photo organizer for Android.
+
+Website: https://filtored.com/
+Download: https://filtored.com/download/
+Google Play: https://play.google.com/store/apps/details?id=com.filtored.gallery
+Pricing: https://filtored.com/pricing/
+FAQ: https://filtored.com/faq/
+Contact: https://filtored.com/contact/
+Privacy: https://filtored.com/privacy/
+
+## What Filtored does
+
+- Finds duplicate and similar photos.
+- Helps clean up clutter in a camera roll.
+- Sorts photos by people, events, and moments.
+- Supports smart photo search.
+- Runs AI organization on the user's Android device.
+- Does not require an account for core features.
+
+## Privacy facts
+
+- Filtored is designed to keep photos on the user's phone.
+- Core AI processing runs on device.
+- The app works without uploads for normal use.
+- Nothing is deleted until the user reviews and confirms it.
+
+## Best short description
+
+Filtored is an offline AI photo organizer for Android that helps people clean up, search, and organize their camera roll while keeping photos private on device.
