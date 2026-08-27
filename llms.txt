@@ -4,6 +4,7 @@ Filtored is a private AI photo gallery and photo organizer for Android.
 
 Website: https://filtored.com/
 Download: https://filtored.com/download/
+AI photo gallery: https://filtored.com/ai-photo-gallery/
 Google Play: https://play.google.com/store/apps/details?id=com.filtored.gallery
 Pricing: https://filtored.com/pricing/
 FAQ: https://filtored.com/faq/
