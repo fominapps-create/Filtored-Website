@@ -821,8 +821,8 @@ img.ph-polaroid, img.ph-wide {
 .zig-text { flex: 1 1 40%; }
 
 .zig-text h3 {
-    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-    font-weight: 700;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    font-weight: 800;
     margin-bottom: 0.7rem;
 }
 
@@ -835,8 +835,8 @@ img.ph-polaroid, img.ph-wide {
 .zig-row:first-child .zig-text p:first-child {
     color: var(--ink);
     font-family: 'Sora', 'Inter', sans-serif;
-    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-    font-weight: 700;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    font-weight: 800;
     line-height: 1.15;
     margin-bottom: 0.7rem;
 }
