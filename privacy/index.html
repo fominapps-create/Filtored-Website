@@ -6,6 +6,10 @@
   <title>Privacy Policy • Filtored AI Gallery</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://filtored.com/privacy/">
+  <link rel="stylesheet" href="../style.css?v=44">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --fg:#111; --muted:#555; --link:#0a66c2; --bg:#fff; }
     * { box-sizing: border-box; }
@@ -19,6 +23,10 @@
     .card { background:#fafafa; border:1px solid #eee; padding:16px; border-radius:12px; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    html[data-language="ru"] body { font-family: 'Manrope', sans-serif; }
+    html[data-language="ru"] h1, html[data-language="ru"] h2 { font-family: 'Roboto Condensed', sans-serif; }
+    html[data-language="he"] body { font-family: 'Inter', sans-serif; }
+    html[data-language="he"] h1, html[data-language="he"] h2 { font-family: 'Heebo', sans-serif; }
   </style>
   <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -29,6 +37,22 @@
   </script>
 </head>
 <body>
+  <header class="site-header" id="top">
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="brand" href="../index.html">Filtored</a>
+    <nav class="site-nav" id="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../ai-photo-gallery/index.html">AI Gallery</a>
+      <a href="../faq/index.html">FAQ</a>
+      <a href="../pricing/index.html">Pricing</a>
+      <a href="../contact/index.html">Contact</a>
+      <a href="../download/index.html" class="nav-cta">Get the app</a>
+    </nav>
+  </header>
   <main class="wrap">
     <h1>Privacy Policy for Filtored AI Gallery</h1>
     <p class="muted">Last updated: May 12, 2026</p>
@@ -82,8 +106,18 @@
     <h2>Contact</h2>
     <p>For privacy questions, use the contact information on the app's store listing.</p>
 
-    
   </main>
+  <footer class="site-footer">
+    <div class="foot-left">
+      <span class="brand-sm">Filtored</span>
+      <span data-i18n="footer.rights">&copy; 2026 Filtored. All rights reserved.</span>
+    </div>
+    <div class="foot-links">
+      <a href="../contact/index.html">Contact</a>
+      <a href="../faq/index.html">FAQ</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </div>
+  </footer>
   <script src="../script.js?v=10"></script>
 </body>
 </html>

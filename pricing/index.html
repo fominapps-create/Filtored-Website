@@ -186,7 +186,7 @@
                     <span class="plan-radio" aria-hidden="true"></span>
                     <span class="plan-option-info">
                         <span class="plan-option-tag">Start here</span>
-                        <span class="plan-option-top"><span class="plan-option-name">Free</span><span class="plan-option-price">$0 <small>forever</small></span></span>
+                        <span class="plan-option-top"><span class="plan-option-name"><span class="plan-name-text">Free</span></span><span class="plan-option-price">$0 <small>forever</small></span></span>
                         <span class="plan-option-desc">The essentials for a cleaner gallery.</span>
                     </span>
                 </button>
@@ -194,7 +194,7 @@
                     <span class="plan-radio" aria-hidden="true"></span>
                     <span class="plan-option-info">
                         <span class="plan-option-tag">Most popular</span>
-                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>Plus</span><span class="plan-option-price" data-monthly="1.99" data-yearly-total="19.99"><span>$1.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
+                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg><span class="plan-name-text">Plus</span></span><span class="plan-option-price" data-monthly="1.99" data-yearly-total="19.99"><span>$1.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
                         <span class="plan-option-desc">More cleanup power and profile edits.</span>
                     </span>
                 </button>
@@ -202,7 +202,7 @@
                     <span class="plan-radio" aria-hidden="true"></span>
                     <span class="plan-option-info">
                         <span class="plan-option-tag">Everything, unlimited</span>
-                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"></circle><path d="m8 14-1 7 5-3 5 3-1-7M12 6.5l.8 1.6 1.7.2-1.2 1.2.3-1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.2z"></path></svg>Premium</span><span class="plan-option-price" data-monthly="4.99" data-yearly-total="49.99"><span>$4.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
+                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"></circle><path d="m8 14-1 7 5-3 5 3-1-7M12 6.5l.8 1.6 1.7.2-1.2 1.2.3-1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.2z"></path></svg><span class="plan-name-text">Premium</span></span><span class="plan-option-price" data-monthly="4.99" data-yearly-total="49.99"><span>$4.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
                         <span class="plan-option-desc">The complete Filtored experience for your library.</span>
                     </span>
                 </button>
@@ -293,7 +293,13 @@
         function movePill(button) {
             const toggleRect = billingToggle.getBoundingClientRect();
             const buttonRect = button.getBoundingClientRect();
-            billingPill.style.left = (buttonRect.left - toggleRect.left) + 'px';
+            if (document.documentElement.dir === 'rtl') {
+                billingPill.style.left = 'auto';
+                billingPill.style.right = (toggleRect.right - buttonRect.right) + 'px';
+            } else {
+                billingPill.style.right = 'auto';
+                billingPill.style.left = (buttonRect.left - toggleRect.left) + 'px';
+            }
             billingPill.style.width = buttonRect.width + 'px';
         }
 
