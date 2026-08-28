@@ -13,7 +13,7 @@
     if (!select) {
         const label = document.createElement('label');
         label.className = 'language-picker';
-        label.innerHTML = '<span class="sr-only" data-language-label>Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="ru">Русский</option><option value="he">עברית</option></select>';
+        label.innerHTML = '<span class="language-globe" aria-hidden="true"></span><span class="sr-only" data-language-label>Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="ru">Русский</option><option value="he">עברית</option></select>';
         const nav = document.querySelector('.site-nav');
         if (nav) nav.appendChild(label);
         else document.querySelector('.wrap')?.prepend(label);

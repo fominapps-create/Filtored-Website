@@ -149,16 +149,39 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
 }
 
 .language-picker::before {
-    content: "\1F310";
+    content: none;
+}
+
+.language-globe {
     position: absolute;
     top: 50%;
     left: 0.75rem;
     z-index: 1;
-    color: var(--ink);
-    font-size: 0.95rem;
-    line-height: 1;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
     pointer-events: none;
     transform: translateY(-50%);
+}
+
+.language-globe::before,
+.language-globe::after {
+    content: "";
+    position: absolute;
+    inset: 1px 3px;
+    border: 1px solid var(--ink);
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 50%;
+}
+
+.language-globe::after {
+    inset: 3px 1px;
+    border: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    border-radius: 50%;
 }
 
 .language-picker select {
@@ -226,7 +249,7 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
     cursor: pointer;
 }
 
-html[dir="rtl"] .language-picker::before {
+html[dir="rtl"] .language-globe {
     left: auto;
     right: 0.75rem;
 }
