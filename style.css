@@ -94,11 +94,24 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
 }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 1.7rem;
     font-weight: 800;
     color: var(--ink);
     text-decoration: none;
 }
+
+.brand-logo {
+    order: -1;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+html[dir="rtl"] .brand-logo { order: 1; }
 
 .brand-dot { color: var(--accent); }
 
