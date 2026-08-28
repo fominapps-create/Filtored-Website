@@ -154,7 +154,7 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
     top: 50%;
     left: 0.75rem;
     z-index: 1;
-    color: var(--accent);
+    color: var(--ink);
     font-size: 0.95rem;
     line-height: 1;
     pointer-events: none;

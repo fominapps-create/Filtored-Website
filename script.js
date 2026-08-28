@@ -13,7 +13,7 @@
     if (!select) {
         const label = document.createElement('label');
         label.className = 'language-picker';
-        label.innerHTML = '<span class="sr-only" data-language-label>Language</span><select id="languageSelect" aria-label="Language"><option value="auto">Auto</option><option value="en">English</option><option value="ru">Русский</option><option value="he">עברית</option></select>';
+        label.innerHTML = '<span class="sr-only" data-language-label>Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="ru">Русский</option><option value="he">עברית</option></select>';
         const nav = document.querySelector('.site-nav');
         if (nav) nav.appendChild(label);
         else document.querySelector('.wrap')?.prepend(label);
@@ -164,7 +164,7 @@
         document.documentElement.lang = activeLanguage;
         document.documentElement.dir = activeLanguage === 'he' ? 'rtl' : 'ltr';
         document.documentElement.dataset.language = activeLanguage;
-        select.value = language;
+        select.value = activeLanguage;
         translatableElements.forEach(function (element) {
             const value = dictionary[element.dataset.i18n];
             element.innerHTML = value || element.dataset.i18nDefault;
@@ -172,12 +172,10 @@
         select.setAttribute('aria-label', dictionary['language.label'] || 'Language');
         const languageLabel = select.parentElement.querySelector('[data-language-label], .sr-only');
         if (languageLabel) languageLabel.textContent = dictionary['language.label'] || 'Language';
-        if (select.options[0]) select.options[0].textContent = dictionary['language.auto'] || 'Auto';
         trigger.textContent = select.options[select.selectedIndex]?.textContent || 'Auto';
         menu.querySelectorAll('.language-option').forEach(function (option) {
-            option.classList.toggle('is-selected', option.dataset.value === language);
-            option.setAttribute('aria-selected', String(option.dataset.value === language));
-            if (option.dataset.value === 'auto') option.textContent = dictionary['language.auto'] || 'Auto';
+            option.classList.toggle('is-selected', option.dataset.value === activeLanguage);
+            option.setAttribute('aria-selected', String(option.dataset.value === activeLanguage));
         });
         trigger.setAttribute('aria-label', dictionary['language.label'] || 'Language');
         applyPageTranslations(activeLanguage);
