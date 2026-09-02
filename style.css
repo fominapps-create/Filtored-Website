@@ -78,8 +78,21 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
     -webkit-backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     transition: width 0.28s ease, left 0.28s ease, top 0.28s ease, min-height 0.28s ease, padding 0.28s ease, border-radius 0.28s ease, box-shadow 0.28s ease;
+}
+
+.header-spacer {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.nav-right {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
 }
 
 .site-header.is-scrolled {
@@ -95,6 +108,8 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
 
 .brand {
     display: inline-flex;
+    flex: 1 1 0;
+    min-width: 0;
     align-items: center;
     gap: 0.4rem;
     font-size: 1.7rem;
@@ -142,9 +157,15 @@ html[dir="rtl"] .brand-logo { order: 1; }
 .site-header.is-nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .site-nav {
+    display: contents;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
-    gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: clamp(0.6rem, 2vw, 1.6rem);
 }
 
 .site-nav a {
@@ -152,6 +173,7 @@ html[dir="rtl"] .brand-logo { order: 1; }
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .site-nav a:hover { color: var(--ink); }
@@ -170,31 +192,11 @@ html[dir="rtl"] .brand-logo { order: 1; }
     top: 50%;
     left: 0.75rem;
     z-index: 1;
-    width: 0.9rem;
-    height: 0.9rem;
-    border: 1.5px solid var(--ink);
-    border-radius: 50%;
+    width: 1.15rem;
+    height: 1.15rem;
+    background: url("assets/language%20icon.png") center / contain no-repeat;
     pointer-events: none;
     transform: translateY(-50%);
-}
-
-.language-globe::before,
-.language-globe::after {
-    content: "";
-    position: absolute;
-    inset: 1px 3px;
-    border: 1px solid var(--ink);
-    border-top: 0;
-    border-bottom: 0;
-    border-radius: 50%;
-}
-
-.language-globe::after {
-    inset: 3px 1px;
-    border: 0;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    border-radius: 50%;
 }
 
 .language-picker select {
@@ -1191,26 +1193,33 @@ img.ph-polaroid, img.ph-wide {
 }
 
 /* ============ Responsive ============ */
-@media (max-width: 860px) {
+@media (max-width: 1180px) {
     .site-header {
+        display: flex;
         justify-content: flex-start;
         gap: 0.75rem;
     }
 
     .nav-toggle {
         display: flex;
-        order: 2;
+        order: 3;
     }
 
     .brand {
         order: 1;
+        flex: none;
         margin-right: auto;
     }
 
-    .site-nav {
+    .nav-right {
+        order: 2;
+        flex: none;
+    }
+
+    .nav-links {
         position: absolute;
-        top: calc(100% + 0.55rem);
         left: clamp(1rem, 4vw, 1.5rem);
+        top: calc(100% + 0.55rem);
         right: clamp(1rem, 4vw, 1.5rem);
         display: flex;
         flex-direction: column;
@@ -1227,32 +1236,22 @@ img.ph-polaroid, img.ph-wide {
         transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
-    .site-header.is-nav-open .site-nav {
+    .site-header.is-nav-open .nav-links {
         opacity: 1;
         transform: none;
         pointer-events: auto;
     }
 
-    .site-nav a {
+    .nav-links a {
         display: block;
         padding: 0.7rem 0.85rem;
         border-radius: 10px;
         color: var(--ink);
     }
 
-    .site-nav a:hover { background: var(--paper-deep); }
+    .nav-links a:hover { background: var(--paper-deep); }
 
-    .site-nav .nav-cta {
-        margin-top: 0.25rem;
-        text-align: center;
-        border-radius: 999px;
-    }
-
-    .language-picker { margin-top: 0.35rem; }
-
-    .language-picker select { width: 100%; }
-
-    .language-menu { left: 0; right: 0; }
+    .language-menu { left: auto; right: 0; }
 
     html[dir="rtl"] .site-header { direction: rtl; }
 
@@ -1305,6 +1304,11 @@ img.ph-polaroid, img.ph-wide {
 
     .email-form { flex-direction: column; }
 
+@media (max-width: 560px) {
+    .nav-right .nav-cta { display: none; }
+}
+
+@media (max-width: 1180px) {
     /* Banner: shorter, centred text, darker veil so it stays readable */
     .cta-banner {
         min-height: 78svh;
