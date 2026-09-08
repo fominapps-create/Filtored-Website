@@ -22,14 +22,14 @@
 
     const translations = {
         ru: {
-            'nav.gallery': 'Возможности', 'nav.faq': 'Частые вопросы', 'nav.pricing': 'Цены', 'nav.contact': 'Связаться с нами', 'nav.download': 'Скачать приложение',
+            'nav.gallery': 'Возможности', 'nav.articles': 'Статьи', 'nav.faq': 'Частые вопросы', 'nav.pricing': 'Цены', 'nav.contact': 'Связаться с нами', 'nav.download': 'Скачать приложение',
             'language.label': 'Язык', 'language.auto': 'Авто', 'banner.kicker': 'Умная AI-галерея', 'banner.title': 'Ваша фотоплёнка,<br><em>отфильтрована</em> и рассортирована.', 'banner.description': 'Офлайн-галерея с искусственным интеллектом для порядка в фотографиях: очистка от лишнего, распознавание лиц, умный поиск и сортировка по людям, событиям и моментам.', 'banner.learn': 'Как это работает',
             'hero.kicker': 'Как это работает', 'hero.title': 'Ваши фотографии,<br>организованные по-вашему.', 'hero.description': 'Наведите порядок в тысячах моментов на телефоне. Находите важное, удаляйте лишнее и создавайте свою галерею.', 'hero.features': 'Возможности',
             'strip.title': 'Чистая галерея автоматически', 'strip.cleanTitle': 'Порядок сохраняется сам', 'strip.cleanText': 'Приложение сортирует беспорядок за вас, чтобы очистить галерею за малую часть прежнего времени. Проверьте, нажмите, готово.', 'strip.momentsTitle': 'Моменты, а не беспорядок', 'strip.momentsText': 'Filtored превращает особенные моменты, затерявшиеся среди сотен фотографий, в события, чтобы галерея рассказывала вашу историю.', 'strip.searchTitle': 'Находите за секунды', 'strip.searchText': 'Категории фотографий можно искать: найдите любую еду, поездку, документ или сохранённую деталь за секунды.', 'strip.peopleTitle': 'Люди распознаются сразу', 'strip.peopleText': 'Filtored узнаёт близких и собирает их фотографии в профили — от только что сделанных снимков до почти забытых моментов, <strong>всё в одном месте.</strong>', 'strip.timeTitle': 'Ваше время ценно', 'strip.timeText': 'Тратьте меньше времени на поиск, сортировку и очистку фотографий, а больше — на действительно важное.',
             'privacy.title': 'Ваши фотографии не покидают телефон', 'privacy.description': 'Весь AI работает на устройстве. Никаких загрузок, аккаунтов и мелких оговорок под обещаниями конфиденциальности. В авиарежиме всё работает так же.', 'privacy.firstTitle': 'Конфиденциальность прежде всего', 'privacy.firstText': 'Ваши фотографии остаются личными и обрабатываются прямо на телефоне.', 'privacy.accountTitle': 'Аккаунт не нужен', 'privacy.accountText': 'Установите, просканируйте, готово. Регистрироваться не нужно.', 'privacy.offlineTitle': 'Создано для работы офлайн', 'privacy.offlineText': 'Ваша галерея остаётся умной даже без подключения.', 'cta.title': 'Filtored уже здесь', 'cta.description': 'Бесплатно в Google Play. Ваши фотографии остаются на телефоне.', 'cta.getItOn': 'Скачать в', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность'
         },
         he: {
-            'nav.gallery': 'תכונות', 'nav.faq': 'שאלות נפוצות', 'nav.pricing': 'מחירים', 'nav.contact': 'צרו קשר', 'nav.download': 'הורדת האפליקציה',
+            'nav.gallery': 'תכונות', 'nav.articles': 'מאמרים', 'nav.faq': 'שאלות נפוצות', 'nav.pricing': 'מחירים', 'nav.contact': 'צרו קשר', 'nav.download': 'הורדת האפליקציה',
             'language.label': 'שפה', 'language.auto': 'אוטומטי', 'banner.kicker': 'גלריית AI חכמה', 'banner.title': 'גלריית התמונות שלך,<br><em>מסוננת</em> וממוינת.', 'banner.description': 'גלריית תמונות חכמה שפועלת ללא חיבור, ומסדרת את התמונות שלך בעזרת AI: ניקוי תמונות, זיהוי פנים, חיפוש חכם ומיון לפי אנשים, אירועים ורגעים.', 'banner.learn': 'איך זה עובד',
             'hero.kicker': 'איך זה עובד', 'hero.title': 'התמונות שלך,<br>מסודרות בדרך שלך.', 'hero.description': 'הכניסו סדר לאלפי הרגעים שחיים בטלפון שלכם. מצאו את מה שחשוב, פנו את מה שלא, והפכו את הגלריה לשלכם.', 'hero.features': 'לכל היכולות',
             'strip.title': 'גלריה נקייה יותר, באופן אוטומטי', 'strip.cleanTitle': 'הספרייה נשארת מסודרת', 'strip.cleanText': 'Filtored ממיין את העומס עבורכם, כך שתוכלו לנקות את הגלריה בחלק קטן מהזמן. בודקים, לוחצים, סיימנו.', 'strip.momentsTitle': 'רגעים, לא בלגן', 'strip.momentsText': 'כשרגעים מיוחדים נבלעים בין מאות תמונות, Filtored הופך אותם לאירועים כדי שהגלריה שלכם תספר את הסיפור.', 'strip.searchTitle': 'מוצאים בשניות', 'strip.searchText': 'אפשר לחפש בקטגוריות התמונות שלכם, כך שמציאת כל ארוחה, טיול, מסמך או פרט ששמרתם לוקחת שניות.', 'strip.peopleTitle': 'האנשים מזוהים מיד', 'strip.peopleText': 'Filtored מזהה את האנשים בחייכם ומרכז את התמונות שלהם בפרופילים — מתמונות שצילמתם עכשיו ועד רגעים שכמעט שכחתם, <strong>הכול במקום אחד.</strong>', 'strip.timeTitle': 'הזמן שלכם יקר', 'strip.timeText': 'השקיעו פחות זמן בחיפוש, מיון וניקוי התמונות, ויותר זמן במה שבאמת חשוב.',
@@ -126,6 +126,7 @@
         if (path.includes('/faq/')) return 'faq';
         if (path.includes('/pricing/')) return 'pricing';
         if (path.includes('/privacy/')) return 'privacy';
+        if (path.includes('/blog/')) return 'blog';
         return '';
     }
 
@@ -135,14 +136,15 @@
         const selectors = Object.assign({}, page.ru, page.he);
         const dictionary = page[language] || {};
         const sharedLabels = {
-            ru: { home: 'Главная', features: 'Возможности', faq: 'Частые вопросы', pricing: 'Цены', contact: 'Связаться с нами', download: 'Скачать приложение', privacy: 'Конфиденциальность' },
-            he: { home: 'דף הבית', features: 'תכונות', faq: 'שאלות נפוצות', pricing: 'מחירים', contact: 'צרו קשר', download: 'הורדת האפליקציה', privacy: 'פרטיות' }
+            ru: { home: 'Главная', features: 'Возможности', blog: 'Статьи', faq: 'Частые вопросы', pricing: 'Цены', contact: 'Связаться с нами', download: 'Скачать приложение', privacy: 'Конфиденциальность' },
+            he: { home: 'דף הבית', features: 'תכונות', blog: 'מאמרים', faq: 'שאלות נפוצות', pricing: 'מחירים', contact: 'צרו קשר', download: 'הורדת האפליקציה', privacy: 'פרטיות' }
         }[language];
         if (sharedLabels) {
             document.querySelectorAll('.site-nav a, .foot-links a').forEach(function (element) {
                 const href = element.getAttribute('href') || '';
                 let key = '';
                 if (href.includes('features')) key = 'features';
+                else if (href.includes('blog')) key = 'blog';
                 else if (href.includes('faq')) key = 'faq';
                 else if (href.includes('pricing')) key = 'pricing';
                 else if (href.includes('contact')) key = 'contact';
@@ -387,6 +389,41 @@
 
     go(0);
     restart();
+})();
+
+// Cookie consent banner (controls whether PostHog analytics may run).
+(function () {
+    const STORAGE_KEY = 'cookie-consent';
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    function applyConsent(value) {
+        if (!window.posthog) return;
+        if (value === 'accepted') posthog.opt_in_capturing();
+        else if (value === 'declined') posthog.opt_out_capturing();
+    }
+
+    if (saved) { applyConsent(saved); return; }
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    const depth = location.pathname.split('/').filter(Boolean).length;
+    const privacyHref = '../'.repeat(depth) + 'privacy/';
+    banner.innerHTML = '<p>We use a privacy-friendly analytics tool to see how people use this site. No data is sold. See our <a href="' + privacyHref + '">Privacy Policy</a>.</p><div class="cookie-banner-actions"><button type="button" class="cookie-decline">Decline</button><button type="button" class="cookie-accept">Accept</button></div>';
+    document.body.appendChild(banner);
+
+    banner.querySelector('.cookie-accept').addEventListener('click', function () {
+        localStorage.setItem(STORAGE_KEY, 'accepted');
+        applyConsent('accepted');
+        banner.remove();
+    });
+
+    banner.querySelector('.cookie-decline').addEventListener('click', function () {
+        localStorage.setItem(STORAGE_KEY, 'declined');
+        applyConsent('declined');
+        banner.remove();
+    });
 })();
 
 

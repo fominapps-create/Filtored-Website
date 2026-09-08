@@ -1176,6 +1176,52 @@ img.ph-polaroid, img.ph-wide {
 
 .foot-links a:hover { color: var(--accent-deep); }
 
+/* ============ Cookie consent banner ============ */
+.cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: var(--paper-deep);
+    border-top: 1px solid var(--line);
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem 1.4rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+}
+
+.cookie-banner p { margin: 0; max-width: 640px; }
+
+.cookie-banner a { color: var(--accent-deep); }
+
+.cookie-banner-actions { display: flex; gap: 0.6rem; flex: 0 0 auto; }
+
+.cookie-banner button {
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+}
+
+.cookie-banner button.cookie-accept {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.cookie-banner button.cookie-accept:hover { background: var(--accent-deep); }
+.cookie-banner button.cookie-decline:hover { border-color: var(--ink-soft); }
+
 /* ============ Reveal on scroll ============ */
 .reveal {
     opacity: 0;

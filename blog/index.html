@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with the Filtored team — questions, bug reports and ideas welcome.">
-    <title>Contact Us — Filtored</title>
-    <link rel="canonical" href="https://filtored.com/contact/">
+    <meta name="description" content="Articles about organizing, cleaning up, and getting the most out of your Android photo gallery — from Filtored.">
+    <title>Articles — Filtored</title>
+    <link rel="canonical" href="https://filtored.com/blog/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Filtored">
-    <meta property="og:title" content="Contact Us — Filtored">
-    <meta property="og:description" content="Contact Filtored for questions, bug reports, feature ideas, and support.">
-    <meta property="og:url" content="https://filtored.com/contact/">
+    <meta property="og:title" content="Articles — Filtored">
+    <meta property="og:description" content="Articles about organizing, cleaning up, and getting the most out of your Android photo gallery.">
+    <meta property="og:url" content="https://filtored.com/blog/">
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
     <link rel="stylesheet" href="../style.css?v=47">
@@ -18,88 +18,78 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        .contact-wrap {
-            max-width: 760px;
+        .blog-wrap {
+            max-width: 880px;
             margin: 0 auto;
             padding: 2.5rem 1.5rem 5rem;
-            text-align: center;
         }
 
-        .contact-wrap h1 {
+        .blog-wrap h1 {
             font-size: clamp(2rem, 4.5vw, 3rem);
             font-weight: 800;
             margin-bottom: 0.6rem;
         }
 
-        .contact-intro {
+        .blog-intro {
             color: var(--ink-soft);
-            max-width: 34rem;
-            margin: 0 auto 2.5rem;
+            margin-bottom: 2.5rem;
         }
 
-        .contact-card {
-            background: linear-gradient(180deg, #eee4d7 0%, #f5ede3 100%);
-            border: 1px solid rgba(194, 65, 12, 0.08);
-            border-radius: 28px;
-            padding: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
+        .blog-hero {
+            display: block;
+            width: 100%;
+            aspect-ratio: 21 / 5;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin: 0 0 1.6rem;
         }
 
-        .contact-card h2 {
+        .blog-post-card {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.7rem;
+            margin-bottom: 1.2rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-post-thumb {
+            flex: 0 0 auto;
+            width: 140px;
+            height: 100px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .blog-post-text { flex: 1; }
+
+        @media (max-width: 560px) {
+            .blog-post-card { flex-direction: column; align-items: stretch; }
+            .blog-post-thumb { width: 100%; height: 160px; }
+        }
+
+        .blog-post-card:hover { border-color: var(--accent); }
+
+        .blog-post-card h2 {
             font-size: 1.3rem;
             margin-bottom: 0.4rem;
         }
 
-        .contact-card p {
+        .blog-post-date {
+            font-size: 0.85rem;
             color: var(--ink-soft);
-            margin-bottom: 1.5rem;
+            margin: 0 0 0.5rem;
         }
 
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            border: 1.5px solid var(--line);
-            border-radius: 999px;
-            background: #fff;
-            color: var(--ink);
-            font-weight: 600;
-            text-decoration: none;
-            transition: border-color 0.2s ease, transform 0.15s ease;
-        }
-
-        .social-link:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
+        .blog-post-card p {
+            color: var(--ink-soft);
+            margin: 0;
         }
     </style>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Filtored",
-        "url": "https://filtored.com/",
-        "logo": "https://filtored.com/favicon.png",
-        "email": "contact@filtored.com",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer support",
-            "email": "contact@filtored.com",
-            "availableLanguage": "en"
-        },
-        "sameAs": [
-            "https://www.instagram.com/filtored",
-            "https://www.tiktok.com/@filtored",
-            "https://youtube.com/@Filtored"
-        ]
-    }
-    </script>
     <script>
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
         posthog.init('phc_gXSa98DuFdTRI8t4hBi9W5bFVpfntafWVzObIZkfKsj', {
@@ -120,7 +110,6 @@
         <a class="brand" href="../"><img class="brand-logo" src="../assets/logo%20shutter%20zoomer%20no%20bg.png" alt="" width="30" height="30">Filtored</a>
         <nav class="site-nav" id="site-nav">
             <div class="nav-links">
-                <a href="../">Home</a>
                 <a href="../features/">Features</a>
                 <a href="../blog/">Articles</a>
                 <a href="../faq/">FAQ</a>
@@ -133,25 +122,19 @@
         </nav>
     </header>
 
-    <main class="contact-wrap">
-        <h1>Get in touch</h1>
-        <p class="contact-intro">Questions, bug reports, feature ideas — we read everything and reply to most.</p>
+    <main class="blog-wrap">
+        <h1>Articles</h1>
+        <img class="blog-hero" src="../assets/phone%20holding.jpg" alt="Holding a phone while browsing a photo gallery" width="1400" height="333">
+        <p class="blog-intro">Tips and guides for organizing, cleaning up, and getting the most out of your photo gallery.</p>
 
-        <div class="contact-card">
-            <h2>Email us</h2>
-            <p>The fastest way to reach us. We usually answer within a day or two.</p>
-            <a class="btn btn-solid" href="mailto:contact@filtored.com">contact@filtored.com</a>
-        </div>
-
-        <div class="contact-card">
-            <h2>Follow along</h2>
-            <p>Tips, updates and behind-the-scenes.</p>
-            <div class="socials">
-                <a class="social-link" href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a class="social-link" href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer">TikTok</a>
-                <a class="social-link" href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="blog-post-card" href="best-photo-gallery-cleanup-apps-android/">
+            <img class="blog-post-thumb" src="../assets/gallery-held-web.jpg" alt="" width="280" height="200">
+            <div class="blog-post-text">
+                <h2>Best Gallery & Photo Cleanup Apps for Android</h2>
+                <p class="blog-post-date"><time datetime="2026-09-08">September 8, 2026</time></p>
+                <p>A comparison of Filtored, Google Photos, Aves, F-Stop, Piktures, Fossify, Amazon Photos, and Remo — what each is best at, and how free vs. paid works.</p>
             </div>
-        </div>
+        </a>
     </main>
 
     <footer class="site-footer">
@@ -164,8 +147,8 @@
             <a href="../blog/">Articles</a>
             <a href="../contact/">Contact Us</a>
             <a href="../faq/">FAQ</a>
-            <a href="../download/">Download</a>
             <a href="../privacy/">Privacy</a>
+            <a href="../download/">Download</a>
         </div>
     </footer>
 
