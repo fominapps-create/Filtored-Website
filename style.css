@@ -72,8 +72,7 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
     margin: 0;
     min-height: var(--header-h);
     padding: 0.7rem clamp(1.5rem, 3vw, 3rem);
-    background: rgba(250, 247, 242, 0.82);
-    border-bottom: 1px solid rgba(229, 221, 208, 0.7);
+    background: rgba(250, 247, 242, 0.38);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: flex;
@@ -169,10 +168,10 @@ html[dir="rtl"] .brand-logo { order: 1; }
 }
 
 .site-nav a {
-    color: var(--ink-soft);
+    color: var(--ink);
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -337,13 +336,18 @@ html[dir="rtl"] .language-picker::after {
 
 .nav-cta {
     color: #fff !important;
-    background: var(--ink);
+    background: #100e0c;
     padding: 0.55rem 1.1rem;
     border-radius: 999px;
-    transition: background 0.2s ease;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(28, 25, 23, 0.18);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-cta:hover { background: var(--accent); }
+.nav-cta:hover {
+    background: #000;
+    box-shadow: 0 4px 10px rgba(28, 25, 23, 0.24);
+}
 
 /* ============ Buttons ============ */
 .btn {

@@ -383,6 +383,7 @@
     const step = 100 / total;
     let index = 0;
     let timer;
+    let isReady = false;
 
     track.style.width = (total * 100) + '%';
     slides.concat(clone).forEach(function (s) { s.style.width = step + '%'; });
@@ -392,7 +393,11 @@
         dot.type = 'button';
         dot.className = 'cta-dot';
         dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
-        dot.addEventListener('click', function () { go(i); restart(); });
+        dot.addEventListener('click', function () {
+            if (!isReady) return;
+            go(i);
+            restart();
+        });
         dotsWrap.appendChild(dot);
         return dot;
     });
@@ -429,12 +434,25 @@
             return;
         }
 
+        if (!isReady) return;
         go(index + 1);
         restart();
     });
 
-    go(0);
-    restart();
+    function waitForImage(image) {
+        if (image.complete) return Promise.resolve();
+
+        return new Promise(function (resolve) {
+            image.addEventListener('load', resolve, { once: true });
+            image.addEventListener('error', resolve, { once: true });
+        });
+    }
+
+    Promise.all(slides.map(waitForImage)).then(function () {
+        isReady = true;
+        go(0);
+        restart();
+    });
 })();
 
 // Cookie consent banner (controls whether PostHog analytics may run).
