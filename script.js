@@ -7,6 +7,21 @@
     window.addEventListener('scroll', updateHeader, { passive: true });
 })();
 
+// On the homepage, avoid duplicating the main banner's call to action.
+(function () {
+    const header = document.querySelector('.homepage-header');
+    const banner = document.querySelector('.cta-banner');
+    if (!header || !banner) return;
+
+    function updateNavbarCta() {
+        header.classList.toggle('is-cta-passed', banner.getBoundingClientRect().bottom <= 140);
+    }
+
+    updateNavbarCta();
+    window.addEventListener('scroll', updateNavbarCta, { passive: true });
+    window.addEventListener('resize', updateNavbarCta);
+})();
+
 // Homepage translations and automatic language selection.
 (function () {
     let select = document.getElementById('languageSelect');

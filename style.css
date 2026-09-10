@@ -341,12 +341,24 @@ html[dir="rtl"] .language-picker::after {
     border-radius: 999px;
     font-weight: 700;
     box-shadow: 0 3px 8px rgba(28, 25, 23, 0.18);
-    transition: background 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
 .nav-cta:hover {
     background: #000;
     box-shadow: 0 4px 10px rgba(28, 25, 23, 0.24);
+}
+
+.homepage-header .nav-cta {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+}
+
+.homepage-header.is-cta-passed .nav-cta {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 /* ============ Buttons ============ */
