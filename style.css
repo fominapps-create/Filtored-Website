@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
 
 /* ============ Base ============ */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -682,7 +682,7 @@ html[dir="rtl"] .language-picker::after {
     aspect-ratio: 4 / 3;
 }
 
-/* People collage — scattered polaroids */
+/* People collage - scattered polaroids */
 .collage {
     position: relative;
     width: 100%;
@@ -709,7 +709,7 @@ img.ph-polaroid, img.ph-wide {
 .tilt-r { top: 60px; right: 0;  transform: rotate(5deg);  z-index: 2; }
 .tilt-c { bottom: 0; left: 60px; transform: rotate(-2deg); z-index: 3; }
 
-/* Events — offset stacked moments */
+/* Events - offset stacked moments */
 .stack {
     position: relative;
     width: 100%;
@@ -831,7 +831,7 @@ img.ph-polaroid, img.ph-wide {
 .card-media .stack-back  { top: -10%; right: -12%; }
 .card-media .stack-front { bottom: -12%; left: -11%; }
 
-/* faces card — family photo behind, People screen in front */
+/* faces card - family photo behind, People screen in front */
 .card-media .faces {
     position: relative;
     width: 100%;

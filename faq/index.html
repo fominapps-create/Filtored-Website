@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Frequently asked questions about Filtored — the smart AI gallery.">
-    <title>FAQ — Filtored</title>
+    <meta name="description" content="Frequently asked questions about Filtored - the smart AI gallery.">
+    <title>FAQ - Filtored</title>
     <link rel="canonical" href="https://filtored.com/faq/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Filtored">
-    <meta property="og:title" content="FAQ — Filtored">
+    <meta property="og:title" content="FAQ - Filtored">
     <meta property="og:description" content="Answers about Filtored pricing, privacy, accounts, Android support, and photo deletion.">
     <meta property="og:url" content="https://filtored.com/faq/">
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
@@ -25,23 +25,23 @@
         }
 
         .faq-wrap h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-size: clamp(1.6rem, 3.6vw, 2.4rem);
             font-weight: 800;
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-intro {
-            color: var(--ink-soft);
-            margin-bottom: 2.5rem;
+            margin-bottom: 0.9rem;
+            text-align: center;
         }
 
         .faq-item {
             background: #fff;
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.6rem;
             overflow: hidden;
+            transition: border-color 0.2s ease;
         }
+
+        .faq-item:hover,
+        .faq-item:focus-within { border-color: var(--accent); }
 
         .faq-item summary {
             list-style: none;
@@ -59,19 +59,49 @@
         .faq-item summary::-webkit-details-marker { display: none; }
 
         .faq-item summary::after {
-            content: "+";
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--accent);
+            content: "";
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
             flex: 0 0 auto;
             transition: transform 0.2s ease;
+            transform: rotate(45deg);
         }
 
-        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item[open] summary::after { transform: rotate(-135deg); }
 
         .faq-item p {
+            margin: 0;
             padding: 0 1.4rem 1.2rem;
             color: var(--ink-soft);
+            animation: faq-open 0.22s ease both;
+        }
+
+        .faq-item ul,
+        .faq-item ol {
+            margin: 0;
+            padding: 0 1.4rem 1.2rem 2.8rem;
+            color: var(--ink-soft);
+            animation: faq-open 0.22s ease both;
+        }
+
+        .faq-item ul.faq-steps {
+            list-style: none;
+            padding-left: 1.4rem;
+        }
+
+        .faq-steps li + li { margin-top: 0.8rem; }
+
+        .faq-steps strong {
+            display: block;
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        @keyframes faq-open {
+            from { opacity: 0; transform: translateY(-0.35rem); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .faq-more {
@@ -89,13 +119,33 @@
         "mainEntity": [
             {
                 "@type": "Question",
+                "name": "What is Filtored?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Filtored is an AI-powered smart photo organization tool designed to automatically clean, organize, and tag your image galleries. It helps users clear up device storage by safely identifying and removing duplicates, while also grouping similar images together." }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Filtored work?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Filtored scans your gallery with on-device AI, organizes your media into categories, objects, and faces, then analyzes it to create smart suggestions. You review the suggestions and decide what to keep or remove." }
+            },
+            {
+                "@type": "Question",
+                "name": "What type of photos can Filtored identify?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Filtored can identify photos with: people, animals, food, scenery, documents, objects, faces, text, barcodes and QR codes." }
+            },
+            {
+                "@type": "Question",
                 "name": "Is Filtored free?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Filtored is free to download on Google Play." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Filtored is free to download on Google Play. It includes in-app purchases to unlock extra features." }
             },
             {
                 "@type": "Question",
                 "name": "Do my photos get uploaded anywhere?",
-                "acceptedAnswer": { "@type": "Answer", "text": "No. All the AI runs on your phone. Nothing is sent to a server; the app works exactly the same in airplane mode." }
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike some native and other galleries, Filtored organizes your photos right on your phone, without sending them to the cloud, keeping your photos private and under your control." }
+            },
+            {
+                "@type": "Question",
+                "name": "How is my privacy handled?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Filtored is offline by design: your photos never leave your phone and all AI processing happens locally. There are no uploads and no account needed, so your photos stay private. Read the Filtored Privacy Policy at https://filtored.com/privacy/." }
             },
             {
                 "@type": "Question",
@@ -104,8 +154,13 @@
             },
             {
                 "@type": "Question",
-                "name": "Which phones does it work on?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Any Android phone running Android 5.0 or newer, with about 100MB of free space." }
+                "name": "What permissions does Filtored need?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Media access - to view your photos and videos. Notification permission - for background scanning." }
+            },
+            {
+                "@type": "Question",
+                "name": "Which devices are supported?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Any Android phone or tablet running Android 7.0 or newer, with 100MB of free space." }
             },
             {
                 "@type": "Question",
@@ -115,7 +170,7 @@
             {
                 "@type": "Question",
                 "name": "Can it delete photos without asking me?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Never. Filtored only suggests duplicates and junk shots. Nothing is removed until you review and confirm it yourself." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Never. Filtored uses smart analysis to suggest photos for deletion, but nothing is ever removed automatically. You review and confirm every deletion yourself." }
             }
         ]
     }
@@ -154,17 +209,40 @@
     </header>
 
     <main class="faq-wrap">
-        <h1>Questions, answered</h1>
-        <p class="faq-intro">The short version of everything people ask us.</p>
+        <h1>Frequently Asked Questions</h1>
 
-        <details class="faq-item" open>
+        <details class="faq-item">
+            <summary>What is Filtored?</summary>
+            <p>Filtored is an AI-powered smart photo organization tool designed to automatically clean, organize, and tag your image galleries. It helps users clear up device storage by safely identifying and removing duplicates, while also grouping similar images together.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>How does Filtored work?</summary>
+            <ul class="faq-steps">
+                <li><strong>Step 1 - Scan</strong>Filtored scans your gallery with on-device AI.</li>
+                <li><strong>Step 2 - Organize</strong>Your media is organized into categories, objects, and faces.</li>
+                <li><strong>Step 3 - Filter</strong>Review suggestions and decide what to keep or remove.</li>
+            </ul>
+        </details>
+
+        <details class="faq-item">
+            <summary>What type of photos can Filtored identify?</summary>
+            <p>Filtored can identify photos with: people, animals, food, scenery, documents, objects, faces, text, barcodes and QR codes.</p>
+        </details>
+
+        <details class="faq-item">
             <summary>Is Filtored free?</summary>
-            <p>Yes. Filtored is free to download on Google Play.</p>
+            <p>Yes. Filtored is free to download on Google Play. It includes in-app purchases to unlock extra features.</p>
         </details>
 
         <details class="faq-item">
             <summary>Do my photos get uploaded anywhere?</summary>
-            <p>No. All the AI runs on your phone. Nothing is sent to a server — the app works exactly the same in airplane mode.</p>
+            <p>No. Unlike some native and other galleries, Filtored organizes your photos right on your phone, without sending them to the cloud, keeping your photos private and under your control.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>How is my privacy handled?</summary>
+            <p>Filtored is offline by design: your photos never leave your phone and all AI processing happens locally. There are no uploads and no account needed, so your photos stay private. Read our <a href="../privacy/">Privacy Policy</a>.</p>
         </details>
 
         <details class="faq-item">
@@ -173,23 +251,31 @@
         </details>
 
         <details class="faq-item">
-            <summary>Which phones does it work on?</summary>
-            <p>Any Android phone running Android 5.0 or newer, with about 100MB of free space.</p>
+            <summary>What permissions does Filtored need?</summary>
+            <ul>
+                <li><strong>Media access</strong> - to view your photos and videos.</li>
+                <li><strong>Notification permission</strong> - for background scanning.</li>
+            </ul>
+        </details>
+
+        <details class="faq-item">
+            <summary>Which devices are supported?</summary>
+            <p>Any Android phone or tablet running Android 7.0 or newer, with 100MB of free space.</p>
         </details>
 
         <details class="faq-item">
             <summary>Is there an iPhone version?</summary>
-            <p>Not yet — Filtored is Android-first. An iPhone version is something we'd love to do later.</p>
+            <p>Not yet - Filtored is Android-first. An iPhone version is something we'd love to do later.</p>
         </details>
 
         <details class="faq-item">
             <summary>Can it delete photos without asking me?</summary>
-            <p>Never. Filtored only suggests duplicates and junk shots — nothing is removed until you review and confirm it yourself.</p>
+            <p>Never. Filtored uses smart analysis to suggest photos for deletion, but nothing is ever removed automatically. You review and confirm every deletion yourself.</p>
         </details>
 
         <details class="faq-item">
             <summary>Found a bug, or have an idea?</summary>
-            <p>We want to hear it — reach us through the <a href="../contact/">contact page</a>.</p>
+            <p>We want to hear it - reach us through the <a href="../contact/">contact page</a>.</p>
         </details>
 
         <p class="faq-more">Didn't find your answer? <a href="../contact/">Ask us directly.</a></p>
@@ -209,6 +295,28 @@
         </div>
     </footer>
 
+    <script>
+        var faqItems = Array.from(document.querySelectorAll('.faq-item'));
+
+        function closeFaqItem(item) {
+            if (!item.open) return;
+            item.open = false;
+        }
+
+        faqItems.forEach(function (item) {
+            item.querySelector('summary').addEventListener('click', function (event) {
+                event.preventDefault();
+                if (item.open) {
+                    closeFaqItem(item);
+                    return;
+                }
+                faqItems.forEach(function (otherItem) {
+                    if (otherItem !== item) closeFaqItem(otherItem);
+                });
+                item.open = true;
+            });
+        });
+    </script>
     <script src="../script.js?v=13"></script>
 </body>
 </html>

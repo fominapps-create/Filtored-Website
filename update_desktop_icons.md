@@ -5,12 +5,12 @@ This document explains how to update the macOS and Windows desktop icons for the
 ⚠️ Note: For publishing or store distribution, you should use properly sized images (transparent PNGs or specifically formatted `.ico` files). This script is intended for development/testing workflows.
 
 What we added
-- `scripts/update_desktop_icons.ps1` — PowerShell script that:
+- `scripts/update_desktop_icons.ps1` - PowerShell script that:
   - Replaces macOS App Icon images in `macos/Runner/Assets.xcassets/AppIcon.appiconset` with `assets/Icon4.png` (copying it into every app_icon_*.png file).
   - Runs the helper `scripts/png2ico.py` to generate `windows/runner/resources/app_icon.ico` from `assets/Icon4.png` (requires Python & Pillow).
    - Runs the helper `scripts/png2ico.py` to generate `windows/runner/resources/app_icon.ico` from `assets/Icon4.png` (requires Python & Pillow).
    - Optionally update web icons using `scripts/update_web_icons.ps1` which calls `scripts/generate_web_icons.py`.
-- `scripts/png2ico.py` — small Python script that generates a multi-size `.ico` (sizes: 256, 128, 64, 48, 32, 16) using Pillow (`PIL`), and writes to target path.
+- `scripts/png2ico.py` - small Python script that generates a multi-size `.ico` (sizes: 256, 128, 64, 48, 32, 16) using Pillow (`PIL`), and writes to target path.
 
 How to run (Windows developer/tester)
 

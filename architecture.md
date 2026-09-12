@@ -5,23 +5,23 @@ This document summarizes the components and dataflow for the Photo Organizer pro
 ## Components
 
 - Flutter Mobile/Desktop/Web app (lib/)
-  - `main.dart` — app bootstrap; initializes `ApiService` which tries candidate local URLs to find the backend.
-  - `ApiService` — handles HTTP endpoints: `/process-image/`, `/all-organized-images/`, `/tags/{}`.
-  - Explorer UI — selects and uploads photos in batches; saves returned tags in SharedPreferences under the filename key.
-  - Gallery UI — fetches `/all-organized-images/` and displays thumbnails; loads tags from SharedPreferences and shows them as chips.
-  - Albums — create tag-based albums using stored SharedPreferences tags.
+  - `main.dart` - app bootstrap; initializes `ApiService` which tries candidate local URLs to find the backend.
+  - `ApiService` - handles HTTP endpoints: `/process-image/`, `/all-organized-images/`, `/tags/{}`.
+  - Explorer UI - selects and uploads photos in batches; saves returned tags in SharedPreferences under the filename key.
+  - Gallery UI - fetches `/all-organized-images/` and displays thumbnails; loads tags from SharedPreferences and shows them as chips.
+  - Albums - create tag-based albums using stored SharedPreferences tags.
 
 - Python backend (python-server/backend/)
-  - `backend_api.py` — FastAPI app. Key endpoints:
-    - `POST /process-image/` — accepts multipart image upload, returns `{ "filename": ..., "tags": [...] }`.
-    - `GET /` — status.
-    - `GET /all-organized-images/` — list of image URLs.
-    - `GET /all-organized-images-with-tags/` — list of images with server-side tags (optional).
-    - `GET /tags/{filename}/` — lookup tags for a specific filename from server-side JSON DB.
-  - `backend_main.py` — organizes files using YOLO output (moves file into `TARGET_FOLDER/<category>`)
-  - `model.py` — loads Ultralytics YOLO weights; returns a model callable.
-  - `sorter.py` — heuristics for deciding target folder (Person/Animals/Documents/Junk).
-  - `config.py` — file paths and thresholds.
+  - `backend_api.py` - FastAPI app. Key endpoints:
+    - `POST /process-image/` - accepts multipart image upload, returns `{ "filename": ..., "tags": [...] }`.
+    - `GET /` - status.
+    - `GET /all-organized-images/` - list of image URLs.
+    - `GET /all-organized-images-with-tags/` - list of images with server-side tags (optional).
+    - `GET /tags/{filename}/` - lookup tags for a specific filename from server-side JSON DB.
+  - `backend_main.py` - organizes files using YOLO output (moves file into `TARGET_FOLDER/<category>`)
+  - `model.py` - loads Ultralytics YOLO weights; returns a model callable.
+  - `sorter.py` - heuristics for deciding target folder (Person/Animals/Documents/Junk).
+  - `config.py` - file paths and thresholds.
 
 ## Dataflow
 
