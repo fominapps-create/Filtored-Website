@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="An offline AI photo organizer for Android that keeps your photos on your phone.">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=65">
+    <link rel="stylesheet" href="style.css?v=71">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -306,10 +306,19 @@
             <h2 data-i18n="cta.title">Filtored is here</h2>
             <p data-i18n="cta.description">Free on Google Play. Your photos stay on your phone.</p>
             <!-- PLACEHOLDER LINK: swap href for the real Play Store URL once the listing is live -->
-            <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored.gallery" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-                <span class="play-badge-text"><small data-i18n="cta.getItOn">Get it on</small><strong>Google Play</strong></span>
-            </a>
+            <div class="cta-download-row">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored.gallery" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                    <span class="play-badge-text"><small data-i18n="cta.getItOn">Get it on</small><strong>Google Play</strong></span>
+                </a>
+                <div class="cta-qr">
+                    <div class="qr-frame">
+                        <div class="cta-qr-code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;ecc=H&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.filtored.gallery" alt="QR code to open Filtored on Google Play" width="112" height="112" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>

@@ -20,7 +20,6 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--paper);
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
@@ -1215,6 +1214,92 @@ img.ph-polaroid, img.ph-wide {
 }
 
 .play-badge-text strong { font-size: 1.3rem; font-weight: 700; }
+
+.cta-download-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.cta-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+}
+
+.cta-qr-code {
+    position: relative;
+    width: 112px;
+    height: 112px;
+}
+
+.cta-qr-code > img:first-child {
+    display: block;
+    width: 112px;
+    height: 112px;
+    padding: 0.35rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px -18px rgba(28, 25, 23, 0.45);
+}
+
+.qr-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 136px;
+    height: 136px;
+    padding: 0;
+    border: 4px solid var(--ink);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.qr-frame::before,
+.qr-frame::after {
+    position: absolute;
+    left: 50%;
+    padding: 0 0.45rem;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Sora', 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.qr-frame::before {
+    content: "GET THE APP";
+    top: -1.3rem;
+}
+
+.qr-frame::after {
+    content: "SCAN HERE";
+    bottom: -0.45rem;
+}
+
+.qr-frame .cta-qr-code,
+.qr-frame .dl-qr-code {
+    flex: 0 0 auto;
+}
+
+.dl-qr-code {
+    width: 112px;
+    height: 112px;
+}
+
+@media (max-width: 640px) {
+    .cta-qr { display: none; }
+}
 
 /* ============ Footer ============ */
 .site-footer {
