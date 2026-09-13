@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filtored — AI Sort Animation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #faf7f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .scene {
+      width: 440px;
+      height: 660px;
+      position: relative;
+      overflow: hidden;
+      background: #fffdfa;
+      border: 1px solid #e5ddd0;
+      border-radius: 24px;
+      box-shadow: 0 20px 48px rgba(28,25,23,0.12);
+    }
+
+    .scene.is-ready > .profiles,
+    .scene.is-ready > .search-bar,
+    .scene.is-ready > .folders,
+    .scene.is-ready > .gallery-grid,
+    .scene.is-ready > .bottom-nav {
+      filter: blur(4px);
+      opacity: 0.72;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Folders */
+    .profiles {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .profile {
+      display: grid;
+      justify-items: center;
+      gap: 5px;
+      color: #57534e;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .profile img {
+      width: 52px;
+      height: 52px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 3px 12px rgba(28,25,23,0.14);
+    }
+
+    @keyframes profilePop {
+      0% { transform: scale(1); }
+      45% { transform: scale(1.14); }
+      100% { transform: scale(1); }
+    }
+
+    .profile img.profile-pop { animation: profilePop 0.3s ease-out; }
+
+    .search-bar {
+      position: absolute;
+      top: 88px;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      width: min(430px, calc(100% - 80px));
+      height: 38px;
+      padding: 0 14px;
+      transform: translateX(-50%);
+      border: 1px solid #e5ddd0;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(28,25,23,0.06);
+      color: #a8a29e;
+      font-size: 11px;
+    }
+
+    .search-icon {
+      width: 13px;
+      height: 13px;
+      margin-right: 9px;
+      border: 1.5px solid #a8a29e;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .search-icon::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      bottom: -2px;
+      width: 5px;
+      height: 1.5px;
+      transform: rotate(45deg);
+      transform-origin: left center;
+      background: #a8a29e;
+    }
+
+    .search-caret {
+      margin-left: auto;
+      color: #e8590c;
+      font-size: 13px;
+    }
+
+    .folders {
+      position: absolute;
+      top: 145px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      padding: 0 15px;
+      z-index: 4;
+    }
+
+    .folder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .folder.visible { opacity: 1; transform: translateY(0); }
+
+    .folder-body {
+      width: 78px;
+      height: 40px;
+      border-radius: 999px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pill-color);
+      background: var(--pill-fill);
+      border: 1px solid var(--pill-border);
+      font-family: 'Sora', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: transform 0.15s;
+    }
+    .folder.people   .folder-body { --pill-color: #2489d6; --pill-fill: rgba(36,137,214,0.14); --pill-border: rgba(36,137,214,0.7); }
+    .folder.animals  .folder-body { --pill-color: #f07818; --pill-fill: rgba(240,120,24,0.14); --pill-border: rgba(240,120,24,0.72); }
+    .folder.food     .folder-body { --pill-color: #39a956; --pill-fill: rgba(57,169,86,0.15); --pill-border: rgba(57,169,86,0.72); }
+    .folder.scenery  .folder-body { --pill-color: #159b9a; --pill-fill: rgba(21,155,154,0.14); --pill-border: rgba(21,155,154,0.72); }
+    .folder.documents .folder-body { --pill-color: #9b3fc0; --pill-fill: rgba(155,63,192,0.14); --pill-border: rgba(155,63,192,0.7); }
+
+    .pill-icon {
+      display: inline-flex;
+      width: 15px;
+      height: 15px;
+      margin-right: 7px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pill-icon svg {
+      display: block;
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.6;
+    }
+
+    .paw-icon svg { fill: none; stroke: currentColor; stroke-width: 1.35; }
+
+    .folder-label {
+      display: none;
+    }
+
+    .gallery-grid {
+      position: absolute;
+      right: 30px;
+      top: 195px;
+      left: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      z-index: 1;
+    }
+
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 3px 12px rgba(28,25,23,0.1);
+    }
+
+    .gallery-tile {
+      position: relative;
+      min-width: 0;
+    }
+
+    .bottom-nav {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 21;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 58px;
+      padding: 7px 12px 5px;
+      border-top: 1px solid rgba(229,221,208,0.9);
+      background: rgba(255,253,250,0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .bottom-nav-item {
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: 2px;
+      border-radius: 10px;
+      color: #78716c;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+    }
+
+    button.bottom-nav-item {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .bottom-nav-item:hover:not(:disabled) {
+      background: rgba(232,89,12,0.1);
+      color: #e8590c;
+      transform: translateY(-1px);
+    }
+
+    button.bottom-nav-item:disabled {
+      cursor: default;
+      opacity: 0.45;
+    }
+
+    .bottom-nav-item.active { color: #e8590c; }
+
+    .bottom-nav-item svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.6;
+    }
+
+    .cleanup-popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+      width: min(380px, calc(100% - 40px));
+      padding: 22px 20px 18px;
+      transform: translate(-50%, -46%) scale(0.96);
+      border: 1px solid rgba(229,221,208,0.96);
+      border-radius: 18px;
+      background: #fffdfa;
+      box-shadow: 0 20px 50px rgba(28,25,23,0.22);
+      opacity: 0;
+      pointer-events: none;
+      text-align: center;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .cleanup-popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cleanup-popup h2 {
+      margin-bottom: 7px;
+      color: #1c1917;
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .cleanup-popup p {
+      color: #57534e;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .cleanup-total {
+      margin-top: 4px;
+      color: #e8590c;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .cleanup-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .cleanup-row {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      align-items: center;
+      gap: 9px;
+      padding: 6px;
+      border: 1px solid #e5ddd0;
+      border-radius: 10px;
+      background: #faf7f2;
+    }
+
+    .cleanup-row img {
+      width: 42px;
+      height: 42px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+
+    .cleanup-row strong,
+    .cleanup-row span {
+      display: block;
+    }
+
+    .cleanup-row strong {
+      color: #1c1917;
+      font-size: 11px;
+    }
+
+    .cleanup-row span {
+      margin-top: 2px;
+      color: #78716c;
+      font-size: 9px;
+    }
+
+    .cleanup-size {
+      color: #57534e;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cleanup-popup-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .cleanup-popup button {
+      min-width: 82px;
+      padding: 9px 14px;
+      border: 1px solid #d6cec1;
+      border-radius: 999px;
+      background: transparent;
+      color: #57534e;
+      cursor: pointer;
+      font: 700 11px 'Inter', sans-serif;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .cleanup-popup .cleanup-review {
+      min-width: 142px;
+      border-color: #e8590c;
+      background: #e8590c;
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(232,89,12,0.25);
+    }
+
+    .cleanup-popup button:hover {
+      transform: translateY(-1px);
+    }
+
+    .cleanup-popup .cleanup-review:hover {
+      background: #c2410c;
+      box-shadow: 0 10px 22px rgba(194,65,12,0.3);
+    }
+
+    .cleanup-cursor {
+      position: absolute;
+      right: 18px;
+      bottom: 13px;
+      z-index: 2;
+      width: 16px;
+      height: 22px;
+      background: #1c1917;
+      clip-path: polygon(0 0, 0 82%, 28% 67%, 43% 100%, 57% 94%, 43% 62%, 77% 62%);
+      filter: drop-shadow(0 2px 2px rgba(28,25,23,0.28));
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .cleanup-popup.show .cleanup-cursor {
+      animation: cursorReview 2.8s ease-in-out 0.35s forwards;
+    }
+
+    .cleanup-popup.show .cleanup-review {
+      animation: reviewPulse 2.8s ease-in-out 0.35s forwards;
+    }
+
+    @keyframes cursorReview {
+      0% { opacity: 0; transform: translate(20px, 12px); }
+      18% { opacity: 1; transform: translate(20px, 12px); }
+      62% { opacity: 1; transform: translate(-18px, -13px); }
+      72% { opacity: 1; transform: translate(-18px, -9px) scale(0.86); }
+      82% { opacity: 1; transform: translate(-18px, -13px) scale(1); }
+      100% { opacity: 0; transform: translate(-18px, -13px) scale(1); }
+    }
+
+    @keyframes reviewPulse {
+      0%, 58% { transform: translateY(0); }
+      66% { transform: translateY(1px) scale(0.97); }
+      76%, 100% { transform: translateY(0) scale(1); }
+    }
+
+    .cleanup-hub {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      padding: 38px 24px 72px;
+      background: #fffdfa;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .cleanup-hub.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    .cleanup-hub-back {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #78716c;
+      cursor: pointer;
+      font: 600 11px 'Inter', sans-serif;
+    }
+
+    .cleanup-hub h2 {
+      margin-top: 20px;
+      color: #1c1917;
+      font-family: 'Sora', sans-serif;
+      font-size: 23px;
+      line-height: 1.1;
+    }
+
+    .cleanup-hub-total {
+      margin-top: 7px;
+      color: #e8590c;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cleanup-hub-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .cleanup-hub-row {
+      position: relative;
+      min-height: 148px;
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      align-items: center;
+      gap: 11px;
+      padding: 8px;
+      border: 1px solid #e5ddd0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #57534e;
+    }
+
+    .cleanup-hub-row img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .cleanup-hub-row::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(28,25,23,0.78), rgba(28,25,23,0.32));
+    }
+
+    .cleanup-hub-row strong {
+      position: relative;
+      z-index: 2;
+      display: block;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .cleanup-hub-row span {
+      position: relative;
+      z-index: 2;
+      display: block;
+      margin-top: 3px;
+      color: rgba(255,255,255,0.82);
+      font-size: 10px;
+    }
+
+    .cleanup-hub-size {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .gallery-pill {
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      color: var(--pill-color);
+      background: var(--pill-fill);
+      border: 1px solid var(--pill-border);
+      font-family: 'Sora', sans-serif;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(28,25,23,0.18);
+    }
+
+    .gallery-pill.people { --pill-color: #2489d6; --pill-fill: rgba(255,255,255,0.86); --pill-border: rgba(36,137,214,0.78); }
+    .gallery-pill.animals { --pill-color: #f07818; --pill-fill: rgba(255,255,255,0.86); --pill-border: rgba(240,120,24,0.8); }
+    .gallery-pill.food { --pill-color: #39a956; --pill-fill: rgba(255,255,255,0.86); --pill-border: rgba(57,169,86,0.8); }
+    .gallery-pill.scenery { --pill-color: #159b9a; --pill-fill: rgba(255,255,255,0.86); --pill-border: rgba(21,155,154,0.8); }
+    .gallery-pill.documents { --pill-color: #9b3fc0; --pill-fill: rgba(255,255,255,0.86); --pill-border: rgba(155,63,192,0.78); }
+
+    .gallery-pill .pill-icon {
+      width: 10px;
+      height: 10px;
+      margin-right: 3px;
+      vertical-align: -2px;
+    }
+
+    .gallery-pill .pill-icon svg {
+      width: 10px;
+      height: 10px;
+      stroke-width: 1.8;
+    }
+
+    .folder-count {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--pill-color);
+      background: #fffdfa;
+      border: 1px solid var(--pill-border);
+      border-radius: 10px;
+      padding: 1px 7px;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      min-width: 18px;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s;
+    }
+    .folder-count.show { opacity: 1; transform: translateX(-50%) scale(1); }
+
+    /* Photo cards */
+    .photo-card {
+      position: absolute;
+      width: 78px;
+      height: 70px;
+      border-radius: 8px;
+      background: #f3ede4;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      pointer-events: none;
+      border: 2px solid white;
+      z-index: 3;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-card::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+      padding: 3px 4px;
+      border-radius: 4px;
+      background: rgba(28,25,23,0.68);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* AI scan beam */
+    .ai-beam {
+      position: absolute;
+      top: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 60px);
+      max-width: 380px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e8590c 40%, #e8590c 60%, transparent);
+      border-radius: 2px;
+      opacity: 0;
+      z-index: 6;
+    }
+
+    .ai-label {
+      position: absolute;
+      top: 205px;
+      left: 50%;
+      padding: 6px 12px;
+      transform: translateX(-50%);
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      background: rgba(255,253,250,0.9);
+      box-shadow: 0 4px 14px rgba(28,25,23,0.14);
+      font-size: 14px;
+      font-weight: 800;
+      color: #e8590c;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      white-space: nowrap;
+      z-index: 7;
+    }
+
+    @keyframes folderPop {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.13); }
+      100% { transform: scale(1); }
+    }
+    .folder-body.pop { animation: folderPop 0.25s ease-out; }
+
+    /* Start scanning button */
+    .replay-btn {
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      z-index: 12;
+      min-width: 176px;
+      padding: 13px 20px;
+      transform: translate(50%, -50%);
+      border: 1px solid #e8590c;
+      border-radius: 999px;
+      background: #e8590c;
+      box-shadow: 0 12px 26px rgba(232,89,12,0.28);
+      color: #fff;
+      cursor: pointer;
+      font: 800 14px 'Inter', sans-serif;
+      letter-spacing: 0.02em;
+      opacity: 1;
+      transition: opacity 0.25s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .replay-btn.show { opacity: 1; }
+    .replay-btn:not(.show) { opacity: 0; pointer-events: none; }
+    .replay-btn:hover { transform: translate(50%, calc(-50% - 2px)); background: #c2410c; }
+
+    .start-cursor {
+      position: absolute;
+      top: calc(50% + 40px);
+      left: calc(50% + 72px);
+      z-index: 13;
+      width: 16px;
+      height: 22px;
+      background: #1c1917;
+      clip-path: polygon(0 0, 0 82%, 28% 67%, 43% 100%, 57% 94%, 43% 62%, 77% 62%);
+      filter: drop-shadow(0 2px 2px rgba(28,25,23,0.28));
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .start-cursor .click-line {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 3px;
+      height: 10px;
+      border-radius: 3px;
+      background: #e8590c;
+      opacity: 0;
+    }
+
+    .start-cursor .click-line:nth-child(1) { transform: translate(-8px, -8px) rotate(-45deg); }
+    .start-cursor .click-line:nth-child(2) { transform: translate(7px, -9px) rotate(0deg); }
+    .start-cursor .click-line:nth-child(3) { transform: translate(13px, 4px) rotate(45deg); }
+    .start-cursor .click-line:nth-child(4) { transform: translate(-10px, 6px) rotate(-90deg); }
+
+    .scene.is-ready .start-cursor {
+      animation: startCursorClick 2.8s ease-in-out 0.4s infinite;
+    }
+
+    .scene.is-ready .start-cursor .click-line {
+      animation: clickLines 2.8s ease-in-out 0.4s infinite;
+    }
+
+    @keyframes startCursorClick {
+      0%, 12% { opacity: 0; transform: translate(24px, 24px); }
+      28%, 55% { opacity: 1; transform: translate(-30px, -30px); }
+      62% { opacity: 1; transform: translate(-30px, -25px) scale(0.86); }
+      70%, 82% { opacity: 1; transform: translate(-30px, -30px) scale(1); }
+      100% { opacity: 0; transform: translate(-30px, -30px); }
+    }
+
+    @keyframes clickLines {
+      0%, 58% { opacity: 0; }
+      64%, 76% { opacity: 1; }
+      84%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scene is-ready" id="scene">
+  <div class="profiles" aria-label="People profiles">
+    <div class="profile"><img src="card-family-faces.jpg" alt="Alex"><span>Alex</span></div>
+    <div class="profile"><img src="card-selfie-cafe.jpg" alt="Maya"><span>Maya</span></div>
+    <div class="profile"><img src="friends-slide3-web.jpg" alt="Sam"><span>Sam</span></div>
+    <div class="profile"><img src="full%20family%20white.png" alt="Family"><span>Family</span></div>
+    <div class="profile"><img src="kids%20with%20dog.png" alt="Kids"><span>Kids</span></div>
+  </div>
+
+  <div class="search-bar" role="search">
+    <span class="search-icon" aria-hidden="true"></span>
+    <span>Search your gallery</span>
+    <span class="search-caret">⌕</span>
+  </div>
+
+  <div class="ai-label" id="aiLabel">AI sorting…</div>
+  <div class="ai-beam" id="aiBeam"></div>
+
+  <div class="folders" id="folders">
+    <div class="folder people" id="f-people">
+      <div class="folder-body"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="2.5"></circle><path d="M3.5 13c.6-2.4 2.1-3.6 4.5-3.6s3.9 1.2 4.5 3.6"></path></svg></span>PEOPLE<span class="folder-count" id="cnt-people">0</span></div>
+      <span class="folder-label">People</span>
+    </div>
+    <div class="folder animals" id="f-animals">
+      <div class="folder-body"><span class="pill-icon paw-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M7.2 8.1c-.7.7-1 1.5-.7 2.3.3.8 1.1 1.2 1.9 1.2s1.6-.4 1.9-1.2c.3-.8 0-1.6-.7-2.3-.7-.7-1.7-.7-2.4 0z"></path><path d="M5.8 6.1c-.6.4-1.4.2-1.7-.5-.3-.7 0-1.6.7-1.8.7-.2 1.4.3 1.5 1.1.1.5-.1.9-.5 1.2zM10.2 6.1c.6.4 1.4.2 1.7-.5.3-.7 0-1.6-.7-1.8-.7-.2-1.4.3-1.5 1.1-.1.5.1.9.5 1.2zM4.4 8.3c-.6.3-1.3 0-1.5-.6-.2-.7.2-1.4.8-1.5.7-.1 1.3.4 1.3 1 0 .5-.2.9-.6 1.1zM11.6 8.3c.6.3 1.3 0 1.5-.6.2-.7-.2-1.4-.8-1.5-.7-.1-1.3.4-1.3 1 0 .5.2.9.6 1.1z"></path></svg></span>ANIMALS<span class="folder-count" id="cnt-animals">0</span></div>
+      <span class="folder-label">Animals</span>
+    </div>
+    <div class="folder food" id="f-food">
+      <div class="folder-body"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2v5M2.5 2v3.5M5.5 2v3.5M4 7v7M11 2v12M11 2c2.2 1.8 2.2 4.5 0 6"></path></svg></span>FOOD<span class="folder-count" id="cnt-food">0</span></div>
+      <span class="folder-label">Food</span>
+    </div>
+    <div class="folder scenery" id="f-scenery">
+      <div class="folder-body"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 13l4.5-6 3 3 2-2 2.5 5H2z"></path><path d="M10.5 4.5h.01"></path></svg></span>PLACES<span class="folder-count" id="cnt-scenery">0</span></div>
+      <span class="folder-label">Places</span>
+    </div>
+    <div class="folder documents" id="f-docs">
+      <div class="folder-body"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5h5l3 3V13.5H4z"></path><path d="M9 2.5v3h3M6 9h4M6 11h4"></path></svg></span>FILES<span class="folder-count" id="cnt-docs">0</span></div>
+      <span class="folder-label">Files</span>
+    </div>
+  </div>
+
+  <div class="gallery-grid" aria-label="Photo gallery">
+    <div class="gallery-tile"><img src="gallery%20scenery.jpg" alt="Scenery"></div>
+    <div class="gallery-tile"><img src="gallery%20food.jpg" alt="Food"></div>
+    <div class="gallery-tile"><img src="dog%20at%20the%20beach.jpg" alt="Dog at the beach"></div>
+    <div class="gallery-tile"><img src="card-camping.jpg" alt="Camping"></div>
+    <div class="gallery-tile"><img src="2.jpg" alt="Document"></div>
+    <div class="gallery-tile"><img src="photo%20of%20food.jpg" alt="Meal"></div>
+    <div class="gallery-tile"><img src="friends-slide3-web.jpg" alt="Friends"></div>
+    <div class="gallery-tile"><img src="beach.jpg" alt="Beach"></div>
+    <div class="gallery-tile"><img src="3.jpg" alt="Photo"></div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="App navigation">
+    <button class="bottom-nav-item active" id="galleryNav" type="button"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"></rect><circle cx="7" cy="7" r="1.2"></circle><path d="M4 15l4-4 2.5 2.5 2-2 3.5 3.5"></path></svg><span>Gallery</span></button>
+    <div class="bottom-nav-item"><svg viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" rx="2"></rect><path d="M6.5 2.5v3M13.5 2.5v3M4 8h12"></path></svg><span>Events</span></div>
+    <div class="bottom-nav-item"><svg viewBox="0 0 20 20"><path d="M3 6h5l1.5 2H17v8H3z"></path><path d="M3 6V4h5l1.5 2"></path></svg><span>Albums</span></div>
+    <button class="bottom-nav-item" id="cleanupNav" type="button" disabled><svg viewBox="0 0 20 20"><path d="M10 2l1.4 4.6L16 8l-4.6 1.4L10 14l-1.4-4.6L4 8l4.6-1.4z"></path><path d="M15.5 13.5l.6 2 .9.5-.9.5-.6 2-.6-2-.9-.5.9-.5z"></path></svg><span>Cleanup</span></button>
+    <div class="bottom-nav-item"><svg viewBox="0 0 20 20"><circle cx="10" cy="6" r="3"></circle><path d="M4 17c.7-3.1 2.7-4.6 6-4.6s5.3 1.5 6 4.6"></path></svg><span>Profile</span></div>
+  </nav>
+
+  <section class="cleanup-popup" id="cleanupPopup" aria-live="polite" aria-label="Cleanup results">
+    <h2>Your gallery is ready to clean</h2>
+    <p class="cleanup-total">428 MB available to free</p>
+    <div class="cleanup-list">
+      <div class="cleanup-row">
+        <img src="duplicates.jpg" alt="Duplicate photos">
+        <div><strong>12 duplicated photos</strong><span>Review the extra copies</span></div>
+        <b class="cleanup-size">128 MB</b>
+      </div>
+      <div class="cleanup-row">
+        <img src="photo%20of%20food.jpg" alt="Blurry photo example">
+        <div><strong>8 blurry photos</strong><span>Find the shots worth keeping</span></div>
+        <b class="cleanup-size">86 MB</b>
+      </div>
+      <div class="cleanup-row">
+        <img src="2.jpg" alt="Screenshot example">
+        <div><strong>24 screenshots</strong><span>Clear away old saved images</span></div>
+        <b class="cleanup-size">214 MB</b>
+      </div>
+    </div>
+    <div class="cleanup-popup-actions">
+      <button id="cleanupSkip" type="button">Skip</button>
+      <button class="cleanup-review" id="cleanupReview" type="button" onclick="openCleanupHub(); return false;">Review cleanup <span aria-hidden="true">&#8594;</span></button>
+    </div>
+    <span class="cleanup-cursor" aria-hidden="true"></span>
+  </section>
+
+  <section class="cleanup-hub" id="cleanupHub" aria-label="Cleanup hub">
+    <button class="cleanup-hub-back" id="cleanupHubBack" type="button">&#8592; Gallery</button>
+    <h2>Cleanup hub</h2>
+    <p class="cleanup-hub-total">428 MB ready to free</p>
+    <div class="cleanup-hub-list">
+      <div class="cleanup-hub-row"><img src="duplicates.jpg" alt="Duplicate photos"><div><strong>Duplicates</strong><span>12 photos to review</span></div><b class="cleanup-hub-size">128 MB</b></div>
+      <div class="cleanup-hub-row"><img src="photo%20of%20food.jpg" alt="Blurry photos"><div><strong>Blurry photos</strong><span>8 photos to review</span></div><b class="cleanup-hub-size">86 MB</b></div>
+      <div class="cleanup-hub-row"><img src="2.jpg" alt="Screenshots"><div><strong>Screenshots</strong><span>24 photos to review</span></div><b class="cleanup-hub-size">214 MB</b></div>
+    </div>
+  </section>
+
+  <button class="replay-btn show" id="replayBtn" onclick="runAnimation()">Start scanning</button>
+  <span class="start-cursor" aria-hidden="true">
+    <span class="click-line"></span>
+    <span class="click-line"></span>
+    <span class="click-line"></span>
+    <span class="click-line"></span>
+  </span>
+</div>
+
+<script>
+const CATEGORIES = [
+  { key: 'people',    labels: ['portrait','friends','family','people'], images: ['card-family-faces.jpg','card-selfie-cafe.jpg','friends-slide3-web.jpg','card-office-photo.jpg'], profileX: [84,152,220,288,356], folderId: 'f-people',  cntId: 'cnt-people',   folderX: 54 },
+  { key: 'animals',   labels: ['pets','wildlife','animals','birds'],     images: ['dog%20at%20the%20beach.jpg','dog%20looking%20at%20camera.jpg','puppy%20sleeping.png','kids%20with%20dog.png'], folderId: 'f-animals', cntId: 'cnt-animals',  folderX: 137 },
+  { key: 'food',      labels: ['dinner','coffee','food','market'],       images: ['gallery%20food.jpg','photo%20of%20food.jpg','she%20holding%20cup%20with%20phone.jpg','card-camping.jpg'], folderId: 'f-food',    cntId: 'cnt-food',     folderX: 220 },
+  { key: 'scenery',   labels: ['travel','places','nature','outdoors'],   images: ['gallery%20scenery.jpg','beach.jpg','dot%20at%20the%20beach.jpg','woman%20in%20park.png'], folderId: 'f-scenery', cntId: 'cnt-scenery',  folderX: 303 },
+  { key: 'documents', labels: ['receipt','notes','files','documents'],   images: ['1.jpg','2.jpg','3.jpg','section_1_photo.png'], folderId: 'f-docs',    cntId: 'cnt-docs',     folderX: 386 },
+];
+
+const counts = {};
+let animating = false;
+let scanComplete = false;
+
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+}
+function easeInCubic(t) { return t*t*t; }
+function randRange(min, max) { return min + Math.random()*(max-min); }
+
+function animateCardToFolder(card, startX, startY, folderX, folderY, delay) {
+  return new Promise(resolve => {
+    card.style.left = startX + 'px';
+    card.style.top  = startY + 'px';
+    const controlX = (folderX - startX) / 2 + randRange(-60, 60);
+    const controlY = -80;
+    const animation = card.animate([
+      {
+        transform: 'translate3d(0, 0, 0) scale(1) rotate(0deg)',
+        opacity: 1,
+        offset: 0
+      },
+      {
+        transform: `translate3d(${controlX}px, ${controlY}px, 0) scale(0.85) rotate(-6deg)`,
+        opacity: 1,
+        offset: 0.55
+      },
+      {
+        transform: `translate3d(${folderX - startX}px, ${folderY - startY}px, 0) scale(0.5) rotate(0deg)`,
+        opacity: 0,
+        offset: 1
+      }
+    ], {
+      delay,
+      duration: 520,
+      easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+      fill: 'forwards'
+    });
+    animation.finished.then(() => { card.remove(); resolve(); });
+  });
+}
+
+function showFolderPop(folderId) {
+  const fb = document.querySelector(`#${folderId} .folder-body`);
+  if (!fb) return;
+  fb.classList.remove('pop');
+  void fb.offsetWidth;
+  fb.classList.add('pop');
+  setTimeout(() => fb.classList.remove('pop'), 280);
+}
+
+function showProfilePop(profileIndex) {
+  const profiles = document.querySelectorAll('.profile img');
+  const profile = profiles[profileIndex];
+  if (!profile) return;
+  profile.classList.remove('profile-pop');
+  void profile.offsetWidth;
+  profile.classList.add('profile-pop');
+  setTimeout(() => profile.classList.remove('profile-pop'), 340);
+}
+
+function updateCount(cntId, val) {
+  const el = document.getElementById(cntId);
+  if (!el) return;
+  el.textContent = val;
+  el.classList.add('show');
+}
+
+async function runAnimation() {
+  if (animating) return;
+  animating = true;
+  scanComplete = false;
+  document.getElementById('cleanupNav').disabled = true;
+  document.getElementById('cleanupNav').classList.remove('active');
+  document.getElementById('scene').classList.remove('is-ready');
+
+  // Reset state
+  document.getElementById('replayBtn').classList.remove('show');
+  document.querySelectorAll('.photo-card').forEach(c => c.remove());
+  CATEGORIES.forEach(c => { counts[c.key] = 0; });
+  CATEGORIES.forEach(c => {
+    const el = document.getElementById(c.cntId);
+    el.textContent = '0';
+    el.classList.remove('show');
+  });
+  document.querySelectorAll('.folder').forEach(f => f.classList.remove('visible'));
+  const aiLabel = document.getElementById('aiLabel');
+  const aiBeam  = document.getElementById('aiBeam');
+  const cleanupPopup = document.getElementById('cleanupPopup');
+  const cleanupHub = document.getElementById('cleanupHub');
+  cleanupPopup.classList.remove('show');
+  cleanupHub.classList.remove('show');
+  aiLabel.style.opacity = '0';
+  aiLabel.style.color   = '#e8590c';
+  aiLabel.textContent   = 'Scanning 0%';
+  aiBeam.style.opacity  = '0';
+  aiBeam.style.top      = '220px';
+
+  // Show folders with stagger
+  await new Promise(r => setTimeout(r, 200));
+  document.querySelectorAll('.folder').forEach((f, i) => {
+    setTimeout(() => f.classList.add('visible'), i*80);
+  });
+
+  // Spawn scattered photo cards
+  const scene = document.getElementById('scene');
+  const totalCards = 18;
+  const cardData   = [];
+
+  for (let i = 0; i < totalCards; i++) {
+    const cat   = CATEGORIES[i % CATEGORIES.length];
+    const label = cat.labels[Math.floor(Math.random()*cat.labels.length)];
+    const imagePath = cat.images[Math.floor(Math.random()*cat.images.length)];
+
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.dataset.label = label;
+    const image = document.createElement('img');
+    image.src = imagePath;
+    image.alt = label;
+    card.appendChild(image);
+
+    const galleryColumn = i % 3;
+    const galleryRow = Math.floor(i / 3) % 3;
+    const x = [52, 175, 298][galleryColumn] + randRange(-8, 8);
+    const y = [205, 334, 463][galleryRow] + randRange(-5, 5);
+
+    card.style.left      = x + 'px';
+    card.style.top       = y + 'px';
+    card.style.transform = `rotate(${randRange(-18,18)}deg)`;
+    card.style.opacity   = '0';
+    card.style.transition = 'opacity 0.3s';
+    card.dataset.cat     = cat.key;
+
+    scene.appendChild(card);
+    cardData.push({ card, x, y, cat });
+  }
+
+  await new Promise(r => setTimeout(r, 1600));
+
+  // AI scan beam sweep
+  aiBeam.style.transition  = 'opacity 0.4s';
+  aiLabel.style.transition = 'opacity 0.4s';
+  aiBeam.style.opacity     = '1';
+  aiLabel.style.opacity    = '1';
+
+  const beamAnimation = aiBeam.animate([
+    { transform: 'translate(-50%, 0)' },
+    { transform: 'translate(-50%, 280px)' },
+    { transform: 'translate(-50%, 0)' }
+  ], {
+    duration: 1200,
+    easing: 'ease-in-out',
+    iterations: Infinity
+  });
+
+  const scanStartedAt = performance.now();
+  function updateScanProgress(now) {
+    const progress = Math.min((now - scanStartedAt) / 1200, 1);
+    aiLabel.textContent = `Scanning ${Math.round(progress * 100)}%`;
+    if (progress < 1) requestAnimationFrame(updateScanProgress);
+  }
+  requestAnimationFrame(updateScanProgress);
+
+  await new Promise(r => setTimeout(r, 1200));
+  beamAnimation.cancel();
+  aiBeam.style.opacity  = '0';
+
+  await new Promise(r => setTimeout(r, 300));
+
+  // Fly cards to folders
+  const folderY  = 145;
+  const shuffled = [...cardData].sort(() => Math.random()-0.5);
+  const promises = [];
+  let profileIndex = 0;
+
+  shuffled.forEach(({ card, x, y, cat }, i) => {
+    const goesToProfile = cat.key === 'people' && profileIndex < 3;
+    const profileTargetIndex = goesToProfile ? profileIndex++ : -1;
+    const targetX = goesToProfile ? cat.profileX[profileTargetIndex] - 39 : cat.folderX - 39;
+    const targetY = goesToProfile ? 18 : folderY;
+    const p = animateCardToFolder(card, x, y, targetX, targetY, i*90)
+      .then(() => {
+        counts[cat.key]++;
+        updateCount(cat.cntId, counts[cat.key]);
+        if (goesToProfile) showProfilePop(profileTargetIndex);
+        else showFolderPop(cat.folderId);
+      });
+    promises.push(p);
+  });
+
+  await Promise.all(promises);
+
+  scanComplete = true;
+  document.getElementById('cleanupNav').disabled = false;
+  aiLabel.textContent = 'Sorted!';
+  aiLabel.style.color = '#39a956';
+  await new Promise(r => setTimeout(r, 700));
+  aiLabel.style.opacity = '0';
+  await new Promise(r => setTimeout(r, 450));
+  cleanupPopup.classList.add('show');
+  animating = false;
+}
+
+document.getElementById('cleanupSkip').addEventListener('click', () => {
+  document.getElementById('cleanupPopup').classList.remove('show');
+});
+document.getElementById('cleanupHubBack').addEventListener('click', () => {
+  document.getElementById('cleanupHub').classList.remove('show');
+  document.querySelector('.bottom-nav-item.active')?.classList.remove('active');
+  document.querySelector('.bottom-nav-item:first-child')?.classList.add('active');
+});
+document.getElementById('cleanupNav').addEventListener('click', () => {
+  if (!scanComplete) return;
+  document.getElementById('cleanupNav').classList.add('active');
+  openCleanupHub();
+});
+document.getElementById('galleryNav').addEventListener('click', () => {
+  document.getElementById('cleanupHub').classList.remove('show');
+  document.getElementById('cleanupNav').classList.remove('active');
+  document.getElementById('galleryNav').classList.add('active');
+});
+
+function openCleanupHub() {
+  document.getElementById('cleanupPopup').classList.remove('show');
+  document.querySelector('.bottom-nav-item:first-child')?.classList.remove('active');
+  document.getElementById('cleanupNav').classList.add('active');
+  window.setTimeout(() => {
+    document.getElementById('cleanupHub').classList.add('show');
+  }, 260);
+}
+
+</script>
+</body>
+</html>

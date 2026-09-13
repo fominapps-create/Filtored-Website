@@ -1026,6 +1026,48 @@ img.ph-polaroid, img.ph-wide {
 }
 .private-point p  { color: #c8c2b8; font-size: 0.95rem; }
 
+/* ============ Sorting demo ============ */
+.sorting-demo {
+    padding: 6rem max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem));
+    text-align: center;
+    background: var(--paper);
+}
+
+.sorting-demo-inner {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.sorting-demo h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+}
+
+.sorting-demo-lede {
+    color: var(--ink-soft);
+    margin: 0 auto 2.2rem;
+}
+
+.sorting-demo-frame {
+    width: 100%;
+    max-width: 440px;
+    height: 660px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: hidden;
+    border-radius: 20px;
+    box-shadow: 0 18px 48px rgba(28, 25, 23, 0.14);
+    background: #f7f5f2;
+}
+
+.sorting-demo-frame iframe {
+    display: block;
+    width: 440px;
+    height: 660px;
+    border: 0;
+}
+
 /* ============ Strip ============ */
 .strip {
     width: 100%;
