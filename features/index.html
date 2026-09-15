@@ -267,6 +267,105 @@
             color: #ffffff;
         }
 
+        .smart-app-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto 1.5rem;
+            min-height: 76px;
+            box-sizing: border-box;
+        }
+
+        .smart-app-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.45rem;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #ffffff;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .smart-app-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-sizing: border-box;
+            border: 2px solid transparent;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .smart-app-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .smart-app-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .smart-app-icon.is-whatsapp {
+            background: #25D366;
+        }
+
+        .smart-app-icon.is-viber {
+            background: #7360f2;
+        }
+
+        .smart-app-icon.is-telegram {
+            background: #2AABEE;
+        }
+
+        .smart-app-icon.is-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .smart-app-icon.is-instagram svg {
+            width: 42px;
+            height: 42px;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 1.85;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .smart-app-icon.is-messages {
+            background: #2563EB;
+        }
+
+        .smart-app-btn.is-active .smart-app-icon {
+            border-color: #ff5500;
+            box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        .smart-app-btn span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+
         .smart-daterange-row {
             display: flex;
             align-items: center;
@@ -541,7 +640,8 @@
         #objects-grid.smart-grid,
         #categories-grid.smart-grid,
         #people-grid.smart-grid,
-        #dates-grid.smart-grid {
+        #dates-grid.smart-grid,
+        #source-grid.smart-grid {
             position: relative;
             display: block;
             width: 100%;
@@ -1395,28 +1495,106 @@
 
                     <div class="smart-screen" data-screen="source">
                         <h3>By Source</h3>
-                        <p>Sort and find photos by where they came from, not just when they were taken.</p>
-                        <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
-                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
-                                </svg>
-                            </span>
-                            <span class="search-label">Camera roll</span>
+                        <p>Find photos that you received</p>
+                        <div class="smart-app-row" role="tablist" aria-label="Source apps" id="source-app-row">
+                            <button class="smart-app-btn is-active" type="button" data-app="0" aria-label="WhatsApp">
+                                <span class="smart-app-icon is-whatsapp">
+                                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.888 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.411z"/></svg>
+                                </span>
+                                <span>Whatsapp</span>
+                            </button>
+                            <button class="smart-app-btn" type="button" data-app="1" aria-label="Viber">
+                                <span class="smart-app-icon is-viber">
+                                    <img src="../assets/viber logo.png" alt="Viber">
+                                </span>
+                                <span>Viber</span>
+                            </button>
+                            <button class="smart-app-btn" type="button" data-app="2" aria-label="Telegram">
+                                <span class="smart-app-icon is-telegram">
+                                    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.198 1.006.128.832.942z"/></svg>
+                                </span>
+                                <span>Telegram</span>
+                            </button>
+                            <button class="smart-app-btn" type="button" data-app="3" aria-label="Instagram">
+                                <span class="smart-app-icon is-instagram">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </span>
+                                <span>Instagram</span>
+                            </button>
+                            <button class="smart-app-btn" type="button" data-app="4" aria-label="Messages">
+                                <span class="smart-app-icon is-messages">
+                                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-12 9c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+                                </span>
+                                <span>Messages</span>
+                            </button>
                         </div>
-                        <div class="smart-grid" aria-label="Source results">
-                            <div class="smart-tile" style="background-image:url('../assets/gallery in held phone.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/gallery-held-web.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/holding-phone-web.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/section_2_photo 1080x2400.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                        <div class="smart-grid" id="source-grid" aria-label="Source results">
+                            <!-- App 0: WhatsApp -->
+                            <div class="smart-grid-view is-active-view" data-view="0">
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone 2.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                            </div>
+                            <!-- App 1: Viber -->
+                            <div class="smart-grid-view" data-view="1">
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/black family cooking candid.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
+                            </div>
+                            <!-- App 2: Telegram -->
+                            <div class="smart-grid-view" data-view="2">
+                                <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup with watch.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                            </div>
+                            <!-- App 3: Instagram -->
+                            <div class="smart-grid-view" data-view="3">
+                                <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photo of food.jpg');"></div>
+                            </div>
+                            <!-- App 4: Messages -->
+                            <div class="smart-grid-view" data-view="4">
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                            </div>
                         </div>
-                        <div class="smart-caption">Separate camera shots from downloads and memes</div>
+                        <div class="smart-caption">You can sort by different message apps, group chat apps, downloads.</div>
                     </div>
 
                     <div class="smart-screen" data-screen="text">
@@ -2111,6 +2289,57 @@
                 clearDatesTimeouts();
             }
 
+            // By Source app switcher & auto-rotation
+            const sourceAppButtons = Array.from(document.querySelectorAll('#source-app-row .smart-app-btn'));
+            const sourceGridViews = Array.from(document.querySelectorAll('#source-grid .smart-grid-view'));
+            let currentSourceIndex = 0;
+            let sourceInterval = null;
+
+            function setSourceView(appIndex) {
+                currentSourceIndex = appIndex;
+                sourceAppButtons.forEach(function (btn, idx) {
+                    btn.classList.toggle('is-active', idx === appIndex);
+                });
+                sourceGridViews.forEach(function (view, idx) {
+                    const isCurrent = idx === appIndex;
+                    view.classList.toggle('is-active-view', isCurrent);
+                    if (isCurrent) {
+                        view.classList.remove('is-revealing');
+                        requestAnimationFrame(function () {
+                            requestAnimationFrame(function () {
+                                view.classList.add('is-revealing');
+                            });
+                        });
+                    } else {
+                        view.classList.remove('is-revealing');
+                    }
+                });
+            }
+
+            function startSourceRotation() {
+                if (sourceInterval) return;
+                sourceInterval = setInterval(function () {
+                    const nextIndex = (currentSourceIndex + 1) % sourceAppButtons.length;
+                    setSourceView(nextIndex);
+                }, 3000);
+            }
+
+            function stopSourceRotation() {
+                if (sourceInterval) {
+                    clearInterval(sourceInterval);
+                    sourceInterval = null;
+                }
+            }
+
+            sourceAppButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const appIndex = parseInt(btn.dataset.app, 10);
+                    setSourceView(appIndex);
+                    stopSourceRotation();
+                    startSourceRotation();
+                });
+            });
+
             function startObjectsRotation() {
                 if (objectInterval) return;
                 objectInterval = setInterval(function () {
@@ -2146,6 +2375,7 @@
                     stopCategoriesRotation();
                     stopPeopleRotation();
                     stopDatesRotation();
+                    stopSourceRotation();
 
                     if (target === 'objects') {
                         currentViewIndex = 0;
@@ -2162,6 +2392,10 @@
                     } else if (target === 'dates') {
                         currentDatePresetIndex = 0;
                         startDatesRotation();
+                    } else if (target === 'source') {
+                        currentSourceIndex = 0;
+                        setSourceView(0);
+                        startSourceRotation();
                     }
                 });
             });
@@ -2173,6 +2407,7 @@
                     stopCategoriesRotation();
                     stopPeopleRotation();
                     stopDatesRotation();
+                    stopSourceRotation();
                 } else {
                     const activeTab = tabs.find(function (t) { return t.classList.contains('is-active'); });
                     if (activeTab && activeTab.dataset.screen === 'objects') {
@@ -2183,6 +2418,8 @@
                         startPeopleRotation();
                     } else if (activeTab && activeTab.dataset.screen === 'dates') {
                         startDatesRotation();
+                    } else if (activeTab && activeTab.dataset.screen === 'source') {
+                        startSourceRotation();
                     }
                 }
             });
