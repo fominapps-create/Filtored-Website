@@ -53,6 +53,417 @@
             box-shadow: 0 22px 60px rgba(28, 25, 23, 0.16);
         }
 
+        .smart-showcase {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-bottom: 5rem;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .smart-showcase-shell {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 760px;
+        }
+
+        .smart-showcase-left {
+            background: #f7f2eb;
+            padding: 4rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .smart-showcase-left h2 {
+            font-size: clamp(2.6rem, 3.8vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin: 0 0 2.5rem;
+            color: #111111;
+            text-align: center;
+        }
+
+        .smart-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem 1.4rem;
+            width: 100%;
+            max-width: 620px;
+        }
+
+        .smart-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #111111;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .smart-tab .thumb {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 22px;
+            background-size: cover;
+            background-position: center;
+            border: 3.5px solid transparent;
+            box-sizing: border-box;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .smart-tab:hover .thumb {
+            transform: translateY(-2px);
+        }
+
+        .smart-tab strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #111111;
+        }
+
+        .smart-tab.is-active .thumb {
+            border-color: #ff5500;
+        }
+
+        .smart-showcase-right {
+            position: relative;
+            background: #282828;
+            color: #ffffff;
+            padding: 3.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .smart-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            width: 100%;
+            max-width: 560px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .smart-screen.is-active {
+            display: flex;
+        }
+
+        .smart-screen h3 {
+            font-size: clamp(2.3rem, 3.4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0 0 0.4rem;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .smart-screen p {
+            max-width: 440px;
+            color: #d1ceca;
+            font-size: 1.05rem;
+            line-height: 1.45;
+            margin: 0 auto 1.4rem;
+            text-align: center;
+        }
+
+        .smart-pill-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.35rem;
+            flex-wrap: nowrap;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto 1.5rem;
+            min-height: 38px;
+            box-sizing: border-box;
+        }
+
+        .smart-filter-pill {
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            border: 1.5px solid #ffffff;
+            background: transparent;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1.2;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .smart-filter-pill.is-active {
+            background: #545459;
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .smart-search-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 270px;
+            height: 44px;
+            padding: 0 1.4rem;
+            background: #ffffff;
+            border-radius: 999px;
+            color: #111111;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .smart-search-box .search-mark {
+            position: absolute;
+            left: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #222222;
+        }
+
+        .smart-search-box .search-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #111111;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.15em;
+            background-color: #111111;
+            margin-left: 2px;
+            animation: blink 0.75s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .smart-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        #objects-grid.smart-grid,
+        #categories-grid.smart-grid {
+            position: relative;
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            aspect-ratio: 1;
+            margin: 0 auto;
+        }
+
+        .smart-grid-view {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .smart-grid-view.is-active-view {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .smart-grid-view.is-revealing .smart-tile {
+            animation: tile-fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .smart-grid-view.is-revealing .smart-tile:nth-child(1),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(2),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(3) {
+            animation-delay: 0.04s;
+        }
+
+        .smart-grid-view.is-revealing .smart-tile:nth-child(4),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(5),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(6) {
+            animation-delay: 0.14s;
+        }
+
+        .smart-grid-view.is-revealing .smart-tile:nth-child(7),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(8),
+        .smart-grid-view.is-revealing .smart-tile:nth-child(9) {
+            animation-delay: 0.24s;
+        }
+
+        @keyframes tile-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-8px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .smart-tile {
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .smart-caption {
+            margin-top: 1.4rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            width: 100%;
+            max-width: 440px;
+            min-height: 3.3rem;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .smart-caption.is-fading {
+            opacity: 0;
+            transform: translateY(6px);
+        }
+
+        .smart-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .smart-nav-item.is-active {
+            color: #ffffff;
+        }
+
+        .smart-nav-icon {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .smart-phone-bar {
+            width: 108px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 999px;
+            margin-top: 0.85rem;
+        }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .smart-caption {
+            margin-top: 1.6rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            max-width: 400px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        @media (max-width: 860px) {
+            .smart-showcase-shell {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .smart-showcase-left,
+            .smart-showcase-right {
+                padding: 2.5rem 1.2rem;
+            }
+            .smart-category-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem 0.8rem;
+                max-width: 100%;
+            }
+            .smart-tab strong {
+                font-size: 0.85rem;
+            }
+            .smart-grid,
+            #objects-grid.smart-grid {
+                max-width: 320px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .smart-category-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.9rem 0.5rem;
+            }
+            .smart-tab .thumb {
+                border-radius: 14px;
+            }
+            .smart-tab strong {
+                font-size: 0.75rem;
+            }
+            .smart-screen p {
+                font-size: 0.9rem;
+            }
+            .smart-caption {
+                font-size: 1rem;
+            }
+            .smart-grid,
+            #objects-grid.smart-grid {
+                max-width: 270px;
+            }
+        }
+
         .seo-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -413,6 +824,298 @@
             <img class="seo-photo" src="../assets/gallery-held-web.jpg" alt="Filtored AI photo gallery running on an Android phone" width="1400" height="933">
         </section>
 
+        <section class="smart-showcase" aria-label="Smart search preview">
+            <div class="smart-showcase-shell">
+                <div class="smart-showcase-left">
+                    <h2>Smart Search</h2>
+                    <div class="smart-category-grid" role="tablist" aria-label="Smart search categories">
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="categories">
+                            <span class="thumb" style="background-image:url('../assets/gallery food.jpg');"></span>
+                            <strong>Categories</strong>
+                        </button>
+                        <button class="smart-tab is-active" type="button" role="tab" aria-selected="true" data-screen="objects">
+                            <span class="thumb" style="background-image:url('../assets/holding phone with laptop.jpg');"></span>
+                            <strong>Objects</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="people">
+                            <span class="thumb" style="background-image:url('../assets/family.jpg');"></span>
+                            <strong>People</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="dates">
+                            <span class="thumb" style="background-image:url('../assets/phone holding.jpg');"></span>
+                            <strong>Dates</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="source">
+                            <span class="thumb" style="background-image:url('../assets/section_1_photo.png');"></span>
+                            <strong>By Source</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="text">
+                            <span class="thumb" style="background-image:url('../assets/holding phone.jpg');"></span>
+                            <strong>Text</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="description">
+                            <span class="thumb" style="background-image:url('../assets/beach.jpg');"></span>
+                            <strong>Description</strong>
+                        </button>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="qr">
+                            <span class="thumb" style="background-image:url('../assets/mockup.jpg');"></span>
+                            <strong>QR Codes</strong>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="smart-showcase-right">
+                    <div class="smart-screen" data-screen="categories">
+                        <h3>Categories</h3>
+                        <p>Identify photos by main categories</p>
+                        <div class="smart-pill-row" role="tablist" aria-label="Category filters" id="categories-pill-row">
+                            <button class="smart-filter-pill is-active" type="button" data-cat="0">Food</button>
+                            <button class="smart-filter-pill" type="button" data-cat="1">Animals</button>
+                            <button class="smart-filter-pill" type="button" data-cat="2">People</button>
+                            <button class="smart-filter-pill" type="button" data-cat="3">Scenery</button>
+                            <button class="smart-filter-pill" type="button" data-cat="4">Documents</button>
+                        </div>
+                        <div class="smart-grid" id="categories-grid" aria-label="Category results">
+                            <!-- Cat 0: Food -->
+                            <div class="smart-grid-view is-active-view" data-view="0">
+                                <div class="smart-tile" style="background-image:url('../assets/gallery food.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photo of food.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone 2.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/black family cooking candid.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                            </div>
+                            <!-- Cat 1: Animals -->
+                            <div class="smart-grid-view" data-view="1">
+                                <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog looking at camera.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/kid and dog sleeping.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/kids with dog.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/puppy sleeping.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/guy with dog on couch.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dot at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                            </div>
+                            <!-- Cat 2: People -->
+                            <div class="smart-grid-view" data-view="2">
+                                <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                            </div>
+                            <!-- Cat 3: Scenery -->
+                            <div class="smart-grid-view" data-view="3">
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family beach.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                            </div>
+                            <!-- Cat 4: Documents -->
+                            <div class="smart-grid-view" data-view="4">
+                                <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/People screen.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/section_2_photo 1080x2400.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/duplicates in phone.png');"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="smart-screen is-active" data-screen="objects">
+                        <h3>Objects</h3>
+                        <p>Identify objects and visual subjects so your photos are easier to organize and find.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label" id="objects-search-label">Car<span class="typing-cursor"></span></span>
+                        </div>
+                        <div class="smart-grid" id="objects-grid" aria-label="Object results">
+                            <!-- View 1: Car -->
+                            <div class="smart-grid-view is-active-view" data-view="0">
+                                <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/hero-couch.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery-held-web.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup with watch.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/holding phone with laptop.jpg');"></div>
+                            </div>
+                            <!-- View 2: Jewelry -->
+                            <div class="smart-grid-view" data-view="1">
+                                <div class="smart-tile" style="background-image:url('../assets/mockup with watch.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone 2.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                            </div>
+                            <!-- View 3: Flowers -->
+                            <div class="smart-grid-view" data-view="2">
+                                <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photo of food.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="smart-caption" id="objects-caption">You can find where you parked or your plate number</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="people">
+                        <h3>People</h3>
+                        <p>Group the people in your gallery and find everyone in a single profile.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">Sam</span>
+                        </div>
+                        <div class="smart-grid" aria-label="People results">
+                            <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                        </div>
+                        <div class="smart-caption">See every photo of a loved one in seconds</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="dates">
+                        <h3>Dates</h3>
+                        <p>Jump back to a place, a trip, or a single day without digging through months of thumbnails.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">July 2025</span>
+                        </div>
+                        <div class="smart-grid" aria-label="Date results">
+                            <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                        </div>
+                        <div class="smart-caption">Find past vacations and memorable weekends instantly</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="source">
+                        <h3>By Source</h3>
+                        <p>Sort and find photos by where they came from, not just when they were taken.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">Camera roll</span>
+                        </div>
+                        <div class="smart-grid" aria-label="Source results">
+                            <div class="smart-tile" style="background-image:url('../assets/gallery in held phone.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/gallery-held-web.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding-phone-web.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/section_2_photo 1080x2400.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                        </div>
+                        <div class="smart-caption">Separate camera shots from downloads and memes</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="text">
+                        <h3>Text</h3>
+                        <p>Read text found inside photos to pull up receipts, notes, signs, and documents.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">Invoice</span>
+                        </div>
+                        <div class="smart-grid" aria-label="Text search results">
+                            <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding phone with laptop.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/mockup in office.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/People screen.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                        </div>
+                        <div class="smart-caption">Search for serial numbers, receipts, or handwriting</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="description">
+                        <h3>Description</h3>
+                        <p>Match what is in the frame, from a scene or object to a place or moment.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">Beach sunset</span>
+                        </div>
+                        <div class="smart-grid" aria-label="Description results">
+                            <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/dot at the beach.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/white family beach.png');"></div>
+                        </div>
+                        <div class="smart-caption">Search by what you remember seeing in the photo</div>
+                    </div>
+
+                    <div class="smart-screen" data-screen="qr">
+                        <h3>QR Codes</h3>
+                        <p>Scan QR codes in your images and find the right photo even if the file name is vague.</p>
+                        <div class="smart-search-box" aria-label="Search query">
+                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-label">Event pass</span>
+                        </div>
+                        <div class="smart-grid" aria-label="QR code results">
+                            <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding phone.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/gallery food.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/duplicates-held-web.jpg');"></div>
+                            <div class="smart-tile" style="background-image:url('../assets/holding-phone-web.jpg');"></div>
+                        </div>
+                        <div class="smart-caption">Quickly access saved passes, tickets, and codes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="feature-explorer-heading">
             <h2>Explore features</h2>
         </div>
@@ -652,7 +1355,9 @@
 
                 tabIndicator.style.left = activeTab.offsetLeft + 'px';
                 tabIndicator.style.width = activeTab.offsetWidth + 'px';
-                activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+                if (window.location.hash) {
+                    activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+                }
                 counter.textContent = (visibleButtons.indexOf(activeTab) + 1) + ' / ' + visibleButtons.length;
 
                 cards.forEach(function (card) {
@@ -706,6 +1411,192 @@
             });
 
             selectFeature('offline-gallery');
+        }());
+
+        (function () {
+            const tabs = Array.from(document.querySelectorAll('.smart-tab'));
+            const screens = Array.from(document.querySelectorAll('.smart-screen'));
+
+            // Auto-rotate Objects views with typing animation
+            const objectViews = [
+                { query: 'Car', caption: 'You can find where you parked or your plate number' },
+                { query: 'Jewelry', caption: 'Find rings, watches, necklaces and accessories' },
+                { query: 'Flowers', caption: 'Search for bouquets, plants, and garden shots' }
+            ];
+            let currentViewIndex = 0;
+            let objectInterval = null;
+            let typingTimeout = null;
+
+            const searchLabel = document.getElementById('objects-search-label');
+            const captionEl = document.getElementById('objects-caption');
+            const gridViews = Array.from(document.querySelectorAll('#objects-grid .smart-grid-view'));
+
+            function typeQuery(text, callback) {
+                if (!searchLabel) return;
+                let currentText = '';
+                let charIndex = 0;
+                searchLabel.innerHTML = '<span class="typing-cursor"></span>';
+
+                function typeNextChar() {
+                    if (charIndex < text.length) {
+                        currentText += text.charAt(charIndex);
+                        charIndex++;
+                        searchLabel.innerHTML = currentText + '<span class="typing-cursor"></span>';
+                        typingTimeout = setTimeout(typeNextChar, 110 + Math.random() * 35);
+                    } else if (callback) {
+                        typingTimeout = setTimeout(callback, 140);
+                    }
+                }
+                typeNextChar();
+            }
+
+            function setObjectsView(index) {
+                if (!gridViews.length) return;
+                
+                if (captionEl) {
+                    captionEl.classList.add('is-fading');
+                    setTimeout(function () {
+                        captionEl.textContent = objectViews[index].caption;
+                        captionEl.classList.remove('is-fading');
+                    }, 180);
+                }
+
+                typeQuery(objectViews[index].query, function () {
+                    gridViews.forEach(function (view, idx) {
+                        const isCurrent = idx === index;
+                        view.classList.toggle('is-active-view', isCurrent);
+                        if (isCurrent) {
+                            view.classList.remove('is-revealing');
+                            requestAnimationFrame(function () {
+                                requestAnimationFrame(function () {
+                                    view.classList.add('is-revealing');
+                                });
+                            });
+                        } else {
+                            view.classList.remove('is-revealing');
+                        }
+                    });
+                });
+            }
+
+            // Categories pill switcher & auto-rotation
+            const catPills = Array.from(document.querySelectorAll('#categories-pill-row .smart-filter-pill'));
+            const catGridViews = Array.from(document.querySelectorAll('#categories-grid .smart-grid-view'));
+            let currentCatIndex = 0;
+            let catInterval = null;
+
+            function setCategoryView(catIndex) {
+                currentCatIndex = catIndex;
+                catPills.forEach(function (p, idx) {
+                    p.classList.toggle('is-active', idx === catIndex);
+                });
+                catGridViews.forEach(function (view, idx) {
+                    const isCurrent = idx === catIndex;
+                    view.classList.toggle('is-active-view', isCurrent);
+                    if (isCurrent) {
+                        view.classList.remove('is-revealing');
+                        requestAnimationFrame(function () {
+                            requestAnimationFrame(function () {
+                                view.classList.add('is-revealing');
+                            });
+                        });
+                    } else {
+                        view.classList.remove('is-revealing');
+                    }
+                });
+            }
+
+            function startCategoriesRotation() {
+                if (catInterval) return;
+                catInterval = setInterval(function () {
+                    const nextIndex = (currentCatIndex + 1) % catPills.length;
+                    setCategoryView(nextIndex);
+                }, 3000);
+            }
+
+            function stopCategoriesRotation() {
+                if (catInterval) {
+                    clearInterval(catInterval);
+                    catInterval = null;
+                }
+            }
+
+            catPills.forEach(function (pill) {
+                pill.addEventListener('click', function () {
+                    const catIndex = parseInt(pill.dataset.cat, 10);
+                    setCategoryView(catIndex);
+                    stopCategoriesRotation();
+                    startCategoriesRotation();
+                });
+            });
+
+            function startObjectsRotation() {
+                if (objectInterval) return;
+                objectInterval = setInterval(function () {
+                    currentViewIndex = (currentViewIndex + 1) % objectViews.length;
+                    setObjectsView(currentViewIndex);
+                }, 4000);
+            }
+
+            function stopObjectsRotation() {
+                if (objectInterval) {
+                    clearInterval(objectInterval);
+                    objectInterval = null;
+                }
+                if (typingTimeout) {
+                    clearTimeout(typingTimeout);
+                    typingTimeout = null;
+                }
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    const target = tab.dataset.screen;
+                    tabs.forEach(function (button) {
+                        const isActive = button === tab;
+                        button.classList.toggle('is-active', isActive);
+                        button.setAttribute('aria-selected', String(isActive));
+                    });
+                    screens.forEach(function (screen) {
+                        screen.classList.toggle('is-active', screen.dataset.screen === target);
+                    });
+
+                    if (target === 'objects') {
+                        stopCategoriesRotation();
+                        stopObjectsRotation();
+                        currentViewIndex = 0;
+                        setObjectsView(0);
+                        startObjectsRotation();
+                    } else if (target === 'categories') {
+                        stopObjectsRotation();
+                        stopCategoriesRotation();
+                        currentCatIndex = 0;
+                        setCategoryView(0);
+                        startCategoriesRotation();
+                    } else {
+                        stopObjectsRotation();
+                        stopCategoriesRotation();
+                    }
+                });
+            });
+
+            // Pause rotation when tab is hidden or section is off-screen
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    stopObjectsRotation();
+                    stopCategoriesRotation();
+                } else {
+                    const activeTab = tabs.find(function (t) { return t.classList.contains('is-active'); });
+                    if (activeTab && activeTab.dataset.screen === 'objects') {
+                        startObjectsRotation();
+                    } else if (activeTab && activeTab.dataset.screen === 'categories') {
+                        startCategoriesRotation();
+                    }
+                }
+            });
+
+            // Start rotation immediately since Objects is active by default
+            startObjectsRotation();
         }());
     </script>
 </body>
