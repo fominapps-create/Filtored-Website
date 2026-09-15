@@ -641,13 +641,35 @@
         #categories-grid.smart-grid,
         #people-grid.smart-grid,
         #dates-grid.smart-grid,
-        #source-grid.smart-grid {
+        #source-grid.smart-grid,
+        #text-display.smart-grid {
             position: relative;
             display: block;
             width: 100%;
             max-width: 440px;
             aspect-ratio: 1;
             margin: 0 auto;
+        }
+
+        .smart-single-view {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: scale(0.97);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .smart-single-view.is-active-view {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
         }
 
         .smart-grid-view {
@@ -1189,12 +1211,12 @@
                 <div class="smart-showcase-left">
                     <h2>Smart Search</h2>
                     <div class="smart-category-grid" role="tablist" aria-label="Smart search categories">
-                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="categories">
+                        <button class="smart-tab is-active" type="button" role="tab" aria-selected="true" data-screen="categories">
                             <span class="thumb" style="background-image:url('../assets/gallery food.jpg');"></span>
                             <strong>Categories</strong>
                         </button>
-                        <button class="smart-tab is-active" type="button" role="tab" aria-selected="true" data-screen="objects">
-                            <span class="thumb" style="background-image:url('../assets/holding phone with laptop.jpg');"></span>
+                        <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="objects">
+                            <span class="thumb" style="background-image:url('../assets/cars.png');"></span>
                             <strong>Objects</strong>
                         </button>
                         <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="people">
@@ -1210,7 +1232,7 @@
                             <strong>By Source</strong>
                         </button>
                         <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="text">
-                            <span class="thumb" style="background-image:url('../assets/holding phone.jpg');"></span>
+                            <span class="thumb" style="background-image:url('../assets/blueberry muffins.jpg');"></span>
                             <strong>Text</strong>
                         </button>
                         <button class="smart-tab" type="button" role="tab" aria-selected="false" data-screen="description">
@@ -1225,7 +1247,7 @@
                 </div>
 
                 <div class="smart-showcase-right">
-                    <div class="smart-screen" data-screen="categories">
+                    <div class="smart-screen is-active" data-screen="categories">
                         <h3>Categories</h3>
                         <p>Identify photos by main categories</p>
                         <div class="smart-pill-row" role="tablist" aria-label="Category filters" id="categories-pill-row">
@@ -1299,7 +1321,7 @@
                         </div>
                     </div>
 
-                    <div class="smart-screen is-active" data-screen="objects">
+                    <div class="smart-screen" data-screen="objects">
                         <h3>Objects</h3>
                         <p>Identify objects and visual subjects so your photos are easier to organize and find.</p>
                         <div class="smart-search-box" aria-label="Search query">
@@ -1313,17 +1335,7 @@
                         </div>
                         <div class="smart-grid" id="objects-grid" aria-label="Object results">
                             <!-- View 1: Car -->
-                            <div class="smart-grid-view is-active-view" data-view="0">
-                                <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/hero-couch.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/gallery-held-web.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/mockup in office.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/mockup with watch.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/search-couch-dog.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/mockup.jpg');"></div>
-                                <div class="smart-tile" style="background-image:url('../assets/holding phone with laptop.jpg');"></div>
-                            </div>
+                            <div class="smart-single-view is-active-view" data-view="0" style="background-image:url('../assets/cars.png');"></div>
                             <!-- View 2: Jewelry -->
                             <div class="smart-grid-view" data-view="1">
                                 <div class="smart-tile" style="background-image:url('../assets/mockup with watch.jpg');"></div>
@@ -1598,8 +1610,8 @@
                     </div>
 
                     <div class="smart-screen" data-screen="text">
-                        <h3>Text</h3>
-                        <p>Read text found inside photos to pull up receipts, notes, signs, and documents.</p>
+                        <h3>Text Reading</h3>
+                        <p>Search for text found inside photos</p>
                         <div class="smart-search-box" aria-label="Search query">
                             <span class="search-mark" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -1607,20 +1619,13 @@
                                     <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
                                 </svg>
                             </span>
-                            <span class="search-label">Invoice</span>
+                            <span class="search-label" id="text-search-label">Blueberry Muffins<span class="typing-cursor"></span></span>
                         </div>
-                        <div class="smart-grid" aria-label="Text search results">
-                            <div class="smart-tile" style="background-image:url('../assets/phone holding.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/holding phone mockup.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/holding phone with laptop.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/mockup in office.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/section_1_photo.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/People screen.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                        <div class="smart-grid" id="text-display" aria-label="Text recognition result">
+                            <div class="smart-single-view is-active-view" data-view="0" style="background-image:url('../assets/blueberry muffins.jpg'); background-position: center top;"></div>
+                            <div class="smart-single-view" data-view="1" style="background-image:url('../assets/agreement in phone.jpg');"></div>
                         </div>
-                        <div class="smart-caption">Search for serial numbers, receipts, or handwriting</div>
+                        <div class="smart-caption" id="text-caption">Find recipes, documents, articles, book quotes and any free text.</div>
                     </div>
 
                     <div class="smart-screen" data-screen="description">
@@ -1991,7 +1996,7 @@
 
             const searchLabel = document.getElementById('objects-search-label');
             const captionEl = document.getElementById('objects-caption');
-            const gridViews = Array.from(document.querySelectorAll('#objects-grid .smart-grid-view'));
+            const gridViews = Array.from(document.querySelectorAll('#objects-grid .smart-grid-view, #objects-grid .smart-single-view'));
 
             function typeQuery(text, callback) {
                 if (!searchLabel) return;
@@ -2359,6 +2364,75 @@
                 }
             }
 
+            // Text Reading views & typing animation
+            const textViews = [
+                { query: 'Blueberry Muffins', caption: 'Find recipes, documents, articles, book quotes and any free text.' },
+                { query: 'Agreement', caption: 'Search for contracts, agreements, receipts, or handwriting in seconds.' }
+            ];
+            let currentTextViewIndex = 0;
+            let textInterval = null;
+            let textTypingTimeout = null;
+
+            const textSearchLabel = document.getElementById('text-search-label');
+            const textCaptionEl = document.getElementById('text-caption');
+            const textDisplayViews = Array.from(document.querySelectorAll('#text-display .smart-single-view'));
+
+            function typeTextQuery(text, callback) {
+                if (!textSearchLabel) return;
+                let currentText = '';
+                let charIndex = 0;
+                textSearchLabel.innerHTML = '<span class="typing-cursor"></span>';
+
+                function typeNextChar() {
+                    if (charIndex < text.length) {
+                        currentText += text.charAt(charIndex);
+                        charIndex++;
+                        textSearchLabel.innerHTML = currentText + '<span class="typing-cursor"></span>';
+                        textTypingTimeout = setTimeout(typeNextChar, 100 + Math.random() * 30);
+                    } else if (callback) {
+                        textTypingTimeout = setTimeout(callback, 140);
+                    }
+                }
+                typeNextChar();
+            }
+
+            function setTextView(index) {
+                if (!textDisplayViews.length) return;
+
+                if (textCaptionEl) {
+                    textCaptionEl.classList.add('is-fading');
+                    setTimeout(function () {
+                        textCaptionEl.textContent = textViews[index].caption;
+                        textCaptionEl.classList.remove('is-fading');
+                    }, 180);
+                }
+
+                typeTextQuery(textViews[index].query, function () {
+                    textDisplayViews.forEach(function (view, idx) {
+                        view.classList.toggle('is-active-view', idx === index);
+                    });
+                });
+            }
+
+            function startTextRotation() {
+                if (textInterval) return;
+                textInterval = setInterval(function () {
+                    currentTextViewIndex = (currentTextViewIndex + 1) % textViews.length;
+                    setTextView(currentTextViewIndex);
+                }, 4500);
+            }
+
+            function stopTextRotation() {
+                if (textInterval) {
+                    clearInterval(textInterval);
+                    textInterval = null;
+                }
+                if (textTypingTimeout) {
+                    clearTimeout(textTypingTimeout);
+                    textTypingTimeout = null;
+                }
+            }
+
             tabs.forEach(function (tab) {
                 tab.addEventListener('click', function () {
                     const target = tab.dataset.screen;
@@ -2376,6 +2450,7 @@
                     stopPeopleRotation();
                     stopDatesRotation();
                     stopSourceRotation();
+                    stopTextRotation();
 
                     if (target === 'objects') {
                         currentViewIndex = 0;
@@ -2396,6 +2471,10 @@
                         currentSourceIndex = 0;
                         setSourceView(0);
                         startSourceRotation();
+                    } else if (target === 'text') {
+                        currentTextViewIndex = 0;
+                        setTextView(0);
+                        startTextRotation();
                     }
                 });
             });
@@ -2408,6 +2487,7 @@
                     stopPeopleRotation();
                     stopDatesRotation();
                     stopSourceRotation();
+                    stopTextRotation();
                 } else {
                     const activeTab = tabs.find(function (t) { return t.classList.contains('is-active'); });
                     if (activeTab && activeTab.dataset.screen === 'objects') {
@@ -2420,12 +2500,14 @@
                         startDatesRotation();
                     } else if (activeTab && activeTab.dataset.screen === 'source') {
                         startSourceRotation();
+                    } else if (activeTab && activeTab.dataset.screen === 'text') {
+                        startTextRotation();
                     }
                 }
             });
 
-            // Start rotation immediately since Objects is active by default
-            startObjectsRotation();
+            // Start rotation immediately since Categories is active by default
+            startCategoriesRotation();
         }());
     </script>
 </body>
