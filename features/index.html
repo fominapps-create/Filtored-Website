@@ -221,6 +221,253 @@
             color: #ffffff;
         }
 
+        .smart-avatar-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto 1.5rem;
+            min-height: 76px;
+            box-sizing: border-box;
+        }
+
+        .smart-avatar-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        .smart-avatar-thumb {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            transition: border-color 0.25s ease, transform 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .smart-avatar-btn.is-active .smart-avatar-thumb {
+            border-color: #ff5500;
+        }
+
+        .smart-avatar-btn span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .smart-daterange-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto 1.5rem;
+            min-height: 38px;
+            box-sizing: border-box;
+        }
+
+        .smart-date-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            border: 1.5px solid #ffffff;
+            background: transparent;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+        }
+
+        .smart-date-pill.is-active-picking {
+            border-color: #ea9e6c;
+            background: rgba(234, 158, 108, 0.22);
+            color: #ffffff;
+            transform: scale(1.04);
+        }
+
+        .smart-date-arrow {
+            color: #ffffff;
+            font-size: 1.15rem;
+            line-height: 1;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        .smart-calendar-card {
+            position: absolute;
+            inset: 0;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.15rem 1.35rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+            color: #222222;
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 3;
+            pointer-events: auto;
+        }
+
+        .smart-calendar-card.is-hidden {
+            opacity: 0;
+            transform: scale(0.96);
+            pointer-events: none;
+        }
+
+        .smart-cal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Inter', sans-serif;
+            padding: 0 0.15rem;
+        }
+
+        .smart-cal-month {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1f1f23;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .smart-cal-dropdown-arrow {
+            font-size: 0.72rem;
+            color: #3a3a3c;
+            transform: translateY(1px);
+        }
+
+        .smart-cal-nav {
+            background: transparent;
+            border: none;
+            font-size: 1.25rem;
+            color: #2c2c2e;
+            cursor: pointer;
+            padding: 0 0.4rem;
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        .smart-cal-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #8e8e93;
+            letter-spacing: 0.05em;
+            margin-top: 0.35rem;
+        }
+
+        .smart-cal-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-auto-rows: 1fr;
+            row-gap: 2px;
+            flex: 1;
+            align-items: center;
+            margin-top: 0.25rem;
+        }
+
+        .smart-cal-cell {
+            position: relative;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2c2c2e;
+            overflow: hidden;
+            transition: color 0.25s ease;
+        }
+
+        .smart-cal-cell::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #ea9e6c;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.25, 1);
+            z-index: 0;
+            border-radius: 0;
+        }
+
+        .smart-cal-cell span.smart-cal-num {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .smart-cal-cell.is-muted {
+            color: #aeaeb2;
+        }
+
+        .smart-cal-cell.is-weekend {
+            color: #c94a4a;
+        }
+
+        .smart-cal-cell.in-range {
+            color: #ffffff !important;
+        }
+
+        .smart-cal-cell.in-range::before {
+            transform: scaleX(1);
+        }
+
+        .smart-cal-cell.range-start::before {
+            border-top-left-radius: 999px;
+            border-bottom-left-radius: 999px;
+        }
+
+        .smart-cal-cell.range-end::before {
+            border-top-right-radius: 999px;
+            border-bottom-right-radius: 999px;
+        }
+
+        .smart-cal-cell.is-single-pick {
+            color: #ffffff !important;
+        }
+
+        .smart-cal-cell.is-single-pick::before {
+            transform: scale(1);
+            border-radius: 999px;
+            animation: cal-pick-pulse 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        .smart-cal-cell.is-single-pick span.smart-cal-num {
+            transform: scale(1.08);
+        }
+
+        @keyframes cal-pick-pulse {
+            0% { transform: scale(0.65); opacity: 0.4; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         .smart-search-box {
             display: flex;
             align-items: center;
@@ -236,16 +483,27 @@
             margin: 0 auto 1.5rem;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             flex-shrink: 0;
+            box-sizing: border-box;
         }
 
         .smart-search-box .search-mark {
             position: absolute;
-            left: 16px;
-            display: inline-flex;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: #222222;
+            width: 20px;
+            height: 20px;
+            color: #1a1a1a;
+            pointer-events: none;
+        }
+
+        .smart-search-box .search-mark svg {
+            width: 19px;
+            height: 19px;
+            display: block;
         }
 
         .smart-search-box .search-label {
@@ -281,7 +539,9 @@
         }
 
         #objects-grid.smart-grid,
-        #categories-grid.smart-grid {
+        #categories-grid.smart-grid,
+        #people-grid.smart-grid,
+        #dates-grid.smart-grid {
             position: relative;
             display: block;
             width: 100%;
@@ -943,7 +1203,12 @@
                         <h3>Objects</h3>
                         <p>Identify objects and visual subjects so your photos are easier to organize and find.</p>
                         <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
+                                </svg>
+                            </span>
                             <span class="search-label" id="objects-search-label">Car<span class="typing-cursor"></span></span>
                         </div>
                         <div class="smart-grid" id="objects-grid" aria-label="Object results">
@@ -989,51 +1254,155 @@
 
                     <div class="smart-screen" data-screen="people">
                         <h3>People</h3>
-                        <p>Group the people in your gallery and find everyone in a single profile.</p>
-                        <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
-                            <span class="search-label">Sam</span>
+                        <p>Identify photos by people</p>
+                        <div class="smart-avatar-row" role="tablist" aria-label="People profiles" id="people-avatar-row">
+                            <button class="smart-avatar-btn is-active" type="button" data-person="0" aria-label="Person 1">
+                                <span class="smart-avatar-thumb" style="background-image:url('../assets/card-selfie-cafe.jpg');"></span>
+                                <span>Name</span>
+                            </button>
+                            <button class="smart-avatar-btn" type="button" data-person="1" aria-label="Person 2">
+                                <span class="smart-avatar-thumb" style="background-image:url('../assets/social photo 2.jpg');"></span>
+                                <span>Name</span>
+                            </button>
+                            <button class="smart-avatar-btn" type="button" data-person="2" aria-label="Person 3">
+                                <span class="smart-avatar-thumb" style="background-image:url('../assets/social selfie from side.jpg');"></span>
+                                <span>Name</span>
+                            </button>
+                            <button class="smart-avatar-btn" type="button" data-person="3" aria-label="Person 4">
+                                <span class="smart-avatar-thumb" style="background-image:url('../assets/she holding cup with phone 2.png');"></span>
+                                <span>Name</span>
+                            </button>
+                            <button class="smart-avatar-btn" type="button" data-person="4" aria-label="Person 5">
+                                <span class="smart-avatar-thumb" style="background-image:url('../assets/woman in park.png');"></span>
+                                <span>Name</span>
+                            </button>
                         </div>
-                        <div class="smart-grid" aria-label="People results">
-                            <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                        <div class="smart-grid" id="people-grid" aria-label="People results">
+                            <!-- Person 0 -->
+                            <div class="smart-grid-view is-active-view" data-view="0">
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                            </div>
+                            <!-- Person 1 -->
+                            <div class="smart-grid-view" data-view="1">
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                            </div>
+                            <!-- Person 2 -->
+                            <div class="smart-grid-view" data-view="2">
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/black family cooking candid.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/profile pics.png');"></div>
+                            </div>
+                            <!-- Person 3 -->
+                            <div class="smart-grid-view" data-view="3">
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone 2.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/she holding cup with phone.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-office-photo.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                            </div>
+                            <!-- Person 4 -->
+                            <div class="smart-grid-view" data-view="4">
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                            </div>
                         </div>
-                        <div class="smart-caption">See every photo of a loved one in seconds</div>
                     </div>
 
                     <div class="smart-screen" data-screen="dates">
                         <h3>Dates</h3>
-                        <p>Jump back to a place, a trip, or a single day without digging through months of thumbnails.</p>
-                        <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
-                            <span class="search-label">July 2025</span>
+                        <p>Identify photos by specific dates</p>
+                        <div class="smart-daterange-row" id="dates-range-row">
+                            <span class="smart-date-pill" id="date-pill-start">DEC 25 2025</span>
+                            <span class="smart-date-arrow" aria-hidden="true">→</span>
+                            <span class="smart-date-pill" id="date-pill-end">JAN 01 2026</span>
                         </div>
-                        <div class="smart-grid" aria-label="Date results">
-                            <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/social photo 2.jpg');"></div>
-                            <div class="smart-tile" style="background-image:url('../assets/social selfie from side.jpg');"></div>
+                        <div class="smart-grid" id="dates-grid" aria-label="Date picker and photo results">
+                            <!-- Calendar Card -->
+                            <div class="smart-calendar-card" id="dates-calendar-card">
+                                <div class="smart-cal-header">
+                                    <button class="smart-cal-nav" type="button" aria-label="Previous month">&lt;</button>
+                                    <div class="smart-cal-month">
+                                        <span id="dates-cal-month-name">December 2025</span>
+                                        <span class="smart-cal-dropdown-arrow">▼</span>
+                                    </div>
+                                    <button class="smart-cal-nav" type="button" aria-label="Next month">&gt;</button>
+                                </div>
+                                <div class="smart-cal-weekdays">
+                                    <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+                                </div>
+                                <div class="smart-cal-days" id="dates-cal-days"></div>
+                            </div>
+                            <!-- Result Grid 0: Holiday (Christmas & New Year) -->
+                            <div class="smart-grid-view" data-view="0">
+                                <div class="smart-tile" style="background-image:url('../assets/family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/candid family.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-selfie-cafe.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-family-faces.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/social 3.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/white family outdoors.png');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/taking photo in office.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/black family cooking candid.png');"></div>
+                            </div>
+                            <!-- Result Grid 1: Summer Vacation -->
+                            <div class="smart-grid-view" data-view="1">
+                                <div class="smart-tile" style="background-image:url('../assets/beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/dog at the beach.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/camping.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/gallery scenery.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/photographing bridge.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/friends selfie on grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/card-friends-grass.jpg');"></div>
+                                <div class="smart-tile" style="background-image:url('../assets/woman in park.png');"></div>
+                            </div>
                         </div>
-                        <div class="smart-caption">Find past vacations and memorable weekends instantly</div>
+                        <div class="smart-caption" id="dates-caption">Find photos from previous christmas and new year’s eve or any specific date.</div>
                     </div>
 
                     <div class="smart-screen" data-screen="source">
                         <h3>By Source</h3>
                         <p>Sort and find photos by where they came from, not just when they were taken.</p>
                         <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
+                                </svg>
+                            </span>
                             <span class="search-label">Camera roll</span>
                         </div>
                         <div class="smart-grid" aria-label="Source results">
@@ -1054,7 +1423,12 @@
                         <h3>Text</h3>
                         <p>Read text found inside photos to pull up receipts, notes, signs, and documents.</p>
                         <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
+                                </svg>
+                            </span>
                             <span class="search-label">Invoice</span>
                         </div>
                         <div class="smart-grid" aria-label="Text search results">
@@ -1075,7 +1449,12 @@
                         <h3>Description</h3>
                         <p>Match what is in the frame, from a scene or object to a place or moment.</p>
                         <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
+                                </svg>
+                            </span>
                             <span class="search-label">Beach sunset</span>
                         </div>
                         <div class="smart-grid" aria-label="Description results">
@@ -1096,7 +1475,12 @@
                         <h3>QR Codes</h3>
                         <p>Scan QR codes in your images and find the right photo even if the file name is vague.</p>
                         <div class="smart-search-box" aria-label="Search query">
-                            <span class="search-mark" aria-hidden="true">⌕</span>
+                            <span class="search-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                                    <line x1="21" y1="21" x2="15.2" y2="15.2"></line>
+                                </svg>
+                            </span>
                             <span class="search-label">Event pass</span>
                         </div>
                         <div class="smart-grid" aria-label="QR code results">
@@ -1530,6 +1914,203 @@
                 });
             });
 
+            // People avatar switcher & auto-rotation
+            const peopleAvatars = Array.from(document.querySelectorAll('#people-avatar-row .smart-avatar-btn'));
+            const peopleGridViews = Array.from(document.querySelectorAll('#people-grid .smart-grid-view'));
+            let currentPersonIndex = 0;
+            let peopleInterval = null;
+
+            function setPersonView(personIndex) {
+                currentPersonIndex = personIndex;
+                peopleAvatars.forEach(function (btn, idx) {
+                    btn.classList.toggle('is-active', idx === personIndex);
+                });
+                peopleGridViews.forEach(function (view, idx) {
+                    const isCurrent = idx === personIndex;
+                    view.classList.toggle('is-active-view', isCurrent);
+                    if (isCurrent) {
+                        view.classList.remove('is-revealing');
+                        requestAnimationFrame(function () {
+                            requestAnimationFrame(function () {
+                                view.classList.add('is-revealing');
+                            });
+                        });
+                    } else {
+                        view.classList.remove('is-revealing');
+                    }
+                });
+            }
+
+            function startPeopleRotation() {
+                if (peopleInterval) return;
+                peopleInterval = setInterval(function () {
+                    const nextIndex = (currentPersonIndex + 1) % peopleAvatars.length;
+                    setPersonView(nextIndex);
+                }, 3000);
+            }
+
+            function stopPeopleRotation() {
+                if (peopleInterval) {
+                    clearInterval(peopleInterval);
+                    peopleInterval = null;
+                }
+            }
+
+            peopleAvatars.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const personIndex = parseInt(btn.dataset.person, 10);
+                    setPersonView(personIndex);
+                    stopPeopleRotation();
+                    startPeopleRotation();
+                });
+            });
+
+            // Dates calendar & photo results animation
+            const datePresets = [
+                {
+                    monthName: 'December 2025',
+                    startPill: 'DEC 25 2025',
+                    endPill: 'JAN 01 2026',
+                    caption: 'Find photos from previous christmas and new year’s eve or any specific date.',
+                    startIndex: 25,
+                    endIndex: 32,
+                    rangeIndices: [25, 26, 27, 28, 29, 30, 31, 32],
+                    days: [
+                        { text: '30', muted: true }, { text: '1' }, { text: '2' }, { text: '3' }, { text: '4' }, { text: '5' }, { text: '6', weekend: true },
+                        { text: '7' }, { text: '8' }, { text: '9' }, { text: '10' }, { text: '11' }, { text: '12' }, { text: '13', weekend: true },
+                        { text: '14' }, { text: '15' }, { text: '16' }, { text: '17' }, { text: '18' }, { text: '19' }, { text: '20', weekend: true },
+                        { text: '21' }, { text: '22' }, { text: '23' }, { text: '24' }, { text: '25' }, { text: '26' }, { text: '27', weekend: true },
+                        { text: '28' }, { text: '29' }, { text: '30' }, { text: '31' }, { text: '1' }, { text: '2' }, { text: '3', weekend: true },
+                        { text: '4', muted: true }, { text: '5', muted: true }, { text: '6', muted: true }, { text: '7', muted: true }, { text: '8', muted: true }, { text: '9', muted: true }, { text: '10', muted: true }
+                    ]
+                },
+                {
+                    monthName: 'July 2025',
+                    startPill: 'JUL 19 2025',
+                    endPill: 'JUL 20 2025',
+                    caption: 'Find birthday celebrations, weekend getaways, and special moments in seconds.',
+                    startIndex: 20,
+                    endIndex: 21,
+                    rangeIndices: [20, 21],
+                    days: [
+                        { text: '29', muted: true }, { text: '30', muted: true }, { text: '1' }, { text: '2' }, { text: '3' }, { text: '4' }, { text: '5', weekend: true },
+                        { text: '6', weekend: true }, { text: '7' }, { text: '8' }, { text: '9' }, { text: '10' }, { text: '11' }, { text: '12', weekend: true },
+                        { text: '13', weekend: true }, { text: '14' }, { text: '15' }, { text: '16' }, { text: '17' }, { text: '18' }, { text: '19', weekend: true },
+                        { text: '20', weekend: true }, { text: '21' }, { text: '22' }, { text: '23' }, { text: '24' }, { text: '25' }, { text: '26', weekend: true },
+                        { text: '27', weekend: true }, { text: '28' }, { text: '29' }, { text: '30' }, { text: '31' }, { text: '1', muted: true }, { text: '2', muted: true, weekend: true },
+                        { text: '3', muted: true, weekend: true }, { text: '4', muted: true }, { text: '5', muted: true }, { text: '6', muted: true }, { text: '7', muted: true }, { text: '8', muted: true }, { text: '9', muted: true }
+                    ]
+                }
+            ];
+
+            let currentDatePresetIndex = 0;
+            let datesTimeouts = [];
+            const datePillStart = document.getElementById('date-pill-start');
+            const datePillEnd = document.getElementById('date-pill-end');
+            const datesMonthName = document.getElementById('dates-cal-month-name');
+            const datesDaysContainer = document.getElementById('dates-cal-days');
+            const datesCalendarCard = document.getElementById('dates-calendar-card');
+            const datesCaption = document.getElementById('dates-caption');
+            const datesGridViews = Array.from(document.querySelectorAll('#dates-grid .smart-grid-view'));
+
+            function clearDatesTimeouts() {
+                datesTimeouts.forEach(function (t) { clearTimeout(t); });
+                datesTimeouts = [];
+            }
+
+            function playDatesAnimation(presetIdx) {
+                clearDatesTimeouts();
+                currentDatePresetIndex = presetIdx;
+                const preset = datePresets[presetIdx];
+                if (!preset || !datesDaysContainer) return;
+
+                // 1. Reset Calendar & UI state
+                if (datesMonthName) datesMonthName.textContent = preset.monthName;
+                if (datePillStart) {
+                    datePillStart.textContent = preset.startPill;
+                    datePillStart.classList.remove('is-active-picking');
+                }
+                if (datePillEnd) {
+                    datePillEnd.textContent = preset.endPill;
+                    datePillEnd.classList.remove('is-active-picking');
+                }
+                if (datesCaption) {
+                    datesCaption.textContent = preset.caption;
+                }
+
+                datesDaysContainer.innerHTML = '';
+                const cellElements = [];
+                preset.days.forEach(function (d) {
+                    const cell = document.createElement('span');
+                    cell.className = 'smart-cal-cell' + (d.muted ? ' is-muted' : '') + (d.weekend ? ' is-weekend' : '');
+                    const numSpan = document.createElement('span');
+                    numSpan.className = 'smart-cal-num';
+                    numSpan.textContent = d.text;
+                    cell.appendChild(numSpan);
+                    datesDaysContainer.appendChild(cell);
+                    cellElements.push(cell);
+                });
+
+                if (datesCalendarCard) datesCalendarCard.classList.remove('is-hidden');
+                datesGridViews.forEach(function (v) {
+                    v.classList.remove('is-active-view', 'is-revealing');
+                });
+
+                // Phase 1: Pick start date at 450ms
+                const t1 = setTimeout(function () {
+                    if (datePillStart) datePillStart.classList.add('is-active-picking');
+                    if (cellElements[preset.startIndex]) {
+                        cellElements[preset.startIndex].classList.add('is-single-pick');
+                    }
+                }, 450);
+                datesTimeouts.push(t1);
+
+                // Phase 2: Slide across date range one by one at 1250ms
+                const t2 = setTimeout(function () {
+                    if (datePillEnd) datePillEnd.classList.add('is-active-picking');
+                    if (cellElements[preset.startIndex]) {
+                        cellElements[preset.startIndex].classList.remove('is-single-pick');
+                    }
+
+                    preset.rangeIndices.forEach(function (idx, step) {
+                        const stepTimeout = setTimeout(function () {
+                            const cell = cellElements[idx];
+                            if (!cell) return;
+                            cell.classList.add('in-range');
+                            if (step === 0) cell.classList.add('range-start');
+                            if (step === preset.rangeIndices.length - 1) cell.classList.add('range-end');
+                        }, step * 65);
+                        datesTimeouts.push(stepTimeout);
+                    });
+                }, 1250);
+                datesTimeouts.push(t2);
+
+                // Phase 3: Reveal photo grid at 2650ms
+                const t3 = setTimeout(function () {
+                    if (datesCalendarCard) datesCalendarCard.classList.add('is-hidden');
+                    const targetGrid = datesGridViews[presetIdx % datesGridViews.length];
+                    if (targetGrid) {
+                        targetGrid.classList.add('is-active-view', 'is-revealing');
+                    }
+                }, 2650);
+                datesTimeouts.push(t3);
+
+                // Phase 4: Loop to next preset at 5900ms
+                const t4 = setTimeout(function () {
+                    const nextIdx = (presetIdx + 1) % datePresets.length;
+                    playDatesAnimation(nextIdx);
+                }, 5900);
+                datesTimeouts.push(t4);
+            }
+
+            function startDatesRotation() {
+                playDatesAnimation(currentDatePresetIndex);
+            }
+
+            function stopDatesRotation() {
+                clearDatesTimeouts();
+            }
+
             function startObjectsRotation() {
                 if (objectInterval) return;
                 objectInterval = setInterval(function () {
@@ -1561,21 +2142,26 @@
                         screen.classList.toggle('is-active', screen.dataset.screen === target);
                     });
 
+                    stopObjectsRotation();
+                    stopCategoriesRotation();
+                    stopPeopleRotation();
+                    stopDatesRotation();
+
                     if (target === 'objects') {
-                        stopCategoriesRotation();
-                        stopObjectsRotation();
                         currentViewIndex = 0;
                         setObjectsView(0);
                         startObjectsRotation();
                     } else if (target === 'categories') {
-                        stopObjectsRotation();
-                        stopCategoriesRotation();
                         currentCatIndex = 0;
                         setCategoryView(0);
                         startCategoriesRotation();
-                    } else {
-                        stopObjectsRotation();
-                        stopCategoriesRotation();
+                    } else if (target === 'people') {
+                        currentPersonIndex = 0;
+                        setPersonView(0);
+                        startPeopleRotation();
+                    } else if (target === 'dates') {
+                        currentDatePresetIndex = 0;
+                        startDatesRotation();
                     }
                 });
             });
@@ -1585,12 +2171,18 @@
                 if (document.hidden) {
                     stopObjectsRotation();
                     stopCategoriesRotation();
+                    stopPeopleRotation();
+                    stopDatesRotation();
                 } else {
                     const activeTab = tabs.find(function (t) { return t.classList.contains('is-active'); });
                     if (activeTab && activeTab.dataset.screen === 'objects') {
                         startObjectsRotation();
                     } else if (activeTab && activeTab.dataset.screen === 'categories') {
                         startCategoriesRotation();
+                    } else if (activeTab && activeTab.dataset.screen === 'people') {
+                        startPeopleRotation();
+                    } else if (activeTab && activeTab.dataset.screen === 'dates') {
+                        startDatesRotation();
                     }
                 }
             });
