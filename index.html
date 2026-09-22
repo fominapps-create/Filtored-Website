@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="An offline AI photo organizer for Android that keeps your photos on your phone.">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=71">
+    <link rel="stylesheet" href="style.css?v=72">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -253,7 +253,8 @@
             </div>
         </section>
 
-        <!-- ============ SORTING DEMO ============ -->
+        <!-- ============ SORTING DEMO (HIDDEN) ============ -->
+        <!--
         <section class="sorting-demo" id="sorting-demo">
             <div class="sorting-demo-inner">
                 <p class="kicker">AI sorting, in motion</p>
@@ -261,6 +262,58 @@
                 <p class="sorting-demo-lede">Watch Filtored sort a messy batch of photos into useful categories.</p>
                 <div class="sorting-demo-frame">
                     <iframe src="assets/filtored-sort-animation.html" title="Animated demonstration of Filtored sorting photos into categories" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- ============ AI INTELLIGENCE BENTO ============ -->
+        <section class="bento-section" id="intelligence">
+            <div class="bento-inner">
+                <div class="bento-header">
+                    <h2 data-i18n="bento.title">AI Capabilities</h2>
+                    <p class="bento-lede" data-i18n="bento.description">Intelligence built into your gallery</p>
+                </div>
+                <div class="bento-stage">
+                    <div class="bento-grid">
+                        <!-- Column 1 -->
+                        <div class="bento-col bento-col-1">
+                            <article class="bento-card bento-card-smart">
+                                <h3 data-i18n="bento.smartTitle">Smart AI Analysis</h3>
+                                <p data-i18n="bento.smartText">AI scans and analyzes each photo to identify its overall content, context, and characteristics, going beyond basic metadata to build a detailed understanding of your gallery.</p>
+                            </article>
+                            <article class="bento-card bento-card-cleanup">
+                                <h3 data-i18n="bento.cleanupTitle">Intelligent Cleanup</h3>
+                                <p data-i18n="bento.cleanupText">AI compares photos to identify redundancy, clutter, and other content that may need review.</p>
+                            </article>
+                        </div>
+                        <!-- Column 2 -->
+                        <div class="bento-col bento-col-2">
+                            <article class="bento-card bento-card-visual">
+                                <h3 data-i18n="bento.visualTitle">Visual Understanding</h3>
+                                <p data-i18n="bento.visualText">AI recognizes specific visual elements within your photos and interprets the details and structure of each image.</p>
+                            </article>
+                            <article class="bento-card bento-card-center" aria-label="AI capabilities visual">
+                                <img src="assets/center piece ai section.png" alt="AI visual centerpiece" loading="lazy">
+                                <span class="bento-ball-text">AI</span>
+                            </article>
+                            <article class="bento-card bento-card-search">
+                                <h3 data-i18n="bento.searchTitle">Semantic Search</h3>
+                                <p data-i18n="bento.searchText">AI connects your searches with the visual content and meaning of your photos.</p>
+                            </article>
+                        </div>
+                        <!-- Column 3 -->
+                        <div class="bento-col bento-col-3">
+                            <article class="bento-card bento-card-grouping">
+                                <h3 data-i18n="bento.groupingTitle">Smart Grouping</h3>
+                                <p data-i18n="bento.groupingText">AI identifies similarities and relationships between images to connect related photos.</p>
+                            </article>
+                            <article class="bento-card bento-card-insights">
+                                <h3 data-i18n="bento.insightsTitle">Gallery Insights</h3>
+                                <p data-i18n="bento.insightsText">AI finds patterns across your photo library to reveal useful information about your collection.</p>
+                            </article>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -341,6 +394,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=18"></script>
+    <script src="script.js?v=19"></script>
 </body>
 </html>

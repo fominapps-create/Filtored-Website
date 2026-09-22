@@ -41,6 +41,13 @@
             'language.label': 'Язык', 'language.auto': 'Авто', 'banner.kicker': 'Умная AI-галерея и очистка', 'banner.title': 'Ваша фотоплёнка,<br><em>отфильтрована</em> и рассортирована.', 'banner.description': 'Офлайн-галерея с искусственным интеллектом для порядка в фотографиях: очистка от лишнего, распознавание лиц, умный поиск и сортировка по людям, событиям и моментам.', 'banner.learn': 'Как это работает',
             'hero.kicker': 'Как это работает', 'hero.title': 'Ваши фотографии,<br>организованные по-вашему.', 'hero.description': 'Наведите порядок в тысячах моментов на телефоне. Находите важное, удаляйте лишнее и создавайте свою галерею.', 'hero.features': 'Возможности',
             'strip.title': 'Чистая галерея автоматически', 'strip.cleanTitle': 'Порядок сохраняется сам', 'strip.cleanText': 'Приложение сортирует беспорядок за вас, чтобы очистить галерею за малую часть прежнего времени. Проверьте, нажмите, готово.', 'strip.momentsTitle': 'Моменты, а не беспорядок', 'strip.momentsText': 'Filtored превращает особенные моменты, затерявшиеся среди сотен фотографий, в события, чтобы галерея рассказывала вашу историю.', 'strip.searchTitle': 'Находите за секунды', 'strip.searchText': 'Категории фотографий можно искать: найдите любую еду, поездку, документ или сохранённую деталь за секунды.', 'strip.peopleTitle': 'Люди распознаются сразу', 'strip.peopleText': 'Filtored узнаёт близких и собирает их фотографии в профили - от только что сделанных снимков до почти забытых моментов, <strong>всё в одном месте.</strong>', 'strip.timeTitle': 'Ваше время ценно', 'strip.timeText': 'Тратьте меньше времени на поиск, сортировку и очистку фотографий, а больше - на действительно важное.',
+            'bento.title': 'AI Capabilities', 'bento.description': 'Intelligence built into your gallery',
+            'bento.smartTitle': 'Smart AI Analysis', 'bento.smartText': 'AI scans and analyzes each photo to identify its overall content, context, and characteristics, going beyond basic metadata to build a detailed understanding of your gallery.',
+            'bento.visualTitle': 'Visual Understanding', 'bento.visualText': 'AI recognizes specific visual elements within your photos and interprets the details and structure of each image.',
+            'bento.groupingTitle': 'Smart Grouping', 'bento.groupingText': 'AI identifies similarities and relationships between images to connect related photos.',
+            'bento.cleanupTitle': 'Intelligent Cleanup', 'bento.cleanupText': 'AI compares photos to identify redundancy, clutter, and other content that may need review.',
+            'bento.searchTitle': 'Semantic Search', 'bento.searchText': 'AI connects your searches with the visual content and meaning of your photos.',
+            'bento.insightsTitle': 'Gallery Insights', 'bento.insightsText': 'AI finds patterns across your photo library to reveal useful information about your collection.',
             'privacy.title': 'Ваши фотографии не покидают телефон', 'privacy.description': 'Весь AI работает на устройстве. Никаких загрузок, аккаунтов и мелких оговорок под обещаниями конфиденциальности. В авиарежиме всё работает так же.', 'privacy.firstTitle': 'Конфиденциальность прежде всего', 'privacy.firstText': 'Ваши фотографии остаются личными и обрабатываются прямо на телефоне.', 'privacy.accountTitle': 'Аккаунт не нужен', 'privacy.accountText': 'Установите, просканируйте, готово. Регистрироваться не нужно.', 'privacy.offlineTitle': 'Создано для работы офлайн', 'privacy.offlineText': 'Ваша галерея остаётся умной даже без подключения.', 'cta.title': 'Filtored уже здесь', 'cta.description': 'Бесплатно в Google Play. Ваши фотографии остаются на телефоне.', 'cta.getItOn': 'Скачать в', 'cta.scan': 'Отсканируйте, чтобы установить на телефон', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность',
             'post.title': 'Лучшие галереи и приложения для очистки фото на Android', 'post.date': '8 сентября 2026 г.', 'post.intro': 'Галерея на Android должна не просто показывать фотографии. Каждый день добавляются новые фото, скриншоты, видео и файлы - и со временем библиотека превращается в тысячи файлов, которые трудно искать, упорядочивать или чистить. Разные приложения решают это по-разному: одни делают акцент на облачном резервном копировании, другие - на локальной организации, а некоторые созданы только для поиска дубликатов. Вот как сравниваются самые полезные из них.',
             'post.th.app': 'Приложение', 'post.th.best': 'Лучше всего для', 'post.th.feature': 'Главная особенность', 'post.th.pricing': 'Цена',
@@ -71,6 +78,13 @@
             'language.label': 'שפה', 'language.auto': 'אוטומטי', 'banner.kicker': 'גלריית AI חכמה וניקוי', 'banner.title': 'גלריית התמונות שלך,<br><em>מסוננת</em> וממוינת.', 'banner.description': 'גלריית תמונות חכמה שפועלת ללא חיבור, ומסדרת את התמונות שלך בעזרת AI: ניקוי תמונות, זיהוי פנים, חיפוש חכם ומיון לפי אנשים, אירועים ורגעים.', 'banner.learn': 'איך זה עובד',
             'hero.kicker': 'איך זה עובד', 'hero.title': 'התמונות שלך,<br>מסודרות בדרך שלך.', 'hero.description': 'הכניסו סדר לאלפי הרגעים שחיים בטלפון שלכם. מצאו את מה שחשוב, פנו את מה שלא, והפכו את הגלריה לשלכם.', 'hero.features': 'לכל היכולות',
             'strip.title': 'גלריה נקייה יותר, באופן אוטומטי', 'strip.cleanTitle': 'הספרייה נשארת מסודרת', 'strip.cleanText': 'Filtored ממיין את העומס עבורכם, כך שתוכלו לנקות את הגלריה בחלק קטן מהזמן. בודקים, לוחצים, סיימנו.', 'strip.momentsTitle': 'רגעים, לא בלגן', 'strip.momentsText': 'כשרגעים מיוחדים נבלעים בין מאות תמונות, Filtored הופך אותם לאירועים כדי שהגלריה שלכם תספר את הסיפור.', 'strip.searchTitle': 'מוצאים בשניות', 'strip.searchText': 'אפשר לחפש בקטגוריות התמונות שלכם, כך שמציאת כל ארוחה, טיול, מסמך או פרט ששמרתם לוקחת שניות.', 'strip.peopleTitle': 'האנשים מזוהים מיד', 'strip.peopleText': 'Filtored מזהה את האנשים בחייכם ומרכז את התמונות שלהם בפרופילים - מתמונות שצילמתם עכשיו ועד רגעים שכמעט שכחתם, <strong>הכול במקום אחד.</strong>', 'strip.timeTitle': 'הזמן שלכם יקר', 'strip.timeText': 'השקיעו פחות זמן בחיפוש, מיון וניקוי התמונות, ויותר זמן במה שבאמת חשוב.',
+            'bento.title': 'יכולות AI', 'bento.description': 'אינטליגנציה מובנית ישירות בגלריה שלך',
+            'bento.smartTitle': 'ניתוח AI חכם', 'bento.smartText': 'ה-AI סורק ומנתח כל תמונה כדי לזהות תוכן, הקשר ומאפיינים, הרבה מעבר למטא-דאטה בסיסי.',
+            'bento.visualTitle': 'הבנה חזותית', 'bento.visualText': 'ה-AI מזהה אלמנטים חזותיים ספציפיים בתמונות ומפענח את הפרטים והמבנה של כל צילום.',
+            'bento.groupingTitle': 'קיבוץ חכם', 'bento.groupingText': 'ה-AI מזהה קשרים ודמיון בין תמונות כדי לחבר בין רגעים קשורים.',
+            'bento.cleanupTitle': 'ניקוי חכם', 'bento.cleanupText': 'ה-AI משווה בין תמונות כדי לזהות כפילויות, עומס ותכנים לבדיקה.',
+            'bento.searchTitle': 'חיפוש סמנטי', 'bento.searchText': 'ה-AI מחבר בין החיפושים שלכם למשמעות ולתוכן הוויזואלי של התמונות.',
+            'bento.insightsTitle': 'תובנות על הגלריה', 'bento.insightsText': 'ה-AI מזהה דפוסים בספריית התמונות ומציג תובנות שימושיות על האוסף.',
             'privacy.title': 'התמונות שלכם לעולם לא עוזבות את הטלפון', 'privacy.description': 'כל פעולות ה-AI מתבצעות במכשיר. בלי העלאות, בלי חשבון ובלי כוכביות ליד ההבטחה לפרטיות. גם במצב טיסה הכול עובד בדיוק אותו דבר.', 'privacy.firstTitle': 'הפרטיות קודמת לכול', 'privacy.firstText': 'התמונות שלכם נשארות פרטיות ומעובדות ישירות בטלפון.', 'privacy.accountTitle': 'לא צריך חשבון', 'privacy.accountText': 'מתקינים, סורקים, סיימנו. אין צורך להירשם.', 'privacy.offlineTitle': 'נבנתה לעבודה ללא חיבור', 'privacy.offlineText': 'הגלריה נשארת חכמה גם בלי חיבור לאינטרנט.', 'cta.title': 'Filtored כאן', 'cta.description': 'בחינם ב-Google Play. התמונות שלכם נשארות בטלפון.', 'cta.getItOn': 'להורדה ב-', 'cta.scan': 'סרקו כדי להתקין בטלפון', 'footer.rights': '© 2026 Filtored. כל הזכויות שמורות.', 'footer.privacy': 'פרטיות',
             'post.title': 'האפליקציות הכי טובות לגלריה וניקוי תמונות לאנדרואיד', 'post.date': '8 בספטמבר 2026', 'post.intro': 'גלריית אנדרואיד צריכה להתמודד עם יותר מסתם הצגת תמונות. בכל יום מצטרפות תמונות, צילומי מסך, סרטונים וקבצים חדשים - עד שהספרייה הופכת לאלפי קבצים שקשה לחפש, לארגן או לנקות. אפליקציות שונות פותרות את זה בדרכים שונות: חלקן מתמקדות בגיבוי בענן, אחרות בארגון מקומי, וחלקן נועדו רק למציאת תמונות כפולות. כך נראית ההשוואה בין האפליקציות השימושיות ביותר.',
             'post.th.app': 'אפליקציה', 'post.th.best': 'הכי מתאימה ל', 'post.th.feature': 'היכולת הבולטת', 'post.th.pricing': 'מחיר',
@@ -626,6 +640,30 @@
         applyConsent('declined');
         banner.remove();
     });
+})();
+
+// Bento grid entrance animation
+(function () {
+    const stage = document.querySelector('.bento-stage');
+    if (!stage) return;
+
+    function triggerEntrance() {
+        stage.classList.add('is-visible');
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        triggerEntrance();
+        return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+            triggerEntrance();
+            io.disconnect();
+        }
+    }, { threshold: 0.12 });
+
+    io.observe(stage);
 })();
 
 
