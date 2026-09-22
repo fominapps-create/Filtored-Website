@@ -1206,7 +1206,7 @@
             <img class="seo-photo" src="../assets/gallery-held-web.jpg" alt="Filtored AI photo gallery running on an Android phone" width="1400" height="933">
         </section>
 
-        <section class="smart-showcase" aria-label="Smart search preview">
+        <section class="smart-showcase" hidden style="display: none !important;" aria-label="Smart search preview">
             <div class="smart-showcase-shell">
                 <div class="smart-showcase-left">
                     <h2>Smart Search</h2>
@@ -1981,6 +1981,9 @@
         }());
 
         (function () {
+            const showcase = document.querySelector('.smart-showcase');
+            if (!showcase || showcase.hidden || showcase.style.display === 'none') return;
+
             const tabs = Array.from(document.querySelectorAll('.smart-tab'));
             const screens = Array.from(document.querySelectorAll('.smart-screen'));
 
