@@ -1220,6 +1220,7 @@ img.ph-polaroid, img.ph-wide {
     color: #555350;
     margin: 0;
     max-width: 98%;
+    text-wrap: pretty;
 }
 
 .privacy-card-wide p {
