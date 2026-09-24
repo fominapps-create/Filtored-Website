@@ -48,7 +48,7 @@
             'bento.cleanupTitle': 'Intelligent Cleanup', 'bento.cleanupText': 'AI compares photos to identify redundancy, clutter, and other content that may need review.',
             'bento.searchTitle': 'Semantic Search', 'bento.searchText': 'AI connects your searches with the visual content and meaning of your photos.',
             'bento.insightsTitle': 'Gallery Insights', 'bento.insightsText': 'AI finds patterns across your photo library to reveal useful information about your collection.',
-            'privacy.title': 'Ваши фотографии не покидают телефон', 'privacy.description': 'Весь AI работает на устройстве. Никаких загрузок, аккаунтов и мелких оговорок под обещаниями конфиденциальности. В авиарежиме всё работает так же.', 'privacy.firstTitle': 'Конфиденциальность прежде всего', 'privacy.firstText': 'Ваши фотографии остаются личными и обрабатываются прямо на телефоне.', 'privacy.accountTitle': 'Аккаунт не нужен', 'privacy.accountText': 'Установите, просканируйте, готово. Регистрироваться не нужно.', 'privacy.offlineTitle': 'Создано для работы офлайн', 'privacy.offlineText': 'Ваша галерея остаётся умной даже без подключения.', 'cta.title': 'Filtored уже здесь', 'cta.description': 'Бесплатно в Google Play. Ваши фотографии остаются на телефоне.', 'cta.getItOn': 'Скачать в', 'cta.scan': 'Отсканируйте, чтобы установить на телефон', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность',
+            'privacy.kicker': 'Конфиденциальность', 'privacy.title': 'Ваши фотографии<br>остаются вашими.', 'privacy.description': 'Интеллект Filtored работает с вашей галереей, сохраняя всю обработку исключительно на устройстве.', 'privacy.onDeviceTitle': 'AI на устройстве', 'privacy.onDeviceText': 'Обработка AI происходит прямо на вашем устройстве, позволяя анализировать и упорядочивать галерею без использования облачных серверов.', 'privacy.noAccountTitle': 'Без аккаунта', 'privacy.noAccountText': 'Filtored можно использовать без создания аккаунта, сохраняя вашу галерею независимой от онлайн-профилей или учетных записей.', 'privacy.worksOfflineTitle': 'Работает офлайн', 'privacy.worksOfflineText': 'Основные функции AI работают без подключения к интернету, позволяя управлять и просматривать галерею в любом месте.', 'privacy.privateDesignTitle': 'Приватность в основе', 'privacy.privateDesignText': 'Принципы конфиденциальности заложены в саму архитектуру приложения, исключая лишний сбор данных и сохраняя контроль над галереей у вас. Filtored обрабатывает и упорядочивает фото без внешних сервисов и регистрации.', 'cta.title': 'Filtored уже здесь', 'cta.description': 'Бесплатно в Google Play. Ваши фотографии остаются на телефоне.', 'cta.getItOn': 'Скачать в', 'cta.scan': 'Отсканируйте, чтобы установить на телефон', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность',
             'post.title': 'Лучшие галереи и приложения для очистки фото на Android', 'post.date': '8 сентября 2026 г.', 'post.intro': 'Галерея на Android должна не просто показывать фотографии. Каждый день добавляются новые фото, скриншоты, видео и файлы - и со временем библиотека превращается в тысячи файлов, которые трудно искать, упорядочивать или чистить. Разные приложения решают это по-разному: одни делают акцент на облачном резервном копировании, другие - на локальной организации, а некоторые созданы только для поиска дубликатов. Вот как сравниваются самые полезные из них.',
             'post.th.app': 'Приложение', 'post.th.best': 'Лучше всего для', 'post.th.feature': 'Главная особенность', 'post.th.pricing': 'Цена',
             'post.row.filtored.best': 'Одна галерея, которая упорядочивает, защищает и чистит ваши фото', 'post.row.filtored.feature': 'AI на устройстве: события, люди, дубликаты и очистка в одном приложении', 'post.row.filtored.pricing': 'Бесплатно, с подписками Plus/Premium',
@@ -85,7 +85,7 @@
             'bento.cleanupTitle': 'ניקוי חכם', 'bento.cleanupText': 'ה-AI משווה בין תמונות כדי לזהות כפילויות, עומס ותכנים לבדיקה.',
             'bento.searchTitle': 'חיפוש סמנטי', 'bento.searchText': 'ה-AI מחבר בין החיפושים שלכם למשמעות ולתוכן הוויזואלי של התמונות.',
             'bento.insightsTitle': 'תובנות על הגלריה', 'bento.insightsText': 'ה-AI מזהה דפוסים בספריית התמונות ומציג תובנות שימושיות על האוסף.',
-            'privacy.title': 'התמונות שלכם לעולם לא עוזבות את הטלפון', 'privacy.description': 'כל פעולות ה-AI מתבצעות במכשיר. בלי העלאות, בלי חשבון ובלי כוכביות ליד ההבטחה לפרטיות. גם במצב טיסה הכול עובד בדיוק אותו דבר.', 'privacy.firstTitle': 'הפרטיות קודמת לכול', 'privacy.firstText': 'התמונות שלכם נשארות פרטיות ומעובדות ישירות בטלפון.', 'privacy.accountTitle': 'לא צריך חשבון', 'privacy.accountText': 'מתקינים, סורקים, סיימנו. אין צורך להירשם.', 'privacy.offlineTitle': 'נבנתה לעבודה ללא חיבור', 'privacy.offlineText': 'הגלריה נשארת חכמה גם בלי חיבור לאינטרנט.', 'cta.title': 'Filtored כאן', 'cta.description': 'בחינם ב-Google Play. התמונות שלכם נשארות בטלפון.', 'cta.getItOn': 'להורדה ב-', 'cta.scan': 'סרקו כדי להתקין בטלפון', 'footer.rights': '© 2026 Filtored. כל הזכויות שמורות.', 'footer.privacy': 'פרטיות',
+            'privacy.kicker': 'פרטיות', 'privacy.title': 'התמונות שלכם<br>נשארות שלכם.', 'privacy.description': 'הבינה שמאחורי Filtored עובדת עם הגלריה שלכם תוך שמירה על כל העיבוד ישירות במכשיר.', 'privacy.onDeviceTitle': 'AI במכשיר', 'privacy.onDeviceText': 'עיבוד ה-AI מתבצע ישירות במכשיר שלכם, ומאפשר ל-Filtored לנתח ולארגן את הגלריה ללא תלות בעיבוד תמונות בענן.', 'privacy.noAccountTitle': 'ללא צורך בחשבון', 'privacy.noAccountText': 'ניתן להשתמש ב-Filtored ללא פתיחת חשבון, כך שהגלריה שלכם נשארת עצמאית לחלוטין וללא פרופיל מקוון.', 'privacy.worksOfflineTitle': 'עובד ללא חיבור', 'privacy.worksOfflineText': 'יכולות ה-AI המרכזיות פועלות ללא חיבור לאינטרנט, ומאפשרות לכם לנהל ולחקור את הגלריה בכל מקום שבו תהיו.', 'privacy.privateDesignTitle': 'פרטיות מהיסוד', 'privacy.privateDesignText': 'שיקולי פרטיות מובנים בארכיטקטורת האפליקציה, תוך צמצום איסוף נתונים מיותר ושמירה על שליטה מלאה בגלריה במכשירכם. Filtored מעוצבת לעיבוד וארגון התמונות ללא שירותים חיצוניים או דרישות חשבון.', 'cta.title': 'Filtored כאן', 'cta.description': 'בחינם ב-Google Play. התמונות שלכם נשארות בטלפון.', 'cta.getItOn': 'להורדה ב-', 'cta.scan': 'סרקו כדי להתקין בטלפון', 'footer.rights': '© 2026 Filtored. כל הזכויות שמורות.', 'footer.privacy': 'פרטיות',
             'post.title': 'האפליקציות הכי טובות לגלריה וניקוי תמונות לאנדרואיד', 'post.date': '8 בספטמבר 2026', 'post.intro': 'גלריית אנדרואיד צריכה להתמודד עם יותר מסתם הצגת תמונות. בכל יום מצטרפות תמונות, צילומי מסך, סרטונים וקבצים חדשים - עד שהספרייה הופכת לאלפי קבצים שקשה לחפש, לארגן או לנקות. אפליקציות שונות פותרות את זה בדרכים שונות: חלקן מתמקדות בגיבוי בענן, אחרות בארגון מקומי, וחלקן נועדו רק למציאת תמונות כפולות. כך נראית ההשוואה בין האפליקציות השימושיות ביותר.',
             'post.th.app': 'אפליקציה', 'post.th.best': 'הכי מתאימה ל', 'post.th.feature': 'היכולת הבולטת', 'post.th.pricing': 'מחיר',
             'post.row.filtored.best': 'גלריה אחת שמארגנת, מגנה ומנקה את התמונות שלכם', 'post.row.filtored.feature': 'AI במכשיר: אירועים, אנשים, כפילויות וניקוי באפליקציה אחת', 'post.row.filtored.pricing': 'חינם, עם מנויי Plus/Premium',
@@ -500,6 +500,37 @@
     rows.forEach(function (el) { io.observe(el); });
 })();
 
+// Staggered reveal for the privacy section
+(function () {
+    const section = document.querySelector('.privacy-showcase');
+    if (!section) return;
+    const items = section.querySelectorAll('.privacy-left, .privacy-card, .privacy-card-wide');
+    if (!items.length) return;
+
+    items.forEach(function (el) { el.classList.add('privacy-reveal'); });
+
+    function show() {
+        items.forEach(function (el, i) {
+            setTimeout(function () {
+                el.classList.add('in');
+                // drop the classes once done so hover transitions stay snappy
+                setTimeout(function () { el.classList.remove('privacy-reveal', 'in'); }, 800);
+            }, i * 110);
+        });
+    }
+
+    if (!('IntersectionObserver' in window)) { show(); return; }
+
+    const io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+            show();
+            io.disconnect();
+        }
+    }, { threshold: 0.18 });
+
+    io.observe(section);
+})();
+
 // Hero banner slideshow with dots
 (function () {
     const track = document.querySelector('.cta-slides');
@@ -649,6 +680,9 @@
 
     function triggerEntrance() {
         stage.classList.add('is-visible');
+        setTimeout(function () {
+            stage.classList.add('is-settled');
+        }, 3600);
     }
 
     if (!('IntersectionObserver' in window)) {
