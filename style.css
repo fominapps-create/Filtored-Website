@@ -8,8 +8,8 @@
     --ink-soft: #57534e;
     --paper: #faf7f2;
     --paper-deep: #f3ede4;
-    --accent: #e8590c;
-    --accent-deep: #c2410c;
+    --accent: #f97c38;
+    --accent-deep: #e36522;
     --line: #e5ddd0;
     --radius: 18px;
     --maxw: 1520px;
@@ -24,6 +24,7 @@ body {
     line-height: 1.65;
     overflow-x: hidden;
     padding-top: var(--header-h);
+    background-color: #ffffff;
 }
 
 h1, h2, h3, .brand, .brand-sm {
@@ -394,9 +395,13 @@ html[dir="rtl"] .language-picker::after {
 .hero {
     width: 100%;
     max-width: none;
-    margin: 0;
+    margin: 3.5rem 0 0 0;
     padding: 4rem max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem)) 5rem;
-    background-color: #f7f5f0;
+    background-color: #ffffff;
+    background-image: url('assets/gradient%20circle%20section.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
@@ -496,10 +501,15 @@ html[dir="rtl"] .language-picker::after {
 }
 
 .cta-slide {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     flex: none;
     filter: brightness(0.78);
+}
+
+video.cta-slide {
+    filter: saturate(1.22) contrast(1.05);
 }
 
 .cta-slide.flip { transform: scaleX(-1); }
@@ -546,6 +556,50 @@ html[dir="rtl"] .language-picker::after {
         linear-gradient(90deg, rgba(32, 14, 6, 0.6) 0%, rgba(32, 14, 6, 0.45) 50%, rgba(32, 14, 6, 0.6) 100%),
         linear-gradient(180deg, rgba(58, 24, 8, 0.3) 0%, rgba(20, 10, 4, 0.45) 100%);
     z-index: -1;
+    transition: opacity 0.7s ease;
+}
+
+.cta-banner:has(video.cta-slide:only-child)::before,
+.cta-banner.is-video-active::before {
+    opacity: 0;
+}
+
+.cta-banner:has(video.cta-slide:only-child) .cta-banner-inner,
+.cta-banner.is-video-active .cta-banner-inner {
+    color: #2b2b2e;
+}
+
+.cta-banner:has(video.cta-slide:only-child) .cta-banner-inner h2 em,
+.cta-banner.is-video-active .cta-banner-inner h2 em {
+    color: #2b2b2e;
+}
+
+.cta-banner:has(video.cta-slide:only-child) .kicker-light,
+.cta-banner.is-video-active .kicker-light {
+    color: #4a4a4f;
+}
+
+.cta-banner:has(video.cta-slide:only-child) .btn-light,
+.cta-banner.is-video-active .btn-light {
+    color: #2b2b2e;
+    border-color: rgba(43, 43, 46, 0.4);
+    background: rgba(43, 43, 46, 0.05);
+}
+
+.cta-banner:has(video.cta-slide:only-child) .btn-light:hover,
+.cta-banner.is-video-active .btn-light:hover {
+    background: rgba(43, 43, 46, 0.12);
+}
+
+.cta-banner:has(video.cta-slide:only-child) .btn-solid,
+.cta-banner.is-video-active .btn-solid {
+    background: #f97c38;
+    color: #fff;
+}
+
+.cta-banner:has(video.cta-slide:only-child) .btn-solid:hover,
+.cta-banner.is-video-active .btn-solid:hover {
+    background: #e36522;
 }
 
 .cta-banner-inner {
@@ -968,38 +1022,23 @@ img.ph-polaroid, img.ph-wide {
 
 /* ============ Privacy Showcase ============ */
 .privacy-showcase {
-    padding: clamp(3.5rem, 5.5vw, 5.5rem) 1.5rem clamp(5rem, 8vw, 8rem);
+    padding: clamp(4rem, 6vw, 6.5rem) 1.5rem clamp(5rem, 8vw, 8rem);
     background-color: #f7f5f0;
     position: relative;
-    overflow: hidden;
-}
-
-/* Soft ambient colour so the frosted cards have something to refract */
-.privacy-showcase::before {
-    content: '';
-    position: absolute;
-    inset: -8% -4%;
-    z-index: 1;
-    pointer-events: none;
-    background:
-        radial-gradient(30% 34% at 74% 14%, rgba(244, 150, 90, 0.10) 0%, rgba(244, 150, 90, 0) 72%),
-        radial-gradient(30% 36% at 97% 68%, rgba(110, 150, 205, 0.10) 0%, rgba(110, 150, 205, 0) 74%),
-        radial-gradient(26% 32% at 46% 95%, rgba(150, 170, 200, 0.08) 0%, rgba(150, 170, 200, 0) 76%);
-    filter: blur(14px);
-    /* keep the top edge pure #f7f5f0 so the AI section's fade still lands on a flat colour */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 100%);
-    mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 100%);
 }
 
 .privacy-container {
     max-width: 1190px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
-    gap: clamp(1.5rem, 2.6vw, 2.25rem);
-    align-items: stretch;
     position: relative;
     z-index: 2;
+}
+
+.privacy-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: stretch;
 }
 
 .privacy-left {
@@ -1010,232 +1049,125 @@ img.ph-polaroid, img.ph-wide {
 }
 
 .privacy-kicker {
+    display: block;
     font-size: 1.15rem;
-    font-weight: 500;
-    color: #55504b;
-    margin-bottom: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6b645d;
+    margin-bottom: 1.1rem;
 }
 
 .privacy-title {
-    font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+    font-size: clamp(2.4rem, 4.4vw, 3.9rem);
     font-weight: 800;
-    line-height: 1.08;
+    line-height: 1.04;
     color: #242321;
-    letter-spacing: -0.03em;
-    margin: 0 0 1rem;
+    letter-spacing: -0.035em;
+    margin: 0;
+    max-width: 12ch;
 }
 
-.privacy-accent-bar {
-    width: 70%;
-    max-width: 250px;
-    height: 6px;
-    border-radius: 99px;
-    background: linear-gradient(90deg, #f6c3a1 0%, #f2dccb 45%, rgba(242, 220, 203, 0) 100%);
-    margin: 0 0 1.5rem;
+/* Sits at the bottom of the left column, mirroring the headline's top alignment */
+.privacy-statement {
+    margin-top: auto;
+    padding-top: clamp(2.5rem, 6vw, 5rem);
+    max-width: 54ch;
+}
+
+.privacy-statement-title {
+    font-size: clamp(1.45rem, 2vw, 1.7rem);
+    font-weight: 700;
+    color: #242321;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.95rem;
 }
 
 .privacy-lead {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555350;
-    margin: 0 0 1.5rem;
-    max-width: 34ch;
+    font-size: clamp(1.08rem, 1.3vw, 1.18rem);
+    line-height: 1.75;
+    color: #5b5852;
+    margin: 0;
+    text-wrap: pretty;
 }
 
-.privacy-photo-card {
-    width: 100%;
-    flex: 1 1 auto;
-    min-height: 280px;
-    display: flex;
-    border-radius: 24px;
+.privacy-media {
+    border-radius: 22px;
     overflow: hidden;
     background: #efe9e2;
-    border: 1.5px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 20px rgba(120, 90, 70, 0.05);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s ease;
-}
-
-.privacy-photo-card:hover {
-    transform: translateY(-3px);
-    border-color: #ffffff;
-    box-shadow: 0 18px 42px rgba(160, 110, 75, 0.14);
+    min-height: clamp(260px, 32vw, 420px);
 }
 
 .privacy-photo {
     width: 100%;
     height: 100%;
-    min-height: 0;
+    min-height: inherit;
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
-.privacy-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    min-width: 0;
-}
-
-.privacy-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    flex: 0 0 auto;
-}
-
-.privacy-card,
-.privacy-card-wide {
-    position: relative;
-    background: linear-gradient(152deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.52) 46%, rgba(255, 255, 255, 0.66) 100%);
-    backdrop-filter: blur(22px) saturate(165%);
-    -webkit-backdrop-filter: blur(22px) saturate(165%);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 24px;
-    padding: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
-    color: #242321;
-    box-shadow:
-        0 10px 30px rgba(120, 90, 70, 0.08),
-        inset 0 1px 1px rgba(255, 255, 255, 0.95),
-        inset 0 -14px 26px rgba(255, 255, 255, 0.32);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s ease;
-}
-
-/* Specular sheen across the top-left of the glass */
-.privacy-card::before,
-.privacy-card-wide::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    background: radial-gradient(130% 85% at 18% -10%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 58%);
-}
-
-.privacy-card > *,
-.privacy-card-wide > * {
-    position: relative;
-    z-index: 1;
-}
-
-.privacy-card {
-    min-height: 300px;
-    padding: 1.6rem 1.4rem;
-    align-items: center;
-    text-align: center;
-}
-
-.privacy-card-wide {
-    min-height: 164px;
-    flex: 1 1 auto;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.35rem;
-    padding: 1.7rem 1.8rem;
-}
-
-.privacy-wide-body {
-    flex: 1 1 auto;
-    min-width: 0;
-}
-
-.privacy-wide-rule {
-    height: 3px;
+.privacy-rule {
+    height: 2px;
+    background: rgba(56, 50, 44, 0.22);
     border-radius: 99px;
-    background: linear-gradient(90deg, #f3bf9e 0%, #eddbcd 40%, rgba(237, 219, 205, 0.25) 100%);
-    margin: 0 0 1.05rem;
+    margin: clamp(2.5rem, 4.5vw, 4rem) 0 clamp(2.25rem, 4vw, 3.25rem);
 }
 
-.privacy-badge {
+.privacy-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1.75rem, 3.5vw, 3.25rem);
+}
+
+.privacy-point {
+    min-width: 0;
+}
+
+.privacy-point-head {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: linear-gradient(138deg, #ef9351 0%, #f6bd93 34%, #e6d3d0 62%, #cfdcea 84%, #c3d4e8 100%);
-    box-shadow: 0 8px 20px rgba(180, 120, 80, 0.22);
-    margin-bottom: 1.1rem;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 0.95rem;
+    margin-bottom: 0.85rem;
 }
 
-.privacy-card-wide .privacy-badge {
-    margin-bottom: 0;
-}
-
-.privacy-card:hover .privacy-badge,
-.privacy-card-wide:hover .privacy-badge {
-    transform: scale(1.06);
-}
-
-.privacy-card:hover,
-.privacy-card-wide:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.95);
-    box-shadow:
-        0 20px 44px rgba(160, 110, 75, 0.16),
-        inset 0 1px 1px rgba(255, 255, 255, 1),
-        inset 0 -14px 26px rgba(255, 255, 255, 0.42);
-}
-
-.privacy-card-icon {
-    width: 33px;
-    height: 33px;
-    color: #33302d;
-    fill: none;
-    stroke: none;
-    flex-shrink: 0;
-    display: block;
-}
-
-.privacy-card:hover .privacy-card-icon,
-.privacy-card-wide:hover .privacy-card-icon {
-    transform: none;
-}
-
-.privacy-card h3,
-.privacy-card-wide h3 {
-    display: block;
-    font-size: 1.45rem;
+.privacy-point h3 {
+    font-size: 1.3rem;
     font-weight: 700;
     color: #242321;
-    margin: 0 0 0.85rem;
-    line-height: 1.25;
     letter-spacing: -0.015em;
+    margin: 0;
+    line-height: 1.3;
 }
 
-.privacy-card p,
-.privacy-card-wide p {
+.privacy-point p {
     font-size: 1.05rem;
-    line-height: 1.6;
-    color: #555350;
+    line-height: 1.65;
+    color: #5b5852;
     margin: 0;
-    max-width: 98%;
+    max-width: 28ch;
     text-wrap: pretty;
 }
 
-.privacy-card-wide p {
-    max-width: 68ch;
+.privacy-orb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(255, 182, 137, 0.92) 0%, rgba(247, 216, 197, 0.9) 55%, rgba(240, 224, 212, 0.88) 100%);
 }
 
-/* Narrower 3-up cards use a slightly smaller type scale than the wide card */
-.privacy-card h3 {
-    font-size: 1.2rem;
-    margin: 0 0 0.7rem;
-}
-
-.privacy-card p {
-    font-size: 1rem;
-    line-height: 1.55;
+.privacy-point-icon {
+    width: 29px;
+    height: 29px;
+    color: #4a443e;
+    display: block;
 }
 
 /* RTL layout */
@@ -1266,29 +1198,12 @@ html[dir="rtl"] .privacy-left {
 
 /* Responsive */
 @media (max-width: 1060px) {
-    .privacy-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .privacy-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.25rem;
     }
-    .privacy-left {
-        max-width: 620px;
-        margin: 0 auto;
-        text-align: center;
-        align-items: center;
-    }
-    .privacy-lead {
-        max-width: 52ch;
-    }
-    .privacy-photo-card {
-        margin: 0 auto;
-        flex: 0 0 auto;
-        aspect-ratio: 16 / 10;
-    }
-    .privacy-card {
-        min-height: 0;
-    }
-    .privacy-card-wide {
-        min-height: 0;
+    .privacy-point p {
+        max-width: 34ch;
     }
 }
 
@@ -1296,15 +1211,27 @@ html[dir="rtl"] .privacy-left {
     .privacy-showcase {
         padding: 4.5rem 1.25rem;
     }
-    .privacy-cards-grid {
+    .privacy-top {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 2.25rem;
     }
-    .privacy-photo-card {
+    .privacy-title {
+        max-width: none;
+    }
+    .privacy-media {
         aspect-ratio: 4 / 3;
+        min-height: 0;
     }
-    .privacy-card-wide {
-        padding: 1.4rem;
+    .privacy-statement {
+        padding-top: 1.75rem;
+        max-width: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .privacy-points {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
     }
 }
 
@@ -1531,17 +1458,15 @@ html[dir="rtl"] .privacy-left {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
-.bento-card:hover {
+.bento-card:not(.bento-card-center):hover {
     border-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(120, 90, 70, 0.10);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 /* Bento entrance animations with gentle ease-out deceleration */
 .bento-card:not(.bento-card-center) {
     opacity: 0;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.2s ease;
     will-change: transform, opacity;
 }
@@ -1637,11 +1562,10 @@ html[dir="rtl"] .privacy-left {
 .bento-stage.is-visible .bento-col-2 .bento-card-search   { animation: bentoFlySearch 2.4s cubic-bezier(0.05, 0.7, 0.1, 1) 0.97s forwards; }
 .bento-stage.is-visible .bento-col-1 .bento-card-cleanup  { animation: bentoFlyCleanup 2.4s cubic-bezier(0.05, 0.7, 0.1, 1) 1.10s forwards; }
 
-.bento-stage.is-visible .bento-card:hover {
-    border-color: #ffffff;
-    box-shadow: 0 20px 42px rgba(160, 110, 75, 0.18),
-                0 0 20px rgba(255, 255, 255, 0.5);
-    transform: translateY(-4px);
+.bento-card.is-settled,
+.bento-stage.is-settled .bento-card:not(.bento-card-center) {
+    animation: none;
+    opacity: 1;
 }
 
 @media (max-width: 980px) {
@@ -1940,6 +1864,20 @@ html[data-language="he"] .bento-card {
 }
 
 .foot-links a:hover { color: var(--accent-deep); }
+
+.footer-wrap {
+    width: 100%;
+    background-color: #f8edea;
+    background-image: url('assets/footer%20bg.png');
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+}
+
+.footer-wrap .site-footer {
+    background: transparent !important;
+    border-top: 1px solid rgba(28, 25, 23, 0.18) !important;
+}
 
 /* ============ Cookie consent banner ============ */
 .cookie-banner {
