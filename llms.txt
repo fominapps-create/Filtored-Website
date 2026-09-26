@@ -9,6 +9,7 @@ Google Play: https://play.google.com/store/apps/details?id=com.filtored.gallery
 Pricing: https://filtored.com/pricing/
 FAQ: https://filtored.com/faq/
 Contact: https://filtored.com/contact/
+Patch Notes: https://filtored.com/patch-notes/
 Privacy: https://filtored.com/privacy/
 
 ## What Filtored does

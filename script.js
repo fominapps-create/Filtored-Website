@@ -37,7 +37,7 @@
 
     const translations = {
         ru: {
-            'nav.gallery': 'Возможности', 'nav.articles': 'Блог', 'nav.faq': 'Частые вопросы', 'nav.pricing': 'Цены', 'nav.contact': 'Связаться с нами', 'nav.download': 'Скачать приложение',
+            'nav.gallery': 'Возможности', 'nav.articles': 'Блог', 'nav.patchNotes': 'Обновления', 'nav.faq': 'Частые вопросы', 'nav.pricing': 'Цены', 'nav.contact': 'Связаться с нами', 'nav.download': 'Скачать приложение',
             'language.label': 'Язык', 'language.auto': 'Авто', 'banner.kicker': 'Умная AI-галерея и очистка', 'banner.title': 'Ваша фотоплёнка,<br><em>отфильтрована</em> и рассортирована.', 'banner.description': 'Офлайн-галерея с искусственным интеллектом для порядка в фотографиях: очистка от лишнего, распознавание лиц, умный поиск и сортировка по людям, событиям и моментам.', 'banner.learn': 'Как это работает',
             'hero.kicker': 'Как это работает', 'hero.title': 'Ваши фотографии,<br>организованные по-вашему.', 'hero.description': 'Наведите порядок в тысячах моментов на телефоне. Находите важное, удаляйте лишнее и создавайте свою галерею.', 'hero.features': 'Возможности',
             'strip.title': 'Чистая галерея автоматически', 'strip.cleanTitle': 'Порядок сохраняется сам', 'strip.cleanText': 'Приложение сортирует беспорядок за вас, чтобы очистить галерею за малую часть прежнего времени. Проверьте, нажмите, готово.', 'strip.momentsTitle': 'Моменты, а не беспорядок', 'strip.momentsText': 'Filtored превращает особенные моменты, затерявшиеся среди сотен фотографий, в события, чтобы галерея рассказывала вашу историю.', 'strip.searchTitle': 'Находите за секунды', 'strip.searchText': 'Категории фотографий можно искать: найдите любую еду, поездку, документ или сохранённую деталь за секунды.', 'strip.peopleTitle': 'Люди распознаются сразу', 'strip.peopleText': 'Filtored узнаёт близких и собирает их фотографии в профили - от только что сделанных снимков до почти забытых моментов, <strong>всё в одном месте.</strong>', 'strip.timeTitle': 'Ваше время ценно', 'strip.timeText': 'Тратьте меньше времени на поиск, сортировку и очистку фотографий, а больше - на действительно важное.',
@@ -74,7 +74,7 @@
             'post.back': 'Попробовать Filtored на Android →', 'post.disclaimer': 'Цены и функции приведены по данным публичных страниц в магазинах приложений на сентябрь 2026 года и могут измениться - всегда проверяйте актуальную страницу приложения в Google Play перед покупкой.'
         },
         he: {
-            'nav.gallery': 'תכונות', 'nav.articles': 'בלוג', 'nav.faq': 'שאלות נפוצות', 'nav.pricing': 'מחירים', 'nav.contact': 'צרו קשר', 'nav.download': 'הורדת האפליקציה',
+            'nav.gallery': 'תכונות', 'nav.articles': 'בלוג', 'nav.patchNotes': 'עדכונים', 'nav.faq': 'שאלות נפוצות', 'nav.pricing': 'מחירים', 'nav.contact': 'צרו קשר', 'nav.download': 'הורדת האפליקציה',
             'language.label': 'שפה', 'language.auto': 'אוטומטי', 'banner.kicker': 'גלריית AI חכמה וניקוי', 'banner.title': 'גלריית התמונות שלך,<br><em>מסוננת</em> וממוינת.', 'banner.description': 'גלריית תמונות חכמה שפועלת ללא חיבור, ומסדרת את התמונות שלך בעזרת AI: ניקוי תמונות, זיהוי פנים, חיפוש חכם ומיון לפי אנשים, אירועים ורגעים.', 'banner.learn': 'איך זה עובד',
             'hero.kicker': 'איך זה עובד', 'hero.title': 'התמונות שלך,<br>מסודרות בדרך שלך.', 'hero.description': 'הכניסו סדר לאלפי הרגעים שחיים בטלפון שלכם. מצאו את מה שחשוב, פנו את מה שלא, והפכו את הגלריה לשלכם.', 'hero.features': 'לכל היכולות',
             'strip.title': 'גלריה נקייה יותר, באופן אוטומטי', 'strip.cleanTitle': 'הספרייה נשארת מסודרת', 'strip.cleanText': 'Filtored ממיין את העומס עבורכם, כך שתוכלו לנקות את הגלריה בחלק קטן מהזמן. בודקים, לוחצים, סיימנו.', 'strip.momentsTitle': 'רגעים, לא בלגן', 'strip.momentsText': 'כשרגעים מיוחדים נבלעים בין מאות תמונות, Filtored הופך אותם לאירועים כדי שהגלריה שלכם תספר את הסיפור.', 'strip.searchTitle': 'מוצאים בשניות', 'strip.searchText': 'אפשר לחפש בקטגוריות התמונות שלכם, כך שמציאת כל ארוחה, טיול, מסמך או פרט ששמרתם לוקחת שניות.', 'strip.peopleTitle': 'האנשים מזוהים מיד', 'strip.peopleText': 'Filtored מזהה את האנשים בחייכם ומרכז את התמונות שלהם בפרופילים - מתמונות שצילמתם עכשיו ועד רגעים שכמעט שכחתם, <strong>הכול במקום אחד.</strong>', 'strip.timeTitle': 'הזמן שלכם יקר', 'strip.timeText': 'השקיעו פחות זמן בחיפוש, מיון וניקוי התמונות, ויותר זמן במה שבאמת חשוב.',
@@ -206,6 +206,7 @@
         if (path.includes('/pricing/')) return 'pricing';
         if (path.includes('/privacy/')) return 'privacy';
         if (path.includes('/blog/')) return 'blog';
+        if (path.includes('/patch-notes/')) return 'patch-notes';
         return '';
     }
 
@@ -215,8 +216,8 @@
         const selectors = Object.assign({}, page.ru, page.he);
         const dictionary = page[language] || {};
         const sharedLabels = {
-            ru: { home: 'Главная', features: 'Возможности', blog: 'Блог', faq: 'Частые вопросы', pricing: 'Цены', contact: 'Связаться с нами', download: 'Скачать приложение', privacy: 'Конфиденциальность' },
-            he: { home: 'דף הבית', features: 'תכונות', blog: 'בלוג', faq: 'שאלות נפוצות', pricing: 'מחירים', contact: 'צרו קשר', download: 'הורדת האפליקציה', privacy: 'פרטיות' }
+            ru: { home: 'Главная', features: 'Возможности', blog: 'Блог', patchNotes: 'Обновления', faq: 'Частые вопросы', pricing: 'Цены', contact: 'Связаться с нами', download: 'Скачать приложение', privacy: 'Конфиденциальность' },
+            he: { home: 'דף הבית', features: 'תכונות', blog: 'בלוג', patchNotes: 'עדכונים', faq: 'שאלות נפוצות', pricing: 'מחירים', contact: 'צרו קשר', download: 'הורדת האפליקציה', privacy: 'פרטיות' }
         }[language];
         if (sharedLabels) {
             document.querySelectorAll('.site-nav a, .foot-links a').forEach(function (element) {
@@ -224,6 +225,7 @@
                 let key = '';
                 if (href.includes('features')) key = 'features';
                 else if (href.includes('blog')) key = 'blog';
+                else if (href.includes('patch-notes')) key = 'patchNotes';
                 else if (href.includes('faq')) key = 'faq';
                 else if (href.includes('pricing')) key = 'pricing';
                 else if (href.includes('contact')) key = 'contact';

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patch notes, updates, and release history for Filtored AI Gallery.">
+    <title>Patch Notes - Filtored</title>
+    <link rel="canonical" href="https://filtored.com/patch-notes/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filtored">
+    <meta property="og:title" content="Patch Notes - Filtored">
+    <meta property="og:description" content="Recent updates, new features, and fixes for Filtored AI Gallery.">
+    <meta property="og:url" content="https://filtored.com/patch-notes/">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css?v=53">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .patch-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        .patch-hero {
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .patch-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+            color: var(--ink);
+        }
+
+        .patch-hero p {
+            color: var(--ink-soft);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .patch-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .patch-entry {
+            background: transparent;
+            padding: 0;
+        }
+
+        .patch-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .patch-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .patch-version {
+            font-family: 'Sora', 'Inter', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        .patch-badge-latest {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: #ffffff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .patch-date {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+            font-weight: 500;
+        }
+
+        .patch-body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 1.4rem 0 0.5rem;
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        .patch-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .patch-body p {
+            color: var(--ink-soft);
+            margin: 0 0 1rem;
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .patch-body ul {
+            margin: 0 0 1.25rem;
+            padding-left: 1.35rem;
+            color: var(--ink-soft);
+        }
+
+        .patch-body li {
+            margin-bottom: 0.45rem;
+            line-height: 1.6;
+        }
+
+        .patch-body li strong {
+            color: var(--ink);
+        }
+
+        .patch-subnote {
+            margin-top: 3.5rem;
+            text-align: center;
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+        }
+
+        .patch-subnote a {
+            color: var(--accent-deep);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .patch-subnote a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .patch-wrap {
+                padding: 2rem 1.1rem 4rem;
+            }
+
+            .patch-entry {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .patch-version {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_gXSa98DuFdTRI8t4hBi9W5bFVpfntafWVzObIZkfKsj', {
+            api_host: 'https://eu.i.posthog.com',
+            defaults: '2026-05-30',
+            opt_out_capturing_by_default: true,
+        })
+    </script>
+</head>
+<body>
+
+    <header class="site-header">
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="brand" href="../"><img class="brand-logo" src="../assets/logo%20shutter%20zoomer%20no%20bg.png" alt="" width="30" height="30">Filtored</a>
+        <nav class="site-nav" id="site-nav">
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="../features/">Features</a>
+                <a href="../blog/">Blog</a>
+                <a href="../patch-notes/">Patch Notes</a>
+                <a href="../faq/">FAQ</a>
+                <a href="../pricing/">Pricing</a>
+                <a href="../contact/">Contact Us</a>
+            </div>
+            <div class="nav-right">
+                <a href="../download/" class="nav-cta">Get the app</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="patch-wrap">
+        <header class="patch-hero">
+            <h1>Patch Notes</h1>
+            <p>Here you'll find what's new, improved, and fixed in recent updates of Filtored.</p>
+        </header>
+
+        <section class="patch-list">
+            <!-- Latest Release -->
+            <article class="patch-entry">
+                <div class="patch-meta">
+                    <div class="patch-title-group">
+                        <h2 class="patch-version">Version 1.2.0</h2>
+                        <span class="patch-badge-latest">Latest</span>
+                    </div>
+                </div>
+
+                <div class="patch-body">
+                    <h3>New</h3>
+                    <ul>
+                        <li><strong>Read text in photos</strong> - select any text directly from an image to copy, share, or search it online.</li>
+                        <li><strong>QR &amp; barcode scanning</strong> in the photo viewer - links open with one tap.</li>
+                        <li><strong>Search by words inside photos</strong>, not just tags.</li>
+                        <li><strong>Your own labels</strong> - add custom labels to any photo or edit labels found by AI.</li>
+                        <li><strong>Similar Photos</strong> - find near-identical shots and clear them out.</li>
+                        <li><strong>Event albums rework</strong> - tag events with existing or custom tags.</li>
+                        <li><strong>Notifications system</strong> in the profile tab.</li>
+                    </ul>
+
+                    <h3>Enhanced</h3>
+                    <ul>
+                        <li><strong>Faster people merging</strong> - combine similar faces much quicker and pick multiple matches at once.</li>
+                        <li><strong>Smooth swipe navigation</strong> - slide search and filters open naturally with your finger.</li>
+                        <li><strong>Drag-to-select</strong> - drag across the Events grid to select multiple photos in one go.</li>
+                        <li><strong>Independent filters</strong> - use category filters (People, Food, Documents) without resetting search results.</li>
+                        <li><strong>Live cleanup progress</strong> - see real-time progress while bulk deleting photos.</li>
+                        <li><strong>Instant Cleanup hub</strong> - opens right away and remembers scan counts so you don't wait.</li>
+                        <li><strong>Languages</strong> - Event tags and holidays are now available in Hebrew and Russian.</li>
+                    </ul>
+
+                    <h3>Fixed</h3>
+                    <ul>
+                        <li><strong>Accidental face merges</strong> - fixed a bug where two people in one photo were grouped into one profile.</li>
+                        <li><strong>Grey avatars</strong> - fixed profiles getting stuck on a blank silhouette instead of showing face photos.</li>
+                        <li><strong>Names on profile splits</strong> - fixed names getting lost when separating mistakenly combined people.</li>
+                        <li><strong>Missing event albums</strong> - fixed newly tagged events occasionally losing their album.</li>
+                        <li><strong>Duplicate accuracy</strong> - tightened duplicate detection to stop grouping non-identical photos.</li>
+                        <li><strong>Scan freezing</strong> - fixed scans getting stuck mid-way and made the time remaining estimate accurate.</li>
+                        <li><strong>Screen layout issues</strong> - fixed text cut-offs and broken screens when using large system fonts.</li>
+                        <li><strong>Limited photo access</strong> - fixed new photos not being scanned when using limited Android gallery permissions.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Future updates can be added here -->
+        </section>
+
+        <p class="patch-subnote">Have feedback or questions about an update? <a href="../contact/">Let us know here.</a></p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="foot-left">
+            <span class="brand-sm">Filtored</span>
+            <span>&copy; 2026 Filtored. All rights reserved.</span>
+        </div>
+        <div class="foot-links">
+            <a href="../features/">Features</a>
+            <a href="../blog/">Blog</a>
+            <a href="../patch-notes/">Patch Notes</a>
+            <a href="../contact/">Contact Us</a>
+            <a href="../faq/">FAQ</a>
+            <a href="../download/">Download</a>
+            <a href="../privacy/">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=13"></script>
+</body>
+</html>
