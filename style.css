@@ -24,7 +24,7 @@ body {
     line-height: 1.65;
     overflow-x: hidden;
     padding-top: var(--header-h);
-    background-color: #ffffff;
+    background-color: #f7f5f0;
 }
 
 h1, h2, h3, .brand, .brand-sm {
@@ -397,7 +397,7 @@ html[dir="rtl"] .language-picker::after {
     max-width: none;
     margin: 3.5rem 0 0 0;
     padding: 4rem max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem)) 5rem;
-    background-color: #ffffff;
+    background-color: #f7f5f0;
     background-image: url('assets/gradient%20circle%20section.png');
     background-size: contain;
     background-position: right bottom;
@@ -1608,7 +1608,7 @@ html[data-language="he"] .bento-card {
     max-width: none;
     margin: 0;
     padding: 5rem max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem)) 6rem;
-    background: #ffffff;
+    background: #f7f5f0;
     border-top: none;
     border-bottom: 1px solid var(--line);
     text-align: center;
