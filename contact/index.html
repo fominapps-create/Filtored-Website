@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with the Filtored team - questions, bug reports and ideas welcome.">
+    <meta name="description" content="Contact the Filtored team on Discord or by email - questions, feedback, bug reports and ideas welcome.">
     <title>Contact Us - Filtored</title>
     <link rel="canonical" href="https://filtored.com/contact/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Filtored">
     <meta property="og:title" content="Contact Us - Filtored">
-    <meta property="og:description" content="Contact Filtored for questions, bug reports, feature ideas, and support.">
+    <meta property="og:description" content="Contact Filtored on Discord or by email for questions, feedback, bug reports, and support.">
     <meta property="og:url" content="https://filtored.com/contact/">
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
@@ -19,64 +19,291 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         .contact-wrap {
-            max-width: 760px;
+            --discord: #5865f2;
+            --discord-deep: #4752c4;
+            max-width: 980px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem 5rem;
-            text-align: center;
+            padding: 3rem 1.5rem 6rem;
         }
 
-        .contact-wrap h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
+        .contact-wrap svg {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+        }
+
+        .contact-wrap .icon-stroke {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-wrap .icon-fill {
+            fill: currentColor;
+        }
+
+        /* Hero */
+        .contact-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
             font-weight: 800;
-            margin-bottom: 0.6rem;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
         }
 
         .contact-intro {
             color: var(--ink-soft);
+            font-size: 1.1rem;
             max-width: 34rem;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto;
         }
 
-        .contact-card {
-            background: linear-gradient(180deg, #eee4d7 0%, #f5ede3 100%);
-            border: 1px solid rgba(194, 65, 12, 0.08);
-            border-radius: 28px;
-            padding: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
-        }
-
-        .contact-card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .contact-card p {
-            color: var(--ink-soft);
+        /* Contact methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
+        }
+
+        .method-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            padding: clamp(1.75rem, 4vw, 2.25rem);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 12px 32px -18px rgba(28, 25, 23, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 20px 40px -18px rgba(28, 25, 23, 0.25);
+        }
+
+        .method-card.is-discord {
+            background: linear-gradient(160deg, #f4f5ff 0%, #fff 60%);
+            border-color: rgba(88, 101, 242, 0.22);
+        }
+
+        .method-card.is-discord:hover {
+            border-color: rgba(88, 101, 242, 0.45);
+        }
+
+        .method-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .method-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            background: rgba(249, 124, 56, 0.12);
+            color: var(--accent-deep);
+        }
+
+        .method-icon.is-discord {
+            background: var(--discord);
+            color: #fff;
+            box-shadow: 0 10px 22px -10px rgba(88, 101, 242, 0.7);
+        }
+
+        .method-title {
+            font-size: 1.35rem;
+            line-height: 1.25;
+            margin-bottom: 0.35rem;
+        }
+
+        .method-text {
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        .method-channels {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .method-channels li {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(88, 101, 242, 0.08);
+            color: var(--discord-deep);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .method-channels svg {
+            font-size: 1.05rem;
+        }
+
+        .method-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: auto;
+            padding: 0.95rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #fff;
+            background: var(--accent);
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .method-btn:hover {
+            background: var(--accent-deep);
+        }
+
+        .method-btn:active {
+            transform: scale(0.98);
+        }
+
+        .method-btn:focus-visible,
+        .social-link:focus-visible {
+            outline: 3px solid rgba(249, 124, 56, 0.45);
+            outline-offset: 3px;
+        }
+
+        .method-btn.is-discord {
+            background: var(--discord);
+        }
+
+        .method-btn.is-discord:hover {
+            background: var(--discord-deep);
+        }
+
+        .method-btn svg {
+            font-size: 1.2rem;
+        }
+
+        .method-btn .method-btn-arrow {
+            font-size: 1.05rem;
+            transition: transform 0.2s ease;
+        }
+
+        .method-btn:hover .method-btn-arrow {
+            transform: translate(2px, -2px);
+        }
+
+        html[dir="rtl"] .method-btn .method-btn-arrow {
+            transform: scaleX(-1);
+        }
+
+        html[dir="rtl"] .method-btn:hover .method-btn-arrow {
+            transform: scaleX(-1) translate(2px, -2px);
+        }
+
+        .method-btn-address {
+            overflow-wrap: anywhere;
+        }
+
+        /* Follow along */
+        .contact-follow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.75rem clamp(1.75rem, 4vw, 2.25rem);
+            border-radius: 28px;
+            background: linear-gradient(160deg, #f4f5ff 0%, #fff 60%);
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 12px 32px -18px rgba(28, 25, 23, 0.18);
+            text-align: center;
+        }
+
+        .follow-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .follow-text {
+            color: var(--ink-soft);
         }
 
         .socials {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.65rem;
         }
 
         .social-link {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            border: 1.5px solid var(--line);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.65rem 1.15rem;
+            border: 1px solid var(--line);
             border-radius: 999px;
             background: #fff;
             color: var(--ink);
             font-weight: 600;
             text-decoration: none;
-            transition: border-color 0.2s ease, transform 0.15s ease;
+            transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
         }
+
+        .social-link svg {
+            font-size: 1.2rem;
+        }
+
+        .social-link.is-instagram svg { color: #e1306c; }
+        .social-link.is-tiktok svg { color: #000; }
+        .social-link.is-youtube svg { color: #ff0000; }
+        .social-link.is-facebook svg { color: #0866ff; }
+        .social-link.is-x svg { color: #000; font-size: 1.05rem; }
 
         .social-link:hover {
             border-color: var(--accent);
             transform: translateY(-2px);
+            box-shadow: 0 8px 18px -10px rgba(28, 25, 23, 0.3);
+        }
+
+        @media (max-width: 760px) {
+            .contact-wrap {
+                padding: 2rem 1.1rem 4rem;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .method-card,
+            .method-btn,
+            .method-btn .method-btn-arrow,
+            .social-link {
+                transition: none;
+            }
+
+            .method-card:hover,
+            .social-link:hover {
+                transform: none;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -96,7 +323,10 @@
         "sameAs": [
             "https://www.instagram.com/filtored",
             "https://www.tiktok.com/@filtored",
-            "https://youtube.com/@Filtored"
+            "https://youtube.com/@Filtored",
+            "https://www.facebook.com/people/Filtored-App/pfbid0uvexY7vks4ohFoPKLKQTfCnSGjp141SBex2fDj98M7KniTDPJfDCCxYrhbwvfqfAl/",
+            "https://x.com/Filtored",
+            "https://discord.gg/sGDkdh7hHQ"
         ]
     }
     </script>
@@ -135,24 +365,91 @@
     </header>
 
     <main class="contact-wrap">
-        <h1>Get in touch</h1>
-        <p class="contact-intro">Questions, bug reports, feature ideas - we read everything and reply to most.</p>
+        <header class="contact-hero">
+            <h1>Contact us</h1>
+            <p class="contact-intro">Questions, bug reports, feature ideas - we read everything and reply to most.</p>
+        </header>
 
-        <div class="contact-card">
-            <h2>Email us</h2>
-            <p>The fastest way to reach us. We usually answer within a day or two.</p>
-            <a class="btn btn-solid" href="mailto:contact@filtored.com">contact@filtored.com</a>
-        </div>
+        <section class="contact-methods" aria-label="Ways to contact us">
+            <article class="method-card is-discord">
+                <div class="method-head">
+                    <span class="method-icon is-discord" aria-hidden="true">
+                        <svg class="icon-fill" viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.1.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    </span>
+                    <div>
+                        <h2 class="method-title">Join our Discord</h2>
+                        <p class="method-text">Chat with the team and other users. Share feedback, report bugs, and see new patch notes as soon as they're out.</p>
+                    </div>
+                </div>
 
-        <div class="contact-card">
-            <h2>Follow along</h2>
-            <p>Tips, updates and behind-the-scenes.</p>
-            <div class="socials">
-                <a class="social-link" href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a class="social-link" href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer">TikTok</a>
-                <a class="social-link" href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <ul class="method-channels">
+                    <li>
+                        <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                        <span class="channel-label">Ideas</span>
+                    </li>
+                    <li>
+                        <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>
+                        <span class="channel-label">Bug reports</span>
+                    </li>
+                    <li>
+                        <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span class="channel-label">Feedback</span>
+                    </li>
+                </ul>
+
+                <a class="method-btn is-discord" href="https://discord.gg/sGDkdh7hHQ" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.1.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    <span class="method-btn-label">Join the Discord</span>
+                    <svg class="icon-stroke method-btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+            </article>
+
+            <article class="method-card">
+                <div class="method-head">
+                    <span class="method-icon" aria-hidden="true">
+                        <svg class="icon-stroke" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </span>
+                    <div>
+                        <h2 class="method-title">Email us</h2>
+                        <p class="method-text">Prefer to write privately? Send us an email - we usually answer within a day or two.</p>
+                    </div>
+                </div>
+
+                <a class="method-btn" href="mailto:contact@filtored.com">
+                    <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="method-btn-address" dir="ltr">contact@filtored.com</span>
+                </a>
+            </article>
+        </section>
+
+        <section class="contact-follow">
+            <div>
+                <h2 class="follow-title">Follow along</h2>
+                <p class="follow-text">Tips, updates and behind-the-scenes.</p>
             </div>
-        </div>
+            <div class="socials">
+                <a class="social-link is-instagram" href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                    Instagram
+                </a>
+                <a class="social-link is-tiktok" href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    TikTok
+                </a>
+                <a class="social-link is-youtube" href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                    YouTube
+                </a>
+                <a class="social-link is-facebook" href="https://www.facebook.com/people/Filtored-App/pfbid0uvexY7vks4ohFoPKLKQTfCnSGjp141SBex2fDj98M7KniTDPJfDCCxYrhbwvfqfAl/" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+                <a class="social-link is-x" href="https://x.com/Filtored" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+                    <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    X
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -171,6 +468,6 @@
         </div>
     </footer>
 
-    <script src="../script.js?v=13"></script>
+    <script src="../script.js?v=14"></script>
 </body>
 </html>
