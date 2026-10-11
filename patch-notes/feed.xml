@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Filtored Patch Notes</title>
+        <link>https://filtored.com/patch-notes/</link>
+        <description>New features, improvements, and fixes in every Filtored AI Gallery release.</description>
+        <language>en</language>
+        <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <ttl>60</ttl>
+        <image>
+            <title>Filtored Patch Notes</title>
+            <url>https://filtored.com/favicon.png</url>
+            <link>https://filtored.com/patch-notes/</link>
+        </image>
+        <atom:link href="https://filtored.com/patch-notes/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Version 2.0.0</title>
+            <link>https://filtored.com/patch-notes/#version-2-0-0</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-2-0-0</guid>
+            <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Contextual Search</strong> - describe what you're looking for in your own words, like "kids at the beach" or "birthday cake".</li>
+    <li><strong>Manage faces</strong> - spot faces that don't belong in a profile and move them to the right person, or a new one, in a tap. Remove multiple faces at once.</li>
+    <li><strong>Mixed profile alerts</strong> - Filtored lets you know when a profile might include more than one person, and keeps the reminder in your notifications until you get to it.</li>
+    <li><strong>Event search &amp; saved events</strong> - find any event quickly and keep your favorites one tap away, now with holiday artwork.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Built for huge libraries</strong> - ultra-high count galleries now load, scroll, search and organize much faster.</li>
+    <li><strong>Smoother scanning</strong> - the app stays fast and responsive while it organizes your library in the background.</li>
+    <li><strong>Smarter scanning</strong> - scanning adjusts to your phone's capabilities and steps aside while you're using the app.</li>
+    <li><strong>More accurate people</strong> - better grouping of the same person, fewer mix-ups between lookalikes, and better handling of kids and babies.</li>
+    <li><strong>Tidier notifications</strong> - people suggestions are split into Merging and Managing, and show one at a time so they don't get in your way.</li>
+    <li><strong>On This Day</strong> - your best memories are now separated from the clutter.</li>
+    <li><strong>Similar photos are now Burst photos</strong> - clearer name, same quick cleanup.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where the app could freeze when opening Cleanup during a scan.</li>
+    <li>Fixed a bug where new photos weren't organized while the app was closed on Android.</li>
+    <li>Fixed a bug where some faces could be saved incorrectly and mix up people. Affected photos are fixed automatically.</li>
+    <li>Fixed a bug where opening a person's profile could fail.</li>
+    <li>Fixed a bug where renaming someone from the photo viewer showed an error.</li>
+    <li>Fixed memory issues during face scanning that could slow the app down over time.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Contextual Search</strong> - describe what you're looking for in your own words, like "kids at the beach" or "birthday cake".</li>
+    <li><strong>Manage faces</strong> - spot faces that don't belong in a profile and move them to the right person, or a new one, in a tap. Remove multiple faces at once.</li>
+    <li><strong>Mixed profile alerts</strong> - Filtored lets you know when a profile might include more than one person, and keeps the reminder in your notifications until you get to it.</li>
+    <li><strong>Event search &amp; saved events</strong> - find any event quickly and keep your favorites one tap away, now with holiday artwork.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Built for huge libraries</strong> - ultra-high count galleries now load, scroll, search and organize much faster.</li>
+    <li><strong>Smoother scanning</strong> - the app stays fast and responsive while it organizes your library in the background.</li>
+    <li><strong>Smarter scanning</strong> - scanning adjusts to your phone's capabilities and steps aside while you're using the app.</li>
+    <li><strong>More accurate people</strong> - better grouping of the same person, fewer mix-ups between lookalikes, and better handling of kids and babies.</li>
+    <li><strong>Tidier notifications</strong> - people suggestions are split into Merging and Managing, and show one at a time so they don't get in your way.</li>
+    <li><strong>On This Day</strong> - your best memories are now separated from the clutter.</li>
+    <li><strong>Similar photos are now Burst photos</strong> - clearer name, same quick cleanup.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where the app could freeze when opening Cleanup during a scan.</li>
+    <li>Fixed a bug where new photos weren't organized while the app was closed on Android.</li>
+    <li>Fixed a bug where some faces could be saved incorrectly and mix up people. Affected photos are fixed automatically.</li>
+    <li>Fixed a bug where opening a person's profile could fail.</li>
+    <li>Fixed a bug where renaming someone from the photo viewer showed an error.</li>
+    <li>Fixed memory issues during face scanning that could slow the app down over time.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title>Version 1.2.3</title>
+            <link>https://filtored.com/patch-notes/#version-1-2-3</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-1-2-3</guid>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where photos re-sorted themselves for a few seconds every time the gallery opened.</li>
+    <li>Fixed a bug where photos copied from another device all appeared under today's date.</li>
+    <li>Fixed a bug where pull-to-refresh reloaded the whole library instead of just what changed.</li>
+    <li>Fixed a bug where the people row redrew the whole screen and made the app stutter while idle.</li>
+    <li>Fixed a bug where merging people could freeze the screen for several seconds.</li>
+    <li>Fixed a bug where the cleanup hub stuttered while scrolling.</li>
+    <li>Fixed a bug where sharing did nothing on iPad.</li>
+    <li>Fixed a bug where Share diagnostics came back empty on iPhone.</li>
+    <li>Fixed a bug where the edit pencil on face circles was cut off.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where photos re-sorted themselves for a few seconds every time the gallery opened.</li>
+    <li>Fixed a bug where photos copied from another device all appeared under today's date.</li>
+    <li>Fixed a bug where pull-to-refresh reloaded the whole library instead of just what changed.</li>
+    <li>Fixed a bug where the people row redrew the whole screen and made the app stutter while idle.</li>
+    <li>Fixed a bug where merging people could freeze the screen for several seconds.</li>
+    <li>Fixed a bug where the cleanup hub stuttered while scrolling.</li>
+    <li>Fixed a bug where sharing did nothing on iPad.</li>
+    <li>Fixed a bug where Share diagnostics came back empty on iPhone.</li>
+    <li>Fixed a bug where the edit pencil on face circles was cut off.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title>Version 1.2.2</title>
+            <link>https://filtored.com/patch-notes/#version-1-2-2</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-1-2-2</guid>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+    <li>Filtored is starting testing on iPhone and iPad.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li>Finding similar photos is much faster.</li>
+    <li>Similar-photos screen redesign.</li>
+    <li>Photos with text are read instantly.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where labels and category chips showed nothing on iPhone.</li>
+    <li>Fixed a bug where text saved from a photo could be wiped by the background scan.</li>
+    <li>Fixed a bug where sharing a photo stored in iCloud came back empty.</li>
+    <li>Fixed a bug where deleting a photo from full screen left it in the similar-photos grid.</li>
+    <li>Fixed memory management issues that could cause slowness and crashes.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>New</h3>
+<ul>
+    <li>Filtored is starting testing on iPhone and iPad.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li>Finding similar photos is much faster.</li>
+    <li>Similar-photos screen redesign.</li>
+    <li>Photos with text are read instantly.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where labels and category chips showed nothing on iPhone.</li>
+    <li>Fixed a bug where text saved from a photo could be wiped by the background scan.</li>
+    <li>Fixed a bug where sharing a photo stored in iCloud came back empty.</li>
+    <li>Fixed a bug where deleting a photo from full screen left it in the similar-photos grid.</li>
+    <li>Fixed memory management issues that could cause slowness and crashes.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title>Version 1.2.1</title>
+            <link>https://filtored.com/patch-notes/#version-1-2-1</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-1-2-1</guid>
+            <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>On This Day</strong> - see the photos you took on this date every year Day or Week view.</li>
+    <li><strong>My Family</strong> - suggests you photos for deletion that were received from chat groups that do not include your named profiles.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Smoother people row</strong> - face pictures in the gallery now show up in steady batches instead of the screen redrawing every few faces.</li>
+    <li><strong>Profiles open anywhere</strong> - tapping a person inside the cleanup screens now opens their full profile.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li><strong>Battery drain while idle</strong> - fixed the gallery quietly redrawing itself over and over on libraries with lots of people.</li>
+    <li><strong>Stutter while scanning</strong> - fixed short freezes caused by the app writing too many background log lines while merging profiles.</li>
+    <li><strong>Leftover loading</strong> - fixed photo previews that kept loading after you closed their sheet.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>On This Day</strong> - see the photos you took on this date every year Day or Week view.</li>
+    <li><strong>My Family</strong> - suggests you photos for deletion that were received from chat groups that do not include your named profiles.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Smoother people row</strong> - face pictures in the gallery now show up in steady batches instead of the screen redrawing every few faces.</li>
+    <li><strong>Profiles open anywhere</strong> - tapping a person inside the cleanup screens now opens their full profile.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li><strong>Battery drain while idle</strong> - fixed the gallery quietly redrawing itself over and over on libraries with lots of people.</li>
+    <li><strong>Stutter while scanning</strong> - fixed short freezes caused by the app writing too many background log lines while merging profiles.</li>
+    <li><strong>Leftover loading</strong> - fixed photo previews that kept loading after you closed their sheet.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title>Version 1.2.0</title>
+            <link>https://filtored.com/patch-notes/#version-1-2-0</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-1-2-0</guid>
+            <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Read text in photos</strong> - select any text directly from an image to copy, share, or search it online.</li>
+    <li><strong>QR &amp; barcode scanning</strong> in the photo viewer - links open with one tap.</li>
+    <li><strong>Search by words inside photos</strong>, not just tags.</li>
+    <li><strong>Your own labels</strong> - add custom labels to any photo or edit labels found by AI.</li>
+    <li><strong>Similar Photos</strong> - find near-identical shots and clear them out.</li>
+    <li><strong>Event albums rework</strong> - tag events with existing or custom tags.</li>
+    <li><strong>Notifications system</strong> in the profile tab.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Faster people merging</strong> - combine similar faces much quicker and pick multiple matches at once.</li>
+    <li><strong>Smooth swipe navigation</strong> - slide search and filters open naturally with your finger.</li>
+    <li><strong>Drag-to-select</strong> - drag across the Events grid to select multiple photos in one go.</li>
+    <li><strong>Independent filters</strong> - use category filters (People, Food, Documents) without resetting search results.</li>
+    <li><strong>Live cleanup progress</strong> - see real-time progress while bulk deleting photos.</li>
+    <li><strong>Instant Cleanup hub</strong> - opens right away and remembers scan counts so you don't wait.</li>
+    <li><strong>Languages</strong> - Event tags and holidays are now available in Hebrew and Russian.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li><strong>Accidental face merges</strong> - fixed a bug where two people in one photo were grouped into one profile.</li>
+    <li><strong>Grey avatars</strong> - fixed profiles getting stuck on a blank silhouette instead of showing face photos.</li>
+    <li><strong>Names on profile splits</strong> - fixed names getting lost when separating mistakenly combined people.</li>
+    <li><strong>Missing event albums</strong> - fixed newly tagged events occasionally losing their album.</li>
+    <li><strong>Duplicate accuracy</strong> - tightened duplicate detection to stop grouping non-identical photos.</li>
+    <li><strong>Scan freezing</strong> - fixed scans getting stuck mid-way and made the time remaining estimate accurate.</li>
+    <li><strong>Screen layout issues</strong> - fixed text cut-offs and broken screens when using large system fonts.</li>
+    <li><strong>Limited photo access</strong> - fixed new photos not being scanned when using limited Android gallery permissions.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Read text in photos</strong> - select any text directly from an image to copy, share, or search it online.</li>
+    <li><strong>QR &amp; barcode scanning</strong> in the photo viewer - links open with one tap.</li>
+    <li><strong>Search by words inside photos</strong>, not just tags.</li>
+    <li><strong>Your own labels</strong> - add custom labels to any photo or edit labels found by AI.</li>
+    <li><strong>Similar Photos</strong> - find near-identical shots and clear them out.</li>
+    <li><strong>Event albums rework</strong> - tag events with existing or custom tags.</li>
+    <li><strong>Notifications system</strong> in the profile tab.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Faster people merging</strong> - combine similar faces much quicker and pick multiple matches at once.</li>
+    <li><strong>Smooth swipe navigation</strong> - slide search and filters open naturally with your finger.</li>
+    <li><strong>Drag-to-select</strong> - drag across the Events grid to select multiple photos in one go.</li>
+    <li><strong>Independent filters</strong> - use category filters (People, Food, Documents) without resetting search results.</li>
+    <li><strong>Live cleanup progress</strong> - see real-time progress while bulk deleting photos.</li>
+    <li><strong>Instant Cleanup hub</strong> - opens right away and remembers scan counts so you don't wait.</li>
+    <li><strong>Languages</strong> - Event tags and holidays are now available in Hebrew and Russian.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li><strong>Accidental face merges</strong> - fixed a bug where two people in one photo were grouped into one profile.</li>
+    <li><strong>Grey avatars</strong> - fixed profiles getting stuck on a blank silhouette instead of showing face photos.</li>
+    <li><strong>Names on profile splits</strong> - fixed names getting lost when separating mistakenly combined people.</li>
+    <li><strong>Missing event albums</strong> - fixed newly tagged events occasionally losing their album.</li>
+    <li><strong>Duplicate accuracy</strong> - tightened duplicate detection to stop grouping non-identical photos.</li>
+    <li><strong>Scan freezing</strong> - fixed scans getting stuck mid-way and made the time remaining estimate accurate.</li>
+    <li><strong>Screen layout issues</strong> - fixed text cut-offs and broken screens when using large system fonts.</li>
+    <li><strong>Limited photo access</strong> - fixed new photos not being scanned when using limited Android gallery permissions.</li>
+</ul>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

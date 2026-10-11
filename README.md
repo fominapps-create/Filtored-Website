@@ -7,6 +7,27 @@ Simple, clean landing page for www.filtored.com
 - `index.html` - Main HTML page
 - `style.css` - All styles
 - `script.js` - Email form handling and interactions
+- `patch-notes/index.html` - Release notes page
+- `patch-notes/feed.xml` - Generated RSS feed of the release notes
+- `tools/generate-patch-feed.js` - Regenerates `patch-notes/feed.xml` from the page
+
+## Patch Notes RSS Feed
+
+`https://filtored.com/patch-notes/feed.xml` is a plain RSS 2.0 file that feed readers
+and Discord bots (MonitoRSS and similar) can subscribe to.
+
+It is generated from the `<article class="patch-entry">` blocks in
+`patch-notes/index.html`, so after adding a release:
+
+1. Add the new `<article class="patch-entry" id="version-x-y-z">` block at the top of the list.
+2. Run `node tools/generate-patch-feed.js`.
+3. Commit both `patch-notes/index.html` and `patch-notes/feed.xml`.
+
+Use `node tools/generate-patch-feed.js --check` to confirm the committed feed matches the page.
+
+Each entry needs an `id` (used as the item link anchor and the stable feed GUID), an
+`<h2 class="patch-version">` title, and a `<time class="patch-date" datetime="YYYY-MM-DD">`.
+Don't change the `id` or date of a published entry - feed readers would re-post it.
 
 ## Features
 
