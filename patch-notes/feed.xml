@@ -5,7 +5,7 @@
         <link>https://filtored.com/patch-notes/</link>
         <description>New features, improvements, and fixes in every Filtored AI Gallery release.</description>
         <language>en</language>
-        <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 14 Oct 2026 00:00:00 GMT</lastBuildDate>
         <ttl>60</ttl>
         <image>
             <title>Filtored Patch Notes</title>
@@ -13,6 +13,62 @@
             <link>https://filtored.com/patch-notes/</link>
         </image>
         <atom:link href="https://filtored.com/patch-notes/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Version 2.0.1</title>
+            <link>https://filtored.com/patch-notes/#version-2-0-1</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-2-0-1</guid>
+            <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Search QR codes &amp; barcodes</strong> - you can now search for photos that contain barcodes and QR codes.</li>
+    <li><strong>Notification settings</strong> - choose which suggestions you get and how often, from every time you open the app to once a week.</li>
+    <li><strong>Remove wrong search matches</strong> - if a photo shows up for the wrong word, remove that word right from the photo and it won't show up for it again.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Bulk Review Suggestions</strong> - open a notification and swipe through every suggested profile in one go.</li>
+    <li><strong>Manage faces</strong> - see the original photo behind any face before moving it.</li>
+    <li><strong>More accurate people</strong> - smarter face matching, fewer mix-ups in group photos, and clearer profile pictures.</li>
+    <li><strong>Faster startup</strong> - people pictures now load quicker.</li>
+    <li><strong>Scanning optimization</strong> - Filtored now adjusts to your phone's capabilities and adjusts speeds accordingly.</li>
+    <li><strong>Tidier notifications</strong> - notifications clearing capabilities improved.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where speech-to-text typing could defocus from the field.</li>
+    <li>Fixed a bug where the app could freeze while finding duplicates in large libraries.</li>
+    <li>Fixed a bug where duplicate scan progress was lost if the app closed mid-scan.</li>
+    <li>Fixed a bug where the same photo could appear in more than one duplicate group.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<h3>New</h3>
+<ul>
+    <li><strong>Search QR codes &amp; barcodes</strong> - you can now search for photos that contain barcodes and QR codes.</li>
+    <li><strong>Notification settings</strong> - choose which suggestions you get and how often, from every time you open the app to once a week.</li>
+    <li><strong>Remove wrong search matches</strong> - if a photo shows up for the wrong word, remove that word right from the photo and it won't show up for it again.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Bulk Review Suggestions</strong> - open a notification and swipe through every suggested profile in one go.</li>
+    <li><strong>Manage faces</strong> - see the original photo behind any face before moving it.</li>
+    <li><strong>More accurate people</strong> - smarter face matching, fewer mix-ups in group photos, and clearer profile pictures.</li>
+    <li><strong>Faster startup</strong> - people pictures now load quicker.</li>
+    <li><strong>Scanning optimization</strong> - Filtored now adjusts to your phone's capabilities and adjusts speeds accordingly.</li>
+    <li><strong>Tidier notifications</strong> - notifications clearing capabilities improved.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where speech-to-text typing could defocus from the field.</li>
+    <li>Fixed a bug where the app could freeze while finding duplicates in large libraries.</li>
+    <li>Fixed a bug where duplicate scan progress was lost if the app closed mid-scan.</li>
+    <li>Fixed a bug where the same photo could appear in more than one duplicate group.</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title>Version 2.0.0</title>
             <link>https://filtored.com/patch-notes/#version-2-0-0</link>
