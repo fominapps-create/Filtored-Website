@@ -5,7 +5,7 @@
         <link>https://filtored.com/patch-notes/</link>
         <description>New features, improvements, and fixes in every Filtored AI Gallery release.</description>
         <language>en</language>
-        <lastBuildDate>Wed, 14 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 00:00:00 GMT</lastBuildDate>
         <ttl>60</ttl>
         <image>
             <title>Filtored Patch Notes</title>
@@ -13,6 +13,70 @@
             <link>https://filtored.com/patch-notes/</link>
         </image>
         <atom:link href="https://filtored.com/patch-notes/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Version 3.0.0</title>
+            <link>https://filtored.com/patch-notes/#version-3-0-0</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-3-0-0</guid>
+            <pubDate>Sat, 17 Oct 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<p>A new on-device recognition engine. Filtored refreshes your library after updating - people you've named or edited stay exactly as they are, other face groups and Smart Search are rebuilt in the background. Search may be incomplete for a while during this first scan.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>New face recognition engine</strong> - people are recognized by a new on-device model. Everyone you've named, hidden, merged or confirmed is carried over and kept in place.</li>
+    <li><strong>Hebrew &amp; Russian text search</strong> - Filtored now reads Hebrew and Russian text in your photos, so you can find screenshots, signs, receipts and documents by the words in them.</li>
+    <li><strong>Merge into…</strong> - in Manage faces, when a whole profile is someone you already have, merge it into the right person in one step.</li>
+    <li><strong>Restore purchases</strong> - get Premium back on a new phone or after reinstalling, with clear guidance if the purchase is on a different account.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Lighter Smart Search</strong> - a new, smaller model for describing what you're looking for in your own words.</li>
+    <li><strong>Smoother on iPhone</strong> - swiping through photos, Cleanup, Dashboard and Large Videos no longer stall.</li>
+    <li><strong>Easier "Someone else"</strong> - moving faces to another person ranks the closest matches first, everywhere you place faces.</li>
+    <li><strong>Subscription details</strong> - clearer renewal terms and a Subscription manager in Settings.</li>
+    <li><strong>Open-source licenses</strong> - see the third-party software Filtored uses in Settings.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a race condition where fast-scrolling lists could briefly show the wrong thumbnail.</li>
+    <li>Fixed main-thread blocking on iOS during text and barcode recognition.</li>
+    <li>Fixed scan lock contention when skipping the initial scan.</li>
+    <li>Fixed edge cases in purchase acknowledgement.</li>
+    <li>Improved model loading and memory usage during background scans.</li>
+    <li>General stability and performance improvements.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<p>A new on-device recognition engine. Filtored refreshes your library after updating - people you've named or edited stay exactly as they are, other face groups and Smart Search are rebuilt in the background. Search may be incomplete for a while during this first scan.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>New face recognition engine</strong> - people are recognized by a new on-device model. Everyone you've named, hidden, merged or confirmed is carried over and kept in place.</li>
+    <li><strong>Hebrew &amp; Russian text search</strong> - Filtored now reads Hebrew and Russian text in your photos, so you can find screenshots, signs, receipts and documents by the words in them.</li>
+    <li><strong>Merge into…</strong> - in Manage faces, when a whole profile is someone you already have, merge it into the right person in one step.</li>
+    <li><strong>Restore purchases</strong> - get Premium back on a new phone or after reinstalling, with clear guidance if the purchase is on a different account.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Lighter Smart Search</strong> - a new, smaller model for describing what you're looking for in your own words.</li>
+    <li><strong>Smoother on iPhone</strong> - swiping through photos, Cleanup, Dashboard and Large Videos no longer stall.</li>
+    <li><strong>Easier "Someone else"</strong> - moving faces to another person ranks the closest matches first, everywhere you place faces.</li>
+    <li><strong>Subscription details</strong> - clearer renewal terms and a Subscription manager in Settings.</li>
+    <li><strong>Open-source licenses</strong> - see the third-party software Filtored uses in Settings.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a race condition where fast-scrolling lists could briefly show the wrong thumbnail.</li>
+    <li>Fixed main-thread blocking on iOS during text and barcode recognition.</li>
+    <li>Fixed scan lock contention when skipping the initial scan.</li>
+    <li>Fixed edge cases in purchase acknowledgement.</li>
+    <li>Improved model loading and memory usage during background scans.</li>
+    <li>General stability and performance improvements.</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title>Version 2.0.1</title>
             <link>https://filtored.com/patch-notes/#version-2-0-1</link>
