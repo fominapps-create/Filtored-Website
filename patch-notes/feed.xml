@@ -43,6 +43,29 @@
     <li>Fixed a bug where Similar faces could show outdated thumbnails after removing a profile from the list.</li>
     <li>General stability and performance improvements.</li>
 </ul>]]></description>
+            <content:encoded><![CDATA[<p>Undo is here. Filtored now keeps a history of the changes you make to people, profiles and tags, and any of them can be reversed. Your existing names, merges and tags are kept when you update.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>History &amp; Undo</strong> - see your recent changes in Settings → History, grouped by type: merges, moved faces, names and roles, hidden profiles, profile photos, tags and more. Tap any change to undo it, including changes Filtored made automatically.</li>
+    <li><strong>Undo with care</strong> - if later changes depend on the one you're undoing, Filtored shows you what will be affected and lets you undo them together.</li>
+    <li><strong>Recent Smart Searches</strong> - tap the search field to see your latest Smart Searches and run one again in a tap.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Manage profile</strong> - Manage faces is now Manage profile, with all the tools for cleaning up a person in one place.</li>
+    <li><strong>Fewer repeat suggestions</strong> - Similar faces no longer keeps suggesting profiles you've chosen to keep apart, unless they become a much closer match.</li>
+    <li><strong>More accurate Smart Search</strong> - better ranking across your whole library, and more results for everyday searches like "people smiling" or "a group of people".</li>
+    <li><strong>Better text search</strong> - photos are rescanned after updating to find Hebrew text that was missed before.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Fixed a bug where faces you moved by hand could be moved again during background cleanup.</li>
+    <li>Fixed a bug where Similar faces could show outdated thumbnails after removing a profile from the list.</li>
+    <li>General stability and performance improvements.</li>
+</ul>]]></content:encoded>
         </item>
         <item>
             <title>Version 3.0.0</title>
