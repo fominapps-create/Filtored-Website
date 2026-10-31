@@ -144,6 +144,83 @@
             font-size: 0.95rem;
         }
 
+        .patch-archive {
+            margin-top: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .patch-archive-title {
+            font-family: 'Sora', 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            margin: 0 0 0.3rem;
+        }
+
+        .patch-fold {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 0 1.4rem;
+            scroll-margin-top: 6rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .patch-fold:hover,
+        .patch-fold:focus-within { border-color: var(--accent); }
+
+        .patch-summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding: 1.1rem 0;
+        }
+
+        .patch-summary::-webkit-details-marker { display: none; }
+
+        .patch-fold .patch-version { font-size: 1.2rem; }
+
+        .patch-summary-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .patch-chevron {
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+            flex: 0 0 auto;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+        }
+
+        .patch-fold[open] .patch-chevron { transform: rotate(-135deg); }
+
+        .patch-fold[open] .patch-summary {
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 1.25rem;
+        }
+
+        .patch-fold .patch-body {
+            padding-bottom: 1.4rem;
+            animation: patch-open 0.22s ease both;
+        }
+
+        @keyframes patch-open {
+            from { opacity: 0; transform: translateY(-0.35rem); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .patch-subnote a {
             color: var(--accent-deep);
             font-weight: 600;
@@ -163,9 +240,15 @@
                 padding: 1.5rem 1.25rem;
             }
 
+            .patch-fold {
+                padding: 0 1.1rem;
+            }
+
             .patch-version {
                 font-size: 1.25rem;
             }
+
+            .patch-fold .patch-version { font-size: 1.1rem; }
         }
     </style>
     <script>
@@ -210,14 +293,63 @@
 
         <section class="patch-list">
             <!-- Latest Release -->
-            <article class="patch-entry" id="version-3-1-0">
+            <article class="patch-entry" id="version-3-1-1">
                 <div class="patch-meta">
                     <div class="patch-title-group">
-                        <h2 class="patch-version">Version 3.1.0</h2>
+                        <h2 class="patch-version">Version 3.1.1</h2>
                         <span class="patch-badge-latest">Latest</span>
                     </div>
-                    <time class="patch-date" datetime="2026-10-19">October 19, 2026</time>
+                    <time class="patch-date" datetime="2026-10-31">October 31, 2026</time>
                 </div>
+
+                <div class="patch-body">
+                    <p>Group Chats cleanup now groups photos by week or month, lets you choose what's never suggested for deletion, and lets you name people while you clean.</p>
+
+                    <h3>New</h3>
+                    <ul>
+                        <li><strong>Weekly &amp; Monthly view</strong> - Photos saved from chat apps can be viewed by day, week or month, so a whole week or month can be cleared at once. Current periods show as "This week" or "This month".</li>
+                        <li><strong>What to keep</strong> - Pets, scenery, food, documents and your own labels can be excluded from deletion suggestions in Group Chats and On This Day. People you've named are always kept. In Group Chats, On This Day or Organize, open the preferences icon.</li>
+                        <li><strong>Same-name check</strong> - When two people get the same name, Filtored offers to combine them into one. This can be undone from History.</li>
+                        <li><strong>What's New</strong> - Update notes are available in the app, from the Gallery or your Profile, with a link to the full patch notes.</li>
+                    </ul>
+
+                    <h3>Enhanced</h3>
+                    <ul>
+                        <li><strong>Date picker</strong> - One-tap options like "Last 7 days", "This month" and "Last year", plus any single day or range.</li>
+                        <li><strong>Faces in Group Chats</strong> - Faces without a name appear at the top and can be named with a tap. Their photos are then kept. "Family photos" is renamed "Suggested to keep".</li>
+                        <li><strong>Events without screenshots</strong> - Screenshots no longer appear in Events, so events show only your photos, and a screenshot taken in between no longer joins two separate events into one. The Screenshots filter in Events is removed, since it's no longer needed.</li>
+                        <li><strong>Video sorting</strong> - Large Videos can be sorted by size or length, so the ones taking the most space can be found first.</li>
+                        <li><strong>Deleting</strong> - The delete confirmation can be turned off until the app is closed. After deleting, the space freed is shown, with a shortcut to Trash.</li>
+                        <li><strong>Scroll position</strong> - Group Chats stays where you were after opening a group or deleting photos.</li>
+                        <li><strong>Space freed</strong> - Cleanup shows the total space freed so far.</li>
+                        <li><strong>Smart Search glow</strong> - The search bar glows while Smart Search is on, so it's clear which search type is active.</li>
+                    </ul>
+
+                    <h3>Fixed</h3>
+                    <ul>
+                        <li>Deleted photos no longer reappear in Duplicates.</li>
+                        <li>Naming someone in Group Chats now moves their photos to "Suggested to keep".</li>
+                        <li>"Open profile" on a photo now opens the person's full page.</li>
+                        <li>Some people's pages now open instead of showing "try again in a moment".</li>
+                        <li>Naming people in Group Chats no longer lags.</li>
+                        <li>On Android, large cleanups now show the full amount of space freed.</li>
+                        <li>General speed and stability improvements.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="patch-archive">
+            <h2 class="patch-archive-title">Previous releases</h2>
+
+            <details class="patch-fold" id="version-3-1-0">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 3.1.0</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-10-19">October 19, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <p>Undo is here. Filtored now keeps a history of the changes you make to people, profiles and tags, and any of them can be reversed. Your existing names, merges and tags are kept when you update.</p>
@@ -244,15 +376,16 @@
                         <li>General stability and performance improvements.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-3-0-0">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 3.0.0</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-10-17">October 17, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-3-0-0">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 3.0.0</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-10-17">October 17, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <p>A new on-device recognition engine. Filtored refreshes your library after updating - people you've named or edited stay exactly as they are, other face groups and Smart Search are rebuilt in the background. Search may be incomplete for a while during this first scan.</p>
@@ -284,15 +417,16 @@
                         <li>General stability and performance improvements.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-2-0-1">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 2.0.1</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-10-14">October 14, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-2-0-1">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 2.0.1</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-10-14">October 14, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>New</h3>
@@ -320,15 +454,16 @@
                         <li>Fixed a bug where the same photo could appear in more than one duplicate group.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-2-0-0">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 2.0.0</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-10-10">October 10, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-2-0-0">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 2.0.0</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-10-10">October 10, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>New</h3>
@@ -360,15 +495,16 @@
                         <li>Fixed memory issues during face scanning that could slow the app down over time.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-1-2-3">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 1.2.3</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-10-02">October 2, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-1-2-3">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 1.2.3</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-10-02">October 2, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>Fixed</h3>
@@ -384,15 +520,16 @@
                         <li>Fixed a bug where the edit pencil on face circles was cut off.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-1-2-2">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 1.2.2</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-09-30">September 30, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-1-2-2">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 1.2.2</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-09-30">September 30, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>New</h3>
@@ -416,15 +553,16 @@
                         <li>Fixed memory management issues that could cause slowness and crashes.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-1-2-1">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 1.2.1</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-09-28">September 28, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-1-2-1">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 1.2.1</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-09-28">September 28, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>New</h3>
@@ -446,15 +584,16 @@
                         <li><strong>Leftover loading</strong> - fixed photo previews that kept loading after you closed their sheet.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <article class="patch-entry" id="version-1-2-0">
-                <div class="patch-meta">
-                    <div class="patch-title-group">
-                        <h2 class="patch-version">Version 1.2.0</h2>
-                    </div>
-                    <time class="patch-date" datetime="2026-09-27">September 27, 2026</time>
-                </div>
+            <details class="patch-fold" id="version-1-2-0">
+                <summary class="patch-summary">
+                    <h2 class="patch-version">Version 1.2.0</h2>
+                    <span class="patch-summary-meta">
+                        <time class="patch-date" datetime="2026-09-27">September 27, 2026</time>
+                        <span class="patch-chevron" aria-hidden="true"></span>
+                    </span>
+                </summary>
 
                 <div class="patch-body">
                     <h3>New</h3>
@@ -491,9 +630,9 @@
                         <li><strong>Limited photo access</strong> - fixed new photos not being scanned when using limited Android gallery permissions.</li>
                     </ul>
                 </div>
-            </article>
+            </details>
 
-            <!-- Future updates can be added here -->
+            <!-- Older releases are added here as collapsed entries -->
         </section>
 
         <p class="patch-subnote">Have feedback or questions about an update? <a href="../contact/">Let us know here.</a><br>Follow releases in your reader or Discord bot via the <a href="feed.xml">RSS feed</a>.</p>
@@ -516,5 +655,20 @@
     </footer>
 
     <script src="../script.js?v=13"></script>
+    <script>
+        (function () {
+            function openFromHash() {
+                var hash = window.location.hash;
+                if (!hash || hash.length < 2) return;
+                var target = document.getElementById(hash.slice(1));
+                if (target && target.tagName === 'DETAILS' && !target.open) {
+                    target.open = true;
+                    target.scrollIntoView();
+                }
+            }
+            openFromHash();
+            window.addEventListener('hashchange', openFromHash);
+        })();
+    </script>
 </body>
 </html>

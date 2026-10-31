@@ -5,7 +5,7 @@
         <link>https://filtored.com/patch-notes/</link>
         <description>New features, improvements, and fixes in every Filtored AI Gallery release.</description>
         <language>en</language>
-        <lastBuildDate>Mon, 19 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Oct 2026 00:00:00 GMT</lastBuildDate>
         <ttl>60</ttl>
         <image>
             <title>Filtored Patch Notes</title>
@@ -13,6 +13,78 @@
             <link>https://filtored.com/patch-notes/</link>
         </image>
         <atom:link href="https://filtored.com/patch-notes/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Version 3.1.1</title>
+            <link>https://filtored.com/patch-notes/#version-3-1-1</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-3-1-1</guid>
+            <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<p>Group Chats cleanup now groups photos by week or month, lets you choose what's never suggested for deletion, and lets you name people while you clean.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>Weekly &amp; Monthly view</strong> - Photos saved from chat apps can be viewed by day, week or month, so a whole week or month can be cleared at once. Current periods show as "This week" or "This month".</li>
+    <li><strong>What to keep</strong> - Pets, scenery, food, documents and your own labels can be excluded from deletion suggestions in Group Chats and On This Day. People you've named are always kept. In Group Chats, On This Day or Organize, open the preferences icon.</li>
+    <li><strong>Same-name check</strong> - When two people get the same name, Filtored offers to combine them into one. This can be undone from History.</li>
+    <li><strong>What's New</strong> - Update notes are available in the app, from the Gallery or your Profile, with a link to the full patch notes.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Date picker</strong> - One-tap options like "Last 7 days", "This month" and "Last year", plus any single day or range.</li>
+    <li><strong>Faces in Group Chats</strong> - Faces without a name appear at the top and can be named with a tap. Their photos are then kept. "Family photos" is renamed "Suggested to keep".</li>
+    <li><strong>Events without screenshots</strong> - Screenshots no longer appear in Events, so events show only your photos, and a screenshot taken in between no longer joins two separate events into one. The Screenshots filter in Events is removed, since it's no longer needed.</li>
+    <li><strong>Video sorting</strong> - Large Videos can be sorted by size or length, so the ones taking the most space can be found first.</li>
+    <li><strong>Deleting</strong> - The delete confirmation can be turned off until the app is closed. After deleting, the space freed is shown, with a shortcut to Trash.</li>
+    <li><strong>Scroll position</strong> - Group Chats stays where you were after opening a group or deleting photos.</li>
+    <li><strong>Space freed</strong> - Cleanup shows the total space freed so far.</li>
+    <li><strong>Smart Search glow</strong> - The search bar glows while Smart Search is on, so it's clear which search type is active.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Deleted photos no longer reappear in Duplicates.</li>
+    <li>Naming someone in Group Chats now moves their photos to "Suggested to keep".</li>
+    <li>"Open profile" on a photo now opens the person's full page.</li>
+    <li>Some people's pages now open instead of showing "try again in a moment".</li>
+    <li>Naming people in Group Chats no longer lags.</li>
+    <li>On Android, large cleanups now show the full amount of space freed.</li>
+    <li>General speed and stability improvements.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<p>Group Chats cleanup now groups photos by week or month, lets you choose what's never suggested for deletion, and lets you name people while you clean.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>Weekly &amp; Monthly view</strong> - Photos saved from chat apps can be viewed by day, week or month, so a whole week or month can be cleared at once. Current periods show as "This week" or "This month".</li>
+    <li><strong>What to keep</strong> - Pets, scenery, food, documents and your own labels can be excluded from deletion suggestions in Group Chats and On This Day. People you've named are always kept. In Group Chats, On This Day or Organize, open the preferences icon.</li>
+    <li><strong>Same-name check</strong> - When two people get the same name, Filtored offers to combine them into one. This can be undone from History.</li>
+    <li><strong>What's New</strong> - Update notes are available in the app, from the Gallery or your Profile, with a link to the full patch notes.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Date picker</strong> - One-tap options like "Last 7 days", "This month" and "Last year", plus any single day or range.</li>
+    <li><strong>Faces in Group Chats</strong> - Faces without a name appear at the top and can be named with a tap. Their photos are then kept. "Family photos" is renamed "Suggested to keep".</li>
+    <li><strong>Events without screenshots</strong> - Screenshots no longer appear in Events, so events show only your photos, and a screenshot taken in between no longer joins two separate events into one. The Screenshots filter in Events is removed, since it's no longer needed.</li>
+    <li><strong>Video sorting</strong> - Large Videos can be sorted by size or length, so the ones taking the most space can be found first.</li>
+    <li><strong>Deleting</strong> - The delete confirmation can be turned off until the app is closed. After deleting, the space freed is shown, with a shortcut to Trash.</li>
+    <li><strong>Scroll position</strong> - Group Chats stays where you were after opening a group or deleting photos.</li>
+    <li><strong>Space freed</strong> - Cleanup shows the total space freed so far.</li>
+    <li><strong>Smart Search glow</strong> - The search bar glows while Smart Search is on, so it's clear which search type is active.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Deleted photos no longer reappear in Duplicates.</li>
+    <li>Naming someone in Group Chats now moves their photos to "Suggested to keep".</li>
+    <li>"Open profile" on a photo now opens the person's full page.</li>
+    <li>Some people's pages now open instead of showing "try again in a moment".</li>
+    <li>Naming people in Group Chats no longer lags.</li>
+    <li>On Android, large cleanups now show the full amount of space freed.</li>
+    <li>General speed and stability improvements.</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title>Version 3.1.0</title>
             <link>https://filtored.com/patch-notes/#version-3-1-0</link>
