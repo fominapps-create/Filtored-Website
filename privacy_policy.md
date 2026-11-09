@@ -1,6 +1,6 @@
 # Privacy Policy for Filtored AI Gallery
 
-Last updated: May 12, 2026
+Last updated: November 9, 2026
 
 Filtored helps you organize photos and videos with a privacy-first approach. Media analysis is performed on your device. This policy explains what data is used, where it is processed, and what controls you have.
 
@@ -10,6 +10,14 @@ Filtored helps you organize photos and videos with a privacy-first approach. Med
 - Basic technical diagnostics needed to keep features working (for example, scan progress and error logs stored on-device)
 
 The app does not require account sign-in for core functionality and does not collect contacts, messages, or precise location data.
+
+## Face Data
+To group photos of the same person, Filtored detects faces in your photos and creates face templates, which are numerical descriptions of a face. Some laws treat this kind of information as biometric data, so here is exactly how it is handled:
+- Face detection and face templates are created entirely on your device.
+- Face templates are stored only in the app's local storage on your device. They are never uploaded to us or to anyone else, and they are not shared or sold.
+- They are used only to group, name and search for people in your own gallery, not to identify anyone outside the app.
+- Names and roles you give to people stay on your device as well.
+- Face data is removed when you uninstall the app or clear its storage in your device settings.
 
 ## How Processing Works
 - On-device processing: Scanning, tagging, grouping, duplicate/similar detection, and face grouping/photo organization run locally on your device.
