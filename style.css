@@ -105,6 +105,160 @@ html[data-language="he"] .plan-table td:first-child { text-align: right; }
     box-shadow: 0 6px 20px rgba(28, 25, 23, 0.08);
 }
 
+/* ============ Promo banner (toggled by promo.js) ============ */
+.promo-banner { display: none; }
+
+html.has-promo-banner {
+    --promo-h: 40px;
+    --promo-offset: var(--promo-h);
+}
+
+html.has-promo-banner body { padding-top: calc(var(--header-h) + var(--promo-h)); }
+
+html.has-promo-banner .promo-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
+    min-height: 40px;
+    padding: 0.45rem clamp(1rem, 3vw, 3rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem 0.75rem;
+    background: #0c0a09;
+    color: #f5f5f4;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(calc(var(--promo-offset) - var(--promo-h)));
+}
+
+html.has-promo-banner .site-header {
+    top: var(--promo-offset);
+    transition: width 0.28s ease, left 0.28s ease, min-height 0.28s ease, padding 0.28s ease, border-radius 0.28s ease, box-shadow 0.28s ease;
+}
+
+.promo-tag {
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.promo-text strong {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.45rem 0 0.4rem;
+    padding: 0.04em 0.1em 0.04em 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    vertical-align: -0.12em;
+}
+
+.promo-gold-text,
+.promo-text strong {
+    background: linear-gradient(100deg, #f97c38 0%, #fbbf24 35%, #fff7ed 50%, #fbbf24 65%, #f97c38 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: promo-shimmer 3.2s linear infinite;
+}
+
+.promo-sparkles::before,
+.promo-sparkles::after,
+.promo-text strong::before,
+.promo-text strong::after {
+    content: "\2726";
+    content: "\2726" / "";
+    position: absolute;
+    color: #fbbf24;
+    -webkit-text-fill-color: #fbbf24;
+    pointer-events: none;
+    animation: promo-twinkle 1.8s ease-in-out infinite;
+}
+
+.promo-text strong::before { top: -0.35em; left: -0.45em; font-size: 0.45em; }
+.promo-text strong::after { bottom: -0.2em; right: -0.5em; font-size: 0.35em; animation-delay: 0.9s; }
+
+@keyframes promo-shimmer {
+    from { background-position: 100% 0; }
+    to { background-position: -150% 0; }
+}
+
+@keyframes promo-twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.6) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.15) rotate(25deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .promo-gold-text,
+    .promo-text strong,
+    .promo-sparkles::before,
+    .promo-sparkles::after,
+    .promo-text strong::before,
+    .promo-text strong::after { animation: none; }
+}
+
+.promo-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #d6d3d1;
+}
+
+.promo-countdown {
+    display: inline-flex;
+    gap: 0.3rem;
+    font-variant-numeric: tabular-nums;
+    unicode-bidi: isolate;
+}
+
+.promo-countdown .cd-part {
+    padding: 0.05rem 0.35rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #a8a29e;
+    font-size: 0.78rem;
+}
+
+.promo-countdown .cd-part b { color: #fff; font-size: 0.86rem; font-weight: 700; }
+
+.promo-cta {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.promo-banner:hover .promo-cta { color: var(--accent); }
+
+@media (min-width: 1181px) {
+    html.has-promo-banner .cta-banner {
+        min-height: calc(100vh - var(--header-h) - var(--promo-h));
+        min-height: calc(100svh - var(--header-h) - var(--promo-h));
+    }
+}
+
+@media (max-width: 560px) {
+    html.has-promo-banner .promo-banner { font-size: 0.8rem; gap: 0.15rem 0.5rem; }
+    .promo-text strong { font-size: 1.15rem; }
+    .promo-tag { padding: 0.08rem 0.45rem; font-size: 0.62rem; letter-spacing: 0.04em; }
+    .promo-cta { display: none; }
+}
+
 .brand {
     display: inline-flex;
     flex: 1 1 0;

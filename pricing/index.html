@@ -12,7 +12,8 @@
     <meta property="og:description" content="Compare Filtored Free, Plus, and Premium plans for private on-device photo organization.">
     <meta property="og:url" content="https://filtored.com/pricing/">
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
-    <link rel="stylesheet" href="../style.css?v=54">
+    <link rel="stylesheet" href="../style.css?v=58">
+    <script src="../promo.js?v=2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +29,47 @@
         .billing-toggle-pill { position: absolute; z-index: 0; top: 0.25rem; bottom: 0.25rem; border-radius: 999px; background: var(--ink); transition: left 0.3s ease, width 0.3s ease; }
         .billing-note { display: inline-block; color: #a8a29e; font-size: 0.9rem; font-weight: 600; padding: 0.2rem 0.65rem; border: 1px solid transparent; border-radius: 999px; white-space: nowrap; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
         .billing-note.is-active { color: var(--accent-deep); border-color: var(--accent); background: rgba(232, 89, 12, 0.06); }
+        .billing-promo-note { display: none; color: #fff; font-size: 0.9rem; font-weight: 700; padding: 0.2rem 0.75rem; border: 1px solid #0c0a09; border-radius: 999px; background: #0c0a09; white-space: nowrap; transition: border-color 0.2s ease, background 0.2s ease; }
+        .billing-promo-note.is-active { border-color: var(--accent); background: var(--accent); }
+        .promo-active .billing-note { display: none; }
+        .promo-active .billing-promo-note { display: inline-block; }
+
+        .pricing-promo { display: none; }
+        .promo-active .pricing-promo { position: relative; display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem 1.1rem; margin-top: 1.1rem; padding: 0.75rem 1rem 0.75rem 1.4rem; border-radius: 22px; background: radial-gradient(120% 180% at 0% 0%, rgba(249, 124, 56, 0.38) 0%, rgba(249, 124, 56, 0) 55%), #0c0a09; color: #fff; box-shadow: 0 20px 44px -24px rgba(227, 101, 34, 0.95); }
+        html[dir="rtl"].promo-active .pricing-promo { padding: 0.75rem 1.4rem 0.75rem 1rem; background: radial-gradient(120% 180% at 100% 0%, rgba(249, 124, 56, 0.38) 0%, rgba(249, 124, 56, 0) 55%), #0c0a09; }
+        .pricing-promo-burst { position: relative; display: inline-flex; align-items: baseline; gap: 0.4rem; padding: 0.15rem 0.35rem; }
+        .pricing-promo-percent { padding: 0.06em 0.14em 0.04em 0.02em; margin: -0.06em -0.14em -0.04em -0.02em; font: 800 clamp(2.6rem, 6vw, 3.3rem)/1.1 'Sora', sans-serif; letter-spacing: -0.03em; unicode-bidi: isolate; }
+        .pricing-promo-off { font: 800 1.1rem/1 'Sora', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+        .pricing-promo-burst.promo-sparkles::before { top: -0.35rem; left: -0.55rem; font-size: 1.05rem; }
+        .pricing-promo-burst.promo-sparkles::after { bottom: -0.15rem; right: -0.65rem; font-size: 0.75rem; animation-delay: 0.9s; }
+        .pricing-promo-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; padding-left: 1.1rem; border-left: 1px solid rgba(255, 255, 255, 0.15); text-align: start; }
+        html[dir="rtl"] .pricing-promo-copy { padding-left: 0; padding-right: 1.1rem; border-left: 0; border-right: 1px solid rgba(255, 255, 255, 0.15); }
+        .pricing-promo-title { font-size: 0.95rem; font-weight: 700; }
+        .pricing-promo-timer { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+        .pricing-promo-label { color: #a8a29e; font-size: 0.82rem; font-weight: 600; }
+        .pricing-promo-countdown { display: inline-flex; gap: 0.3rem; font-variant-numeric: tabular-nums; unicode-bidi: isolate; }
+        .pricing-promo-countdown .cd-part { display: inline-flex; align-items: baseline; gap: 0.1rem; min-width: 2.9rem; justify-content: center; padding: 0.25rem 0.45rem; border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #a8a29e; font-size: 0.75rem; }
+        .pricing-promo-countdown .cd-part b { color: #fff; font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 800; }
+        .confetti-piece { position: fixed; z-index: 2000; width: 8px; height: 12px; border-radius: 2px; pointer-events: none; will-change: transform, opacity; }
+
+        /* Black November look for Premium while Yearly is selected */
+        .plan-option-badge { display: none; }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] { border-color: #0c0a09; background: radial-gradient(120% 140% at 100% 0%, rgba(249, 124, 56, 0.32) 0%, rgba(249, 124, 56, 0) 55%), #0c0a09; color: #fff; }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"]:hover,
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"].is-active { border-color: var(--accent); }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"].is-active { box-shadow: 0 16px 36px -18px rgba(249, 124, 56, 0.8); }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] .plan-option-tag { color: var(--accent); }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] .plan-option-desc,
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] .plan-option-price small { color: #a8a29e; }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] .plan-option-original { color: #78716c; }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"] .plan-radio { border-color: #57534e; }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option[data-plan="premium"].is-active .plan-radio { border-color: var(--accent); }
+        .promo-active .pricing-panel[data-billing="yearly"] .plan-option-badge { display: inline-block; position: absolute; top: -0.95rem; right: 0.9rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: linear-gradient(100deg, #f97c38, #fbbf24); color: #0c0a09; font: 800 1rem 'Sora', sans-serif; letter-spacing: -0.01em; box-shadow: 0 8px 18px -8px rgba(227, 101, 34, 0.95); transform: rotate(4deg); animation: promo-badge-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        html[dir="rtl"].promo-active .pricing-panel[data-billing="yearly"] .plan-option-badge { right: auto; left: 0.9rem; transform: rotate(-4deg); }
+        @keyframes promo-badge-pop { from { transform: scale(0.4) rotate(-12deg); opacity: 0; } }
+        @media (prefers-reduced-motion: reduce) { .promo-active .pricing-panel[data-billing="yearly"] .plan-option-badge { animation: none; } }
+        .promo-active .pricing-panel[data-billing="yearly"][data-selected-plan="premium"] #planCtaBtn { border-color: #0c0a09; background: #0c0a09; color: #fff; }
+        .promo-active .pricing-panel[data-billing="yearly"][data-selected-plan="premium"] #planCtaBtn:hover { border-color: var(--accent-deep); background: var(--accent-deep); }
 
         .pricing-panel { display: grid; grid-template-columns: 420px 1fr; gap: 0; background: #fff; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
         .plan-panel-toggle { grid-column: 1 / -1; text-align: center; padding: 1.25rem 1.5rem; background: #fff; border-bottom: 1px solid var(--line); }
@@ -92,11 +134,11 @@
             .pricing-heading h1 { font-size: clamp(1.75rem, 9vw, 2.35rem); }
             .pricing-heading p { font-size: 0.96rem; }
             .plan-panel-toggle { padding: 1rem; }
-            .billing-control { width: 100%; gap: 0.45rem; }
+            .billing-control { width: 100%; gap: 0.45rem; flex-wrap: wrap; }
             .billing-toggle { gap: 0.15rem; padding: 0.2rem; }
             .billing-toggle button { padding: 0.48rem 0.78rem; font-size: 0.78rem; }
             .billing-toggle-pill { top: 0.2rem; bottom: 0.2rem; }
-            .billing-note { padding: 0.16rem 0.48rem; font-size: 0.76rem; }
+            .billing-note, .billing-promo-note { padding: 0.16rem 0.48rem; font-size: 0.76rem; }
             .plan-picker { flex-direction: column; gap: 0.55rem; padding: 1rem; }
             .plan-option { width: 100%; flex: none; padding: 0.85rem; border-radius: 14px; }
             .plan-option-top { align-items: flex-start; }
@@ -104,6 +146,9 @@
             .plan-table-wrap { overflow-x: visible; padding: 0.85rem 0.65rem 0.95rem; }
             .plan-table { min-width: 0; width: 100%; }
             .plan-table-highlight { display: none; }
+            .promo-active .pricing-promo, html[dir="rtl"].promo-active .pricing-promo { flex-direction: column; gap: 0.55rem; padding: 0.9rem 1rem; }
+            .pricing-promo-copy, html[dir="rtl"] .pricing-promo-copy { align-items: center; padding: 0.6rem 0 0; border: 0; border-top: 1px solid rgba(255, 255, 255, 0.15); text-align: center; }
+            .pricing-promo-timer { justify-content: center; }
             .plan-table th, .plan-table td { padding: 0.55rem 0.25rem; font-size: 0.68rem; line-height: 1.25; }
             .plan-table th { font-size: 0.67rem; }
             .plan-table th:first-child, .plan-table td:first-child { width: 43%; }
@@ -173,8 +218,21 @@
         <div class="pricing-heading">
             <h1>Get more features</h1>
             <p>Choose the way Filtored fits into your gallery. Your photos stay on your phone with every option.</p>
+            <div class="pricing-promo" role="timer" aria-live="off">
+                <span class="pricing-promo-burst promo-sparkles">
+                    <span class="pricing-promo-percent promo-gold-text">40%</span>
+                    <span class="pricing-promo-off">Off</span>
+                </span>
+                <span class="pricing-promo-copy">
+                    <span class="pricing-promo-title">Black November on yearly plans</span>
+                    <span class="pricing-promo-timer">
+                        <span class="pricing-promo-label">Ends in</span>
+                        <span class="pricing-promo-countdown" data-promo-countdown></span>
+                    </span>
+                </span>
+            </div>
         </div>
-        <section class="pricing-panel" aria-label="Filtored pricing plans">
+        <section class="pricing-panel" aria-label="Filtored pricing plans" data-billing="monthly" data-selected-plan="plus">
             <div class="plan-panel-toggle">
                 <div class="billing-control">
                     <div class="billing-toggle" role="group" aria-label="Billing period">
@@ -183,6 +241,7 @@
                         <button type="button" data-period="yearly" aria-pressed="false">Yearly</button>
                     </div>
                     <small class="billing-note">Save from 16%</small>
+                    <small class="billing-promo-note">Black November: 40% off yearly</small>
                 </div>
             </div>
             <div class="plan-picker" role="radiogroup" aria-label="Choose a plan">
@@ -198,15 +257,16 @@
                     <span class="plan-radio" aria-hidden="true"></span>
                     <span class="plan-option-info">
                         <span class="plan-option-tag">Most popular</span>
-                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg><span class="plan-name-text">Plus</span></span><span class="plan-option-price" data-monthly="1.99" data-yearly-total="19.99"><span>$1.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
+                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg><span class="plan-name-text">Plus</span></span><span class="plan-option-price" data-monthly="1.99" data-yearly-total="19.99" data-yearly-promo="11.99"><span>$1.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
                         <span class="plan-option-desc">More cleanup power and profile edits.</span>
                     </span>
                 </button>
                 <button class="plan-option" type="button" data-plan="premium" data-cta-text="Choose Premium" data-cta-href="https://play.google.com/store/apps/details?id=com.filtored.gallery" aria-pressed="false">
+                    <span class="plan-option-badge" aria-hidden="true">&minus;40%</span>
                     <span class="plan-radio" aria-hidden="true"></span>
                     <span class="plan-option-info">
                         <span class="plan-option-tag">Everything, unlimited</span>
-                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"></circle><path d="m8 14-1 7 5-3 5 3-1-7M12 6.5l.8 1.6 1.7.2-1.2 1.2.3-1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.2z"></path></svg><span class="plan-name-text">Premium</span></span><span class="plan-option-price" data-monthly="4.99" data-yearly-total="49.99"><span>$4.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
+                        <span class="plan-option-top"><span class="plan-option-name"><svg class="plan-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"></circle><path d="m8 14-1 7 5-3 5 3-1-7M12 6.5l.8 1.6 1.7.2-1.2 1.2.3-1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.2z"></path></svg><span class="plan-name-text">Premium</span></span><span class="plan-option-price" data-monthly="4.99" data-yearly-total="49.99" data-yearly-promo="29.99"><span>$4.99</span> <small>/ mo</small><del class="plan-option-original"></del></span></span>
                         <span class="plan-option-desc">The complete Filtored experience for your library.</span>
                     </span>
                 </button>
@@ -250,7 +310,9 @@
         const planTable = tableWrap.querySelector('.plan-table');
         const highlight = tableWrap.querySelector('.plan-table-highlight');
         const ctaBtn = document.getElementById('planCtaBtn');
+        const pricingPanel = document.querySelector('.pricing-panel');
         const columnIndex = { free: 1, plus: 2, premium: 3 };
+        const promoActive = Boolean(window.filtoredPromo && window.filtoredPromo.active);
         let currentPeriod = 'monthly';
 
         function moveHighlight(plan, animate) {
@@ -271,6 +333,7 @@
 
         function applyPeriod(period) {
             currentPeriod = period;
+            pricingPanel.dataset.billing = period;
             periodButtons.forEach((button) => {
                 const selected = button.dataset.period === period;
                 button.classList.toggle('active', selected);
@@ -284,6 +347,10 @@
                     price.querySelector('span').textContent = '$' + monthly;
                     price.querySelector('small').textContent = '/ mo';
                     original.textContent = '';
+                } else if (promoActive && price.dataset.yearlyPromo) {
+                    price.querySelector('span').textContent = '$' + price.dataset.yearlyPromo;
+                    price.querySelector('small').textContent = '/ yr';
+                    original.textContent = '$' + yearlyTotal + '/yr';
                 } else {
                     price.querySelector('span').textContent = '$' + yearlyTotal;
                     price.querySelector('small').textContent = '/ yr';
@@ -291,7 +358,7 @@
                 }
                 original.classList.toggle('is-visible', period === 'yearly');
             });
-            document.querySelector('.billing-note')?.classList.toggle('is-active', period === 'yearly');
+            document.querySelectorAll('.billing-note, .billing-promo-note').forEach((note) => note.classList.toggle('is-active', period === 'yearly'));
         }
 
         function movePill(button) {
@@ -307,9 +374,36 @@
             billingPill.style.width = buttonRect.width + 'px';
         }
 
+        function celebrate(origin) {
+            if (!promoActive || !origin || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const rect = origin.getBoundingClientRect();
+            const colors = ['#f97c38', '#e36522', '#fbbf24', '#fff7ed', '#1c1917'];
+            for (let i = 0; i < 44; i++) {
+                const piece = document.createElement('span');
+                piece.className = 'confetti-piece';
+                piece.style.background = colors[i % colors.length];
+                piece.style.left = (rect.left + rect.width / 2) + 'px';
+                piece.style.top = (rect.top + rect.height / 2) + 'px';
+                if (i % 3 === 0) piece.style.borderRadius = '50%';
+                document.body.appendChild(piece);
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 90 + Math.random() * 170;
+                const dx = Math.cos(angle) * distance;
+                const dy = Math.sin(angle) * distance * 0.65 - 60;
+                const spin = Math.random() * 900 - 450;
+                piece.animate([
+                    { transform: 'translate(-50%, -50%) rotate(0deg)', opacity: 1 },
+                    { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) rotate(${spin / 2}deg)`, opacity: 1, offset: 0.45 },
+                    { transform: `translate(calc(-50% + ${dx * 1.2}px), calc(-50% + ${dy + 220}px)) rotate(${spin}deg)`, opacity: 0 }
+                ], { duration: 1300 + Math.random() * 700, easing: 'cubic-bezier(0.2, 0.7, 0.4, 1)', fill: 'forwards' }).onfinish = () => piece.remove();
+            }
+        }
+
         periodButtons.forEach((button) => button.addEventListener('click', () => {
+            const switchedToYearly = button.dataset.period === 'yearly' && currentPeriod !== 'yearly';
             applyPeriod(button.dataset.period);
             movePill(button);
+            if (switchedToYearly) celebrate(button);
         }));
 
         planOptions.forEach((option) => option.addEventListener('click', () => {
@@ -319,6 +413,7 @@
                 item.setAttribute('aria-pressed', selected);
             });
             tableWrap.dataset.active = option.dataset.plan;
+            pricingPanel.dataset.selectedPlan = option.dataset.plan;
             moveHighlight(option.dataset.plan, true);
             ctaBtn.textContent = option.dataset.ctaText;
             ctaBtn.href = option.dataset.ctaHref;
@@ -331,14 +426,16 @@
             }
         }));
 
-        applyPeriod('monthly');
+        const initialPeriod = new URLSearchParams(window.location.search).get('period') === 'yearly' ? 'yearly' : 'monthly';
+        applyPeriod(initialPeriod);
         movePill(document.querySelector('[data-period].active'));
         moveHighlight(tableWrap.dataset.active, false);
         window.addEventListener('resize', () => {
             movePill(document.querySelector('[data-period].active'));
             moveHighlight(tableWrap.dataset.active, false);
         });
+        window.addEventListener('load', () => setTimeout(() => celebrate(document.querySelector('.pricing-promo-percent')), 250));
     </script>
-    <script src="../script.js?v=13"></script>
+    <script src="../script.js?v=16"></script>
 </body>
 </html>
