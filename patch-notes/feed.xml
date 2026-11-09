@@ -5,7 +5,7 @@
         <link>https://filtored.com/patch-notes/</link>
         <description>New features, improvements, and fixes in every Filtored AI Gallery release.</description>
         <language>en</language>
-        <lastBuildDate>Sat, 31 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Nov 2026 00:00:00 GMT</lastBuildDate>
         <ttl>60</ttl>
         <image>
             <title>Filtored Patch Notes</title>
@@ -13,6 +13,74 @@
             <link>https://filtored.com/patch-notes/</link>
         </image>
         <atom:link href="https://filtored.com/patch-notes/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Version 3.2.0</title>
+            <link>https://filtored.com/patch-notes/#version-3-2-0</link>
+            <guid isPermaLink="false">https://filtored.com/patch-notes/#version-3-2-0</guid>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 GMT</pubDate>
+            <category>Release</category>
+            <dc:creator>Filtored</dc:creator>
+            <description><![CDATA[<p>A big update for albums, events and your Profile. Albums and events can now be shaped by hand, and the new Profile brings your plan, family and gallery health together in one place.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>Better albums</strong> - Photos can be added, moved or removed, the cover can be changed, and albums can be pinned or merged.</li>
+    <li><strong>Make your own events</strong> - Create a new event, or add photos to an event right from the Gallery.</li>
+    <li><strong>Event collections</strong> - Events are grouped into rows like Family, Gatherings and Pets, so the moments that matter are easier to find.</li>
+    <li><strong>New Profile</strong> - Your plan, family and gallery health in one place, plus tips for features you might have missed.</li>
+    <li><strong>Interests</strong> - Pick what you love to photograph and find those photos in one tap.</li>
+    <li><strong>Milestones</strong> - Earn badges as you clean up and organize your gallery.</li>
+    <li><strong>Pin to top</strong> - Favorite photos can be kept at the top of the Gallery.</li>
+    <li><strong>Add photos to people</strong> - A photo can be added to someone even when their face isn't visible, like a baby or someone facing away. Find it in the photo's Labels.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Photo editor</strong> - Edits can be undone and redone. Hold the photo to see the original.</li>
+    <li><strong>Name suggestions</strong> - Names you've already used are suggested as you type.</li>
+    <li><strong>Events</strong> - Smoother swiping between events.</li>
+    <li><strong>History</strong> - Album, pin and event changes can now be undone too.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Smart Search works again after updating from an older version.</li>
+    <li>Photos in Trash no longer appear in albums.</li>
+    <li>People's profile pictures no longer change on their own.</li>
+    <li>Events keep their name and tags when more photos are added later.</li>
+    <li>General speed and stability improvements.</li>
+</ul>]]></description>
+            <content:encoded><![CDATA[<p>A big update for albums, events and your Profile. Albums and events can now be shaped by hand, and the new Profile brings your plan, family and gallery health together in one place.</p>
+
+<h3>New</h3>
+<ul>
+    <li><strong>Better albums</strong> - Photos can be added, moved or removed, the cover can be changed, and albums can be pinned or merged.</li>
+    <li><strong>Make your own events</strong> - Create a new event, or add photos to an event right from the Gallery.</li>
+    <li><strong>Event collections</strong> - Events are grouped into rows like Family, Gatherings and Pets, so the moments that matter are easier to find.</li>
+    <li><strong>New Profile</strong> - Your plan, family and gallery health in one place, plus tips for features you might have missed.</li>
+    <li><strong>Interests</strong> - Pick what you love to photograph and find those photos in one tap.</li>
+    <li><strong>Milestones</strong> - Earn badges as you clean up and organize your gallery.</li>
+    <li><strong>Pin to top</strong> - Favorite photos can be kept at the top of the Gallery.</li>
+    <li><strong>Add photos to people</strong> - A photo can be added to someone even when their face isn't visible, like a baby or someone facing away. Find it in the photo's Labels.</li>
+</ul>
+
+<h3>Enhanced</h3>
+<ul>
+    <li><strong>Photo editor</strong> - Edits can be undone and redone. Hold the photo to see the original.</li>
+    <li><strong>Name suggestions</strong> - Names you've already used are suggested as you type.</li>
+    <li><strong>Events</strong> - Smoother swiping between events.</li>
+    <li><strong>History</strong> - Album, pin and event changes can now be undone too.</li>
+</ul>
+
+<h3>Fixed</h3>
+<ul>
+    <li>Smart Search works again after updating from an older version.</li>
+    <li>Photos in Trash no longer appear in albums.</li>
+    <li>People's profile pictures no longer change on their own.</li>
+    <li>Events keep their name and tags when more photos are added later.</li>
+    <li>General speed and stability improvements.</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title>Version 3.1.1</title>
             <link>https://filtored.com/patch-notes/#version-3-1-1</link>

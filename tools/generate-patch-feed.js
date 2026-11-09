@@ -70,12 +70,13 @@ function normalizeBody(html) {
 }
 
 function parseEntries(html) {
-    const articleRe = /<article class="patch-entry"([^>]*)>([\s\S]*?)<\/article>/g;
+    // The latest release is an <article>; older ones are folded into <details> in the archive.
+    const entryRe = /<(article|details) class="patch-(?:entry|fold)"([^>]*)>([\s\S]*?)<\/\1>/g;
     const entries = [];
     let match;
 
-    while ((match = articleRe.exec(html)) !== null) {
-        const [, attrs, inner] = match;
+    while ((match = entryRe.exec(html)) !== null) {
+        const [, , attrs, inner] = match;
 
         const titleMatch = inner.match(/<h2 class="patch-version">([\s\S]*?)<\/h2>/);
         const dateMatch = inner.match(/<time class="patch-date" datetime="([^"]+)"/);

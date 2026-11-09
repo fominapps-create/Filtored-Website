@@ -16,12 +16,15 @@ Simple, clean landing page for www.filtored.com
 `https://filtored.com/patch-notes/feed.xml` is a plain RSS 2.0 file that feed readers
 and Discord bots (MonitoRSS and similar) can subscribe to.
 
-It is generated from the `<article class="patch-entry">` blocks in
+It is generated from the latest `<article class="patch-entry">` block and the
+`<details class="patch-fold">` blocks under "Previous releases" in
 `patch-notes/index.html`, so after adding a release:
 
 1. Add the new `<article class="patch-entry" id="version-x-y-z">` block at the top of the list.
-2. Run `node tools/generate-patch-feed.js`.
-3. Commit both `patch-notes/index.html` and `patch-notes/feed.xml`.
+2. Move the previous latest release into a `<details class="patch-fold">` block at the top of
+   "Previous releases" (same `id`, `<div class="patch-body">` unchanged).
+3. Run `node tools/generate-patch-feed.js`.
+4. Commit both `patch-notes/index.html` and `patch-notes/feed.xml`.
 
 Use `node tools/generate-patch-feed.js --check` to confirm the committed feed matches the page.
 
