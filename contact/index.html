@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://filtored.com/contact/">
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    <link rel="stylesheet" href="../style.css?v=54">
+    <link rel="stylesheet" href="../style.css?v=115">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -452,23 +452,81 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="foot-left">
-            <span class="brand-sm">Filtored</span>
-            <span>&copy; 2026 Filtored. All rights reserved.</span>
-        </div>
-        <div class="foot-links">
-            <a href="../features/">Features</a>
-            <a href="../blog/">Blog</a>
-            <a href="../patch-notes/">Patch Notes</a>
-            <a href="../contact/">Contact Us</a>
-            <a href="../faq/">FAQ</a>
-            <a href="../download/">Download</a>
-            <a href="../privacy/">Privacy</a>
-            <a href="../terms/">Terms</a>
-        </div>
-    </footer>
+    <div class="footer-wrap">
+        <section class="cta" id="cta">
+            <h2 data-i18n="cta.title">Your gallery, finally under control.</h2>
+            <p data-i18n="cta.description">More of the moments you want. Less of everything else.</p>
+            <p class="cta-get" data-i18n="cta.getFree">Get Filtored free on Google Play</p>
+            <div class="cta-download-row">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.filtored.gallery" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                    <span class="play-badge-text"><small data-i18n="cta.getItOn">Get it on</small><strong>Google Play</strong></span>
+                </a>
+                <div class="cta-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;ecc=M&amp;qzone=1&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.filtored.gallery" alt="QR code to open Filtored on Google Play" width="64" height="64" loading="lazy">
+                </div>
+            </div>
+        </section>
+    
+        <footer class="site-footer">
+            <div class="foot-main">
+                <div class="foot-brand">
+                    <a class="brand-sm foot-logo" href="../"><img src="../assets/logo%20shutter%20zoomer%20no%20bg.png" alt="" width="26" height="26">Filtored</a>
+                    <p class="foot-tagline" data-i18n="footer.tagline">A gallery that simply works.</p>
+                    <form class="foot-signup" action="https://formspree.io/f/mgakakzg" method="POST">
+                        <label class="foot-signup-label" for="foot-email" data-i18n="footer.getUpdates">Get Updates</label>
+                        <div class="foot-signup-field">
+                            <input id="foot-email" type="email" name="email" placeholder="Email Address" data-i18n-placeholder="footer.emailPlaceholder" autocomplete="email" required>
+                            <input type="hidden" name="_subject" value="New Filtored updates signup">
+                            <input class="foot-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+                        </div>
+                        <p class="foot-signup-status" role="status" aria-live="polite"></p>
+                    </form>
+                    <div class="foot-socials">
+                        <a href="https://www.instagram.com/filtored" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>
+                        <a href="https://www.tiktok.com/@filtored" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://youtube.com/@Filtored" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+                        <a href="https://x.com/Filtored" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                        <a href="https://discord.gg/sGDkdh7hHQ" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.1.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+                    </div>
+                </div>
+                <nav class="foot-cols" aria-label="Footer">
+                    <div class="foot-col">
+                        <h3 data-i18n="footer.product">Product</h3>
+                        <ul>
+                            <li><a href="../features/" data-i18n="footer.howItWorks">How it Works</a></li>
+                            <li><a href="../pricing/" data-i18n="nav.pricing">Pricing</a></li>
+                            <li><a href="../download/" data-i18n="footer.download">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-col">
+                        <h3 data-i18n="footer.resources">Resources</h3>
+                        <ul>
+                            <li><a href="../blog/" data-i18n="nav.articles">Blog</a></li>
+                            <li><a href="../blog/" data-i18n="footer.guides">Guides &amp; Tutorials</a></li>
+                            <li><a href="../patch-notes/" data-i18n="footer.updates">Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-col">
+                        <h3 data-i18n="footer.support">Support</h3>
+                        <ul>
+                            <li><a href="../contact/" data-i18n="nav.contact">Contact Us</a></li>
+                            <li><a href="../faq/" data-i18n="footer.faqs">FAQs</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="foot-bottom">
+                <span data-i18n="footer.rights">&copy; 2026 Filtored. All rights reserved.</span>
+                <div class="foot-legal">
+                    <a href="../privacy/" data-i18n="footer.privacyPolicy">Privacy Policy</a>
+                    <a href="../terms/" data-i18n="footer.termsOfService">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-    <script src="../script.js?v=15"></script>
+    <script src="../script.js?v=30"></script>
 </body>
 </html>

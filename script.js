@@ -49,7 +49,8 @@
             'bento.cleanupTitle': 'Intelligent Cleanup', 'bento.cleanupText': 'AI compares photos to identify redundancy, clutter, and other content that may need review.',
             'bento.searchTitle': 'Semantic Search', 'bento.searchText': 'AI connects your searches with the visual content and meaning of your photos.',
             'bento.insightsTitle': 'Gallery Insights', 'bento.insightsText': 'AI finds patterns across your photo library to reveal useful information about your collection.',
-            'privacy.kicker': 'Конфиденциальность', 'privacy.title': 'Ваши фотографии<br>остаются вашими.', 'privacy.noCloudTitle': 'Без облака', 'privacy.noCloudText': 'Ваши фотографии по умолчанию не загружаются в облако для обработки.', 'privacy.onDeviceTitle': 'AI на устройстве', 'privacy.onDeviceText': 'Обработка AI происходит прямо на вашем устройстве.', 'privacy.noAccountTitle': 'Без аккаунта', 'privacy.noAccountText': 'Функции Filtored не требуют аккаунта или онлайн-профиля.', 'privacy.worksOfflineTitle': 'Работает офлайн', 'privacy.worksOfflineText': 'Основные функции не зависят от подключения к интернету.', 'privacy.privateDesignTitle': 'Приватность в основе', 'privacy.privateDesignText': 'Filtored создан с заботой о конфиденциальности и не собирает лишние данные. Фотографии по умолчанию не передаются третьим лицам. Локальная обработка без аккаунта и без внешних сервисов означает, что галерея остаётся под вашим контролем.', 'cta.title': 'Filtored уже здесь', 'cta.description': 'Бесплатно в Google Play. Ваши фотографии остаются на телефоне.', 'cta.getItOn': 'Скачать в', 'cta.scan': 'Отсканируйте, чтобы установить на телефон', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность', 'footer.terms': 'Условия',
+            'privacy.kicker': 'Конфиденциальность', 'privacy.title': 'Ваши фотографии<br>остаются вашими.', 'privacy.noCloudTitle': 'Без облака', 'privacy.noCloudText': 'Ваши фотографии по умолчанию не загружаются в облако для обработки.', 'privacy.onDeviceTitle': 'AI на устройстве', 'privacy.onDeviceText': 'Обработка AI происходит прямо на вашем устройстве.', 'privacy.noAccountTitle': 'Без аккаунта', 'privacy.noAccountText': 'Функции Filtored не требуют аккаунта или онлайн-профиля.', 'privacy.worksOfflineTitle': 'Работает офлайн', 'privacy.worksOfflineText': 'Основные функции не зависят от подключения к интернету.', 'privacy.privateDesignTitle': 'Приватность в основе', 'privacy.privateDesignText': 'Filtored создан с заботой о конфиденциальности и не собирает лишние данные. Фотографии по умолчанию не передаются третьим лицам. Локальная обработка без аккаунта и без внешних сервисов означает, что галерея остаётся под вашим контролем.', 'cta.title': 'Ваша галерея наконец под контролем.', 'cta.description': 'Больше нужных моментов. Меньше всего остального.', 'cta.getFree': 'Скачайте Filtored бесплатно в Google Play', 'cta.getItOn': 'Скачать в', 'cta.scan': 'Отсканируйте, чтобы установить на телефон', 'footer.rights': '© 2026 Filtored. Все права защищены.', 'footer.privacy': 'Конфиденциальность', 'footer.terms': 'Условия',
+            'footer.tagline': 'Галерея, которая просто работает.', 'footer.getUpdates': 'Получать новости', 'footer.emailPlaceholder': 'Адрес эл. почты', 'footer.product': 'Продукт', 'footer.resources': 'Ресурсы', 'footer.support': 'Поддержка', 'footer.howItWorks': 'Как это работает', 'footer.download': 'Скачать', 'footer.guides': 'Гайды и руководства', 'footer.updates': 'Обновления', 'footer.faqs': 'Частые вопросы', 'footer.privacyPolicy': 'Политика конфиденциальности', 'footer.termsOfService': 'Условия использования', 'footer.signupDone': 'Спасибо! Вы подписаны.', 'footer.signupError': 'Что-то пошло не так. Попробуйте ещё раз.',
             'post.title': 'Лучшие галереи и приложения для очистки фото на Android', 'post.date': '8 сентября 2026 г.', 'post.intro': 'Галерея на Android должна не просто показывать фотографии. Каждый день добавляются новые фото, скриншоты, видео и файлы - и со временем библиотека превращается в тысячи файлов, которые трудно искать, упорядочивать или чистить. Разные приложения решают это по-разному: одни делают акцент на облачном резервном копировании, другие - на локальной организации, а некоторые созданы только для поиска дубликатов. Вот как сравниваются самые полезные из них.',
             'post.th.app': 'Приложение', 'post.th.best': 'Лучше всего для', 'post.th.feature': 'Главная особенность', 'post.th.pricing': 'Цена',
             'post.row.filtored.best': 'Одна галерея, которая упорядочивает, защищает и чистит ваши фото', 'post.row.filtored.feature': 'AI на устройстве: события, люди, дубликаты и очистка в одном приложении', 'post.row.filtored.pricing': 'Бесплатно, с подписками Plus/Premium',
@@ -87,7 +88,8 @@
             'bento.cleanupTitle': 'ניקוי חכם', 'bento.cleanupText': 'ה-AI משווה בין תמונות כדי לזהות כפילויות, עומס ותכנים לבדיקה.',
             'bento.searchTitle': 'חיפוש סמנטי', 'bento.searchText': 'ה-AI מחבר בין החיפושים שלכם למשמעות ולתוכן הוויזואלי של התמונות.',
             'bento.insightsTitle': 'תובנות על הגלריה', 'bento.insightsText': 'ה-AI מזהה דפוסים בספריית התמונות ומציג תובנות שימושיות על האוסף.',
-            'privacy.kicker': 'פרטיות', 'privacy.title': 'התמונות שלכם<br>נשארות שלכם.', 'privacy.noCloudTitle': 'ללא ענן', 'privacy.noCloudText': 'התמונות שלכם אינן מועלות לענן לצורך עיבוד כברירת מחדל.', 'privacy.onDeviceTitle': 'AI במכשיר', 'privacy.onDeviceText': 'עיבוד ה-AI מתבצע ישירות במכשיר שלכם.', 'privacy.noAccountTitle': 'ללא צורך בחשבון', 'privacy.noAccountText': 'התכונות של Filtored אינן דורשות חשבון או פרופיל מקוון.', 'privacy.worksOfflineTitle': 'עובד ללא חיבור', 'privacy.worksOfflineText': 'הפונקציות המרכזיות אינן תלויות בחיבור לאינטרנט.', 'privacy.privateDesignTitle': 'פרטיות מהיסוד', 'privacy.privateDesignText': 'Filtored נבנתה מתוך מחשבה על פרטיות, עם צמצום איסוף נתונים מיותר. התמונות אינן משותפות עם צדדים שלישיים כברירת מחדל. עיבוד מקומי, ללא חשבון וללא שירותים חיצוניים, שומר על הגלריה בשליטתכם.', 'cta.title': 'Filtored כאן', 'cta.description': 'בחינם ב-Google Play. התמונות שלכם נשארות בטלפון.', 'cta.getItOn': 'להורדה ב-', 'cta.scan': 'סרקו כדי להתקין בטלפון', 'footer.rights': '© 2026 Filtored. כל הזכויות שמורות.', 'footer.privacy': 'פרטיות', 'footer.terms': 'תנאי שימוש',
+            'privacy.kicker': 'פרטיות', 'privacy.title': 'התמונות שלכם<br>נשארות שלכם.', 'privacy.noCloudTitle': 'ללא ענן', 'privacy.noCloudText': 'התמונות שלכם אינן מועלות לענן לצורך עיבוד כברירת מחדל.', 'privacy.onDeviceTitle': 'AI במכשיר', 'privacy.onDeviceText': 'עיבוד ה-AI מתבצע ישירות במכשיר שלכם.', 'privacy.noAccountTitle': 'ללא צורך בחשבון', 'privacy.noAccountText': 'התכונות של Filtored אינן דורשות חשבון או פרופיל מקוון.', 'privacy.worksOfflineTitle': 'עובד ללא חיבור', 'privacy.worksOfflineText': 'הפונקציות המרכזיות אינן תלויות בחיבור לאינטרנט.', 'privacy.privateDesignTitle': 'פרטיות מהיסוד', 'privacy.privateDesignText': 'Filtored נבנתה מתוך מחשבה על פרטיות, עם צמצום איסוף נתונים מיותר. התמונות אינן משותפות עם צדדים שלישיים כברירת מחדל. עיבוד מקומי, ללא חשבון וללא שירותים חיצוניים, שומר על הגלריה בשליטתכם.', 'cta.title': 'הגלריה שלכם, סוף סוף בשליטה.', 'cta.description': 'יותר מהרגעים שאתם רוצים. פחות מכל השאר.', 'cta.getFree': 'השיגו את Filtored בחינם ב-Google Play', 'cta.getItOn': 'להורדה ב-', 'cta.scan': 'סרקו כדי להתקין בטלפון', 'footer.rights': '© 2026 Filtored. כל הזכויות שמורות.', 'footer.privacy': 'פרטיות', 'footer.terms': 'תנאי שימוש',
+            'footer.tagline': 'גלריה שפשוט עובדת.', 'footer.getUpdates': 'קבלו עדכונים', 'footer.emailPlaceholder': 'כתובת אימייל', 'footer.product': 'מוצר', 'footer.resources': 'משאבים', 'footer.support': 'תמיכה', 'footer.howItWorks': 'איך זה עובד', 'footer.download': 'הורדה', 'footer.guides': 'מדריכים והדרכות', 'footer.updates': 'עדכונים', 'footer.faqs': 'שאלות נפוצות', 'footer.privacyPolicy': 'מדיניות פרטיות', 'footer.termsOfService': 'תנאי שימוש', 'footer.signupDone': 'תודה! נרשמתם בהצלחה.', 'footer.signupError': 'משהו השתבש. נסו שוב.',
             'post.title': 'האפליקציות הכי טובות לגלריה וניקוי תמונות לאנדרואיד', 'post.date': '8 בספטמבר 2026', 'post.intro': 'גלריית אנדרואיד צריכה להתמודד עם יותר מסתם הצגת תמונות. בכל יום מצטרפות תמונות, צילומי מסך, סרטונים וקבצים חדשים - עד שהספרייה הופכת לאלפי קבצים שקשה לחפש, לארגן או לנקות. אפליקציות שונות פותרות את זה בדרכים שונות: חלקן מתמקדות בגיבוי בענן, אחרות בארגון מקומי, וחלקן נועדו רק למציאת תמונות כפולות. כך נראית ההשוואה בין האפליקציות השימושיות ביותר.',
             'post.th.app': 'אפליקציה', 'post.th.best': 'הכי מתאימה ל', 'post.th.feature': 'היכולת הבולטת', 'post.th.pricing': 'מחיר',
             'post.row.filtored.best': 'גלריה אחת שמארגנת, מגנה ומנקה את התמונות שלכם', 'post.row.filtored.feature': 'AI במכשיר: אירועים, אנשים, כפילויות וניקוי באפליקציה אחת', 'post.row.filtored.pricing': 'חינם, עם מנויי Plus/Premium',
@@ -117,6 +119,10 @@
     const translatableElements = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
     translatableElements.forEach(function (element) {
         element.dataset.i18nDefault = element.innerHTML;
+    });
+    const placeholderElements = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-placeholder]'));
+    placeholderElements.forEach(function (element) {
+        element.dataset.i18nPlaceholderDefault = element.getAttribute('placeholder') || '';
     });
 
     const languagePicker = select.parentElement;
@@ -378,6 +384,10 @@
             const value = dictionary[element.dataset.i18n];
             element.innerHTML = value || element.dataset.i18nDefault;
         });
+        placeholderElements.forEach(function (element) {
+            element.setAttribute('placeholder', dictionary[element.dataset.i18nPlaceholder] || element.dataset.i18nPlaceholderDefault);
+        });
+        window.filtoredI18n = dictionary;
         select.setAttribute('aria-label', dictionary['language.label'] || 'Language');
         const languageLabel = select.parentElement.querySelector('[data-language-label], .sr-only');
         if (languageLabel) languageLabel.textContent = dictionary['language.label'] || 'Language';
@@ -399,6 +409,36 @@
     select.addEventListener('change', function () {
         localStorage.setItem('filtored-language', select.value);
         applyLanguage(select.value);
+    });
+})();
+
+// Footer "Get Updates" signup, submitted to Formspree without leaving the page.
+(function () {
+    document.querySelectorAll('.foot-signup').forEach(function (form) {
+        const status = form.querySelector('.foot-signup-status');
+        const button = form.querySelector('button[type="submit"]');
+
+        function showStatus(key, fallback, isError) {
+            const dictionary = window.filtoredI18n || {};
+            status.textContent = dictionary[key] || fallback;
+            status.classList.toggle('is-error', isError);
+            status.classList.toggle('is-success', !isError);
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            button.disabled = true;
+            fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+                .then(function (response) {
+                    if (!response.ok) throw new Error('Signup failed');
+                    form.reset();
+                    showStatus('footer.signupDone', "Thanks! You're on the list.", false);
+                })
+                .catch(function () {
+                    showStatus('footer.signupError', 'Something went wrong. Please try again.', true);
+                })
+                .then(function () { button.disabled = false; });
+        });
     });
 })();
 
