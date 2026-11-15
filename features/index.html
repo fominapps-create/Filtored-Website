@@ -1902,7 +1902,7 @@
         </footer>
     </div>
 
-    <script src="../script.js?v=30"></script>
+    <script src="../script.js?v=31"></script>
     <script>
         (function () {
             const categoryButtons = Array.from(document.querySelectorAll('.feature-cat-toggle button'));
@@ -2033,6 +2033,11 @@
             });
 
             window.addEventListener('resize', function () {
+                const activeCategory = categoryButtons.find(function (button) { return button.classList.contains('is-active'); });
+                if (activeCategory) {
+                    categoryPill.style.left = activeCategory.offsetLeft + 'px';
+                    categoryPill.style.width = activeCategory.offsetWidth + 'px';
+                }
                 const activeTab = featureButtons.find(function (button) { return button.classList.contains('is-active'); });
                 if (!activeTab) return;
                 tabIndicator.style.left = activeTab.offsetLeft + 'px';

@@ -409,22 +409,23 @@
                 button.classList.toggle('active', selected);
                 button.setAttribute('aria-pressed', selected);
             });
+            const i18n = window.filtoredI18n || {};
             paidPrices.forEach((price) => {
                 const monthly = price.dataset.monthly;
                 const yearlyTotal = price.dataset.yearlyTotal;
                 const original = price.querySelector('.plan-option-original');
                 if (period === 'monthly') {
                     price.querySelector('span').textContent = '$' + monthly;
-                    price.querySelector('small').textContent = '/ mo';
+                    price.querySelector('small').textContent = i18n['pricing.perMonth'] || '/ mo';
                     original.textContent = '';
                 } else if (promoActive && price.dataset.yearlyPromo) {
                     price.querySelector('span').textContent = '$' + price.dataset.yearlyPromo;
-                    price.querySelector('small').textContent = '/ yr';
-                    original.textContent = '$' + yearlyTotal + '/yr';
+                    price.querySelector('small').textContent = i18n['pricing.perYear'] || '/ yr';
+                    original.textContent = '$' + yearlyTotal + (i18n['pricing.perYearShort'] || '/yr');
                 } else {
                     price.querySelector('span').textContent = '$' + yearlyTotal;
-                    price.querySelector('small').textContent = '/ yr';
-                    original.textContent = '$' + (monthly * 12).toFixed(2) + '/yr';
+                    price.querySelector('small').textContent = i18n['pricing.perYear'] || '/ yr';
+                    original.textContent = '$' + (monthly * 12).toFixed(2) + (i18n['pricing.perYearShort'] || '/yr');
                 }
                 original.classList.toggle('is-visible', period === 'yearly');
             });
@@ -504,8 +505,9 @@
             movePill(document.querySelector('[data-period].active'));
             moveHighlight(tableWrap.dataset.active, false);
         });
+        window.addEventListener('filtored:languagechange', () => applyPeriod(currentPeriod));
         window.addEventListener('load', () => setTimeout(() => celebrate(document.querySelector('.pricing-promo-percent')), 250));
     </script>
-    <script src="../script.js?v=30"></script>
+    <script src="../script.js?v=31"></script>
 </body>
 </html>
