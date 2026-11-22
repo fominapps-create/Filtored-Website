@@ -40,6 +40,12 @@ Don't change the `id` or date of a published entry - feed readers would re-post 
 - Feature cards
 - Clean typography
 
+The features page has six YouTube-hosted video guides. Each guide's YouTube
+link and video ID are in `features/index.html`; update both when replacing a
+video. The player loads only after the visitor selects Play, and the original
+YouTube link remains available as a fallback. Preview frames are stored in
+`assets/tutorials/`. Videos are currently in English.
+
 ## Deployment Options
 
 ### Option 1: Netlify (Recommended - Easiest)

@@ -1119,6 +1119,52 @@
             flex-wrap: wrap;
         }
 
+        .seo-hero {
+            padding: clamp(1.5rem, 4vw, 3rem);
+            border: 1px solid #e8dfd3;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #fffaf3, #f3e7d8);
+        }
+
+        .seo-photo { aspect-ratio: 4 / 3; object-fit: cover; }
+        .guide-section { margin: 0 0 6rem; scroll-margin-top: 6rem; }
+        .guide-heading { max-width: 720px; margin-bottom: 2rem; }
+        .guide-heading h2 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 0.8rem; }
+        .guide-heading p:last-child { color: var(--ink-soft); font-size: 1.1rem; }
+        .guide-layout { display: grid; grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.8fr); gap: 1rem; align-items: start; }
+        .guide-nav { display: grid; gap: 0.5rem; }
+        .guide-nav a { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.15rem; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 15px; background: #fff; font-weight: 600; transition: background 0.2s, border-color 0.2s; }
+        .guide-nav a:hover, .guide-nav a[aria-current="true"] { border-color: var(--accent); background: #fff2e8; }
+        .guide-nav a span:first-child { color: var(--accent-deep); font-size: 0.8rem; }
+        .guide-nav a:focus-visible, .guide-play:focus-visible, .guide-youtube:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+        .guide-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 2rem; align-items: center; min-height: 480px; padding: clamp(1.5rem, 4vw, 3rem); color: #fff; background: radial-gradient(circle at 85% 20%, #5b3e31, transparent 45%), #25211f; border-radius: 24px; scroll-margin-top: 6rem; }
+        .guide-panel + .guide-panel { margin-top: 1rem; }
+        .guide-panel[hidden] { display: none; }
+        .guide-copy .kicker { color: #ffad7a; }
+        .guide-copy h3 { color: #fff; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; letter-spacing: -0.04em; margin: 0 0 1rem; }
+        .guide-copy > p:not(.kicker) { color: #e0d8d2; line-height: 1.7; margin-bottom: 1.5rem; }
+        .guide-youtube { color: #ffba90; font-size: 0.9rem; font-weight: 600; text-underline-offset: 4px; }
+        .feature-guide-link { display: inline-block; margin-top: 1rem; color: #a63e0b; font-weight: 700; text-underline-offset: 4px; }
+        .hero-guide-link { margin-top: 1.25rem; }
+        .guide-player { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid #70615a; border-radius: 18px; background: #181513; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3); }
+        .guide-play { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; padding: 1rem; color: #fff; text-align: center; text-decoration: none; text-shadow: 0 1px 5px #000; font-weight: 700; background: linear-gradient(0deg, rgba(20, 15, 13, 0.45), rgba(20, 15, 13, 0.12)), var(--guide-image) center / cover; }
+        .guide-play-icon { display: grid; place-items: center; width: 64px; height: 64px; padding-left: 4px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1.25rem; transition: transform 0.2s; }
+        .guide-play:hover .guide-play-icon { transform: scale(1.08); }
+        .guide-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+        .feature-explorer-heading { margin-top: 2rem; }
+        @media (max-width: 1050px) {
+            .guide-layout { grid-template-columns: 1fr; }
+            .guide-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (max-width: 820px) {
+            .guide-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .guide-nav a { padding: 0.85rem; font-size: 0.9rem; }
+        }
+        @media (max-width: 650px) {
+            .guide-panel { grid-template-columns: 1fr; gap: 1.5rem; min-height: 0; padding: 1.25rem; }
+            .guide-player { width: min(100%, 340px); margin: 0 auto; }
+        }
+
         @media (max-width: 820px) {
             .seo-hero,
             .seo-grid { grid-template-columns: 1fr; }
@@ -1204,8 +1250,53 @@
                     <a class="btn btn-solid" href="../download/">Download Filtored</a>
                     <a class="btn btn-ghost" href="../faq/">Read the FAQ</a>
                 </div>
+                <p class="hero-guide-link"><a class="feature-guide-link" href="#guides" data-guide-text="exploreGuides">Explore feature guides ↓</a></p>
             </div>
             <img class="seo-photo" src="../assets/gallery-held-web.jpg" alt="Filtored AI photo gallery running on an Android phone" width="1400" height="933">
+        </section>
+
+        <section class="guide-section" id="guides" aria-labelledby="guides-title">
+            <div class="guide-heading">
+                <p class="kicker" data-guide-text="kicker">Get to know Filtored</p>
+                <h2 id="guides-title" data-guide-text="heading">Feature guides</h2>
+                <p data-guide-text="intro">Pick a subject to watch the guide.</p>
+            </div>
+            <div class="guide-layout">
+                <nav class="guide-nav" aria-label="Feature guides" data-guide-label="navigation">
+                    <a href="#guide-categories"><span>01</span><span data-guide-text="categories">Categories</span></a>
+                    <a href="#guide-profiles"><span>02</span><span data-guide-text="profiles">Profiles</span></a>
+                    <a href="#guide-smart-search"><span>03</span><span data-guide-text="smartSearch">Smart Search</span></a>
+                    <a href="#guide-text-search"><span>04</span><span data-guide-text="textSearch">Text Search</span></a>
+                    <a href="#guide-barcode"><span>05</span><span data-guide-text="barcode">Barcodes &amp; QR</span></a>
+                    <a href="#guide-duplicates"><span>06</span><span data-guide-text="duplicates">Duplicates Cleanup</span></a>
+                </nav>
+                <div class="guide-panels">
+                    <article class="guide-panel" id="guide-categories">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="categories">Categories</h3><p data-guide-text="categoriesDesc">Find your photos by category, from food and documents to animals and scenery.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=_P4ti9YgYvo" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/categories.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=_P4ti9YgYvo" data-video="_P4ti9YgYvo"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                    <article class="guide-panel" id="guide-profiles">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="profiles">Profiles</h3><p data-guide-text="profilesDesc">Find and name the people profiles Filtored creates for your photos.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=e65y7YRAJBw" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/profiles.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=e65y7YRAJBw" data-video="e65y7YRAJBw"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                    <article class="guide-panel" id="guide-smart-search">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="smartSearch">Smart Search</h3><p data-guide-text="smartSearchDesc">Describe what you remember to find a photo without scrolling.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=B1Diw5iAxd0" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/smart-search.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=B1Diw5iAxd0" data-video="B1Diw5iAxd0"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                    <article class="guide-panel" id="guide-text-search">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="textSearch">Text Search</h3><p data-guide-text="textSearchDesc">Search for words in your photos to find that recipe, receipt or document.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=6OuQ-i6HJAs" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/text-search.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=6OuQ-i6HJAs" data-video="6OuQ-i6HJAs"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                    <article class="guide-panel" id="guide-barcode">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="barcode">Barcodes &amp; QR</h3><p data-guide-text="barcodeDesc">Find saved barcodes and QR codes when you need them.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=0DierogdTuQ" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/barcode.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=0DierogdTuQ" data-video="0DierogdTuQ"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                    <article class="guide-panel" id="guide-duplicates">
+                        <div class="guide-copy"><p class="kicker" data-guide-text="videoGuide">Video guide</p><h3 data-guide-text="duplicates">Duplicates Cleanup</h3><p data-guide-text="duplicatesDesc">Review duplicate photos and clear the extra copies from your gallery.</p><a class="guide-youtube" href="https://www.youtube.com/watch?v=C0oHXiPG9TY" target="_blank" rel="noopener noreferrer" data-guide-text="youtube">Watch on YouTube ↗</a></div>
+                        <div class="guide-player" style="--guide-image: url('../assets/tutorials/duplicates.jpg')"><a class="guide-play" href="https://www.youtube.com/watch?v=C0oHXiPG9TY" data-video="C0oHXiPG9TY"><span class="guide-play-icon" aria-hidden="true">▶</span><span data-guide-text="play">Play guide</span></a></div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="smart-showcase" hidden style="display: none !important;" aria-label="Smart search preview">
@@ -1739,6 +1830,7 @@
             <article class="seo-card feature-card" id="profiles" data-feature="profiles">
                 <h2>Profile management</h2>
                 <p>Review, name, and manage the people profiles created from your photo library.</p>
+                <a class="feature-guide-link" href="#guide-profiles" data-guide-text="watchGuide">Watch the guide →</a>
             </article>
             <article class="seo-card feature-card" id="object-detection" data-feature="object-detection">
                 <h2>AI object detection</h2>
@@ -1747,6 +1839,7 @@
             <article class="seo-card feature-card" id="smart-search" data-feature="smart-search">
                 <h2>Smart photo search</h2>
                 <p>Find photos by what is in them, who is in them, and the moments they belong to.</p>
+                <a class="feature-guide-link" href="#guide-smart-search" data-guide-text="watchGuide">Watch the guide →</a>
             </article>
             <article class="seo-card feature-card" id="search" data-feature="search">
                 <h2>Searchable gallery</h2>
@@ -1763,10 +1856,12 @@
             <article class="seo-card feature-card" id="text-reading" data-feature="text-reading">
                 <h2>Text reading from pictures</h2>
                 <p>Read text found inside photos so important information is easier to find later.</p>
+                <a class="feature-guide-link" href="#guide-text-search" data-guide-text="watchGuide">Watch the guide →</a>
             </article>
             <article class="seo-card feature-card" id="barcode-reading" data-feature="barcode-reading">
                 <h2>Barcode reading from pictures</h2>
                 <p>Recognize barcodes in images and make product or saved reference photos more useful.</p>
+                <a class="feature-guide-link" href="#guide-barcode" data-guide-text="watchGuide">Watch the guide →</a>
             </article>
                 </section>
                 </div>
@@ -1776,6 +1871,7 @@
             <article class="seo-card feature-card" id="duplicates" data-feature="duplicates">
                 <h2>Duplicate photos</h2>
                 <p>Find duplicate images so you can review repeated copies and clear unnecessary clutter.</p>
+                <a class="feature-guide-link" href="#guide-duplicates" data-guide-text="watchGuide">Watch the guide →</a>
             </article>
             <article class="seo-card feature-card" id="burst-shots" data-feature="burst-shots">
                 <h2>Similar burst shots</h2>
@@ -1904,6 +2000,110 @@
 
     <script src="../script.js?v=31"></script>
     <script>
+        (function () {
+            const translations = {
+                ru: {
+                    kicker: 'Знакомство с Filtored', heading: 'Руководства по функциям', intro: 'Выберите тему, чтобы посмотреть руководство.',
+                    navigation: 'Руководства по функциям', videoGuide: 'Видеоруководство', play: 'Смотреть видео', youtube: 'Смотреть на YouTube ↗', exploreGuides: 'Руководства по функциям ↓', watchGuide: 'Смотреть руководство →',
+                    categories: 'Категории', profiles: 'Профили', smartSearch: 'Умный поиск', textSearch: 'Поиск по тексту', barcode: 'Штрихкоды и QR', duplicates: 'Очистка дубликатов',
+                    categoriesDesc: 'Находите фотографии по категориям: еда, документы, животные, пейзажи и не только.',
+                    profilesDesc: 'Находите и подписывайте профили людей, созданные Filtored по вашим фотографиям.',
+                    smartSearchDesc: 'Опишите то, что помните, чтобы найти фотографию без долгой прокрутки.',
+                    textSearchDesc: 'Ищите слова на фотографиях, чтобы найти рецепт, чек или документ.',
+                    barcodeDesc: 'Находите сохранённые штрихкоды и QR-коды, когда они нужны.',
+                    duplicatesDesc: 'Проверяйте дубликаты фотографий и удаляйте лишние копии из галереи.'
+                },
+                he: {
+                    kicker: 'הכירו את Filtored', heading: 'מדריכים לתכונות', intro: 'בחרו נושא כדי לצפות במדריך.',
+                    navigation: 'מדריכים לתכונות', videoGuide: 'מדריך וידאו', play: 'הפעלת המדריך', youtube: 'צפייה ב-YouTube ↗', exploreGuides: 'למדריכי התכונות ↓', watchGuide: 'צפייה במדריך →',
+                    categories: 'קטגוריות', profiles: 'פרופילים', smartSearch: 'חיפוש חכם', textSearch: 'חיפוש טקסט', barcode: 'ברקודים ו-QR', duplicates: 'ניקוי כפילויות',
+                    categoriesDesc: 'מצאו תמונות לפי קטגוריה, מאוכל ומסמכים ועד בעלי חיים ונופים.',
+                    profilesDesc: 'מצאו ותנו שמות לפרופילים של האנשים ש-Filtored יצרה מהתמונות שלכם.',
+                    smartSearchDesc: 'תארו את מה שאתם זוכרים כדי למצוא תמונה בלי לגלול.',
+                    textSearchDesc: 'חפשו מילים בתמונות כדי למצוא מתכון, קבלה או מסמך.',
+                    barcodeDesc: 'מצאו ברקודים וקודי QR שמורים כשתצטרכו אותם.',
+                    duplicatesDesc: 'בדקו תמונות כפולות והסירו את העותקים המיותרים מהגלריה.'
+                }
+            };
+            const section = document.querySelector('.guide-section');
+            const links = Array.from(section.querySelectorAll('.guide-nav a'));
+            const panels = Array.from(section.querySelectorAll('.guide-panel'));
+            const textElements = Array.from(document.querySelectorAll('[data-guide-text]'));
+            const labelElements = Array.from(section.querySelectorAll('[data-guide-label]'));
+            let activePlayer = null;
+            textElements.forEach(function (element) { element.dataset.guideDefault = element.textContent; });
+            labelElements.forEach(function (element) { element.dataset.guideDefault = element.getAttribute('aria-label'); });
+
+            function translate(language) {
+                const dictionary = translations[language] || {};
+                textElements.forEach(function (element) {
+                    element.textContent = dictionary[element.dataset.guideText] || element.dataset.guideDefault;
+                });
+                labelElements.forEach(function (element) {
+                    element.setAttribute('aria-label', dictionary[element.dataset.guideLabel] || element.dataset.guideDefault);
+                });
+                if (activePlayer) activePlayer.frame.title = activePlayer.panel.querySelector('h3').textContent;
+            }
+
+            function selectGuide(id) {
+                if (!panels.some(function (panel) { return panel.id === id; })) return;
+                if (activePlayer) {
+                    activePlayer.frame.replaceWith(activePlayer.link);
+                    activePlayer = null;
+                }
+                panels.forEach(function (panel) { panel.hidden = panel.id !== id; });
+                links.forEach(function (link) {
+                    if (link.hash === '#' + id) link.setAttribute('aria-current', 'true');
+                    else link.removeAttribute('aria-current');
+                });
+                document.querySelectorAll('.feature-card .feature-guide-link').forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                        event.preventDefault();
+                        history.pushState(null, '', link.hash);
+                        selectGuide(link.hash.slice(1));
+                        section.scrollIntoView({ block: 'start' });
+                    });
+                });
+            }
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                    event.preventDefault();
+                    history.pushState(null, '', link.hash);
+                    selectGuide(link.hash.slice(1));
+                });
+            });
+            section.querySelectorAll('.guide-play').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                    event.preventDefault();
+                    const panel = link.closest('.guide-panel');
+                    const frame = document.createElement('iframe');
+                    frame.title = panel.querySelector('h3').textContent;
+                    frame.src = 'https://www.youtube-nocookie.com/embed/' + link.dataset.video + '?autoplay=1&playsinline=1';
+                    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    frame.allowFullscreen = true;
+                    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+                    link.replaceWith(frame);
+                    activePlayer = { frame: frame, link: link, panel: panel };
+                    frame.focus();
+                });
+            });
+            function selectFromLocation() {
+                const id = location.hash.slice(1);
+                if (panels.some(function (panel) { return panel.id === id; })) selectGuide(id);
+                else if (!id || id === 'guides') selectGuide(panels[0].id);
+            }
+            window.addEventListener('popstate', selectFromLocation);
+            window.addEventListener('hashchange', selectFromLocation);
+            window.addEventListener('filtored:languagechange', function (event) { translate(event.detail.language); });
+            translate(document.documentElement.lang);
+            const initialId = location.hash.slice(1);
+            selectGuide(panels.some(function (panel) { return panel.id === initialId; }) ? initialId : panels[0].id);
+        }());
+
         (function () {
             const categoryButtons = Array.from(document.querySelectorAll('.feature-cat-toggle button'));
             const categoryPill = document.querySelector('.feature-cat-pill');
