@@ -2,55 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://filtored.com/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://filtored.com/download/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://filtored.com/features/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://filtored.com/faq/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://filtored.com/pricing/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://filtored.com/contact/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://filtored.com/blog/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://filtored.com/blog/best-photo-gallery-cleanup-apps-android/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://filtored.com/patch-notes/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

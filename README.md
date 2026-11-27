@@ -4,9 +4,13 @@ Simple, clean landing page for www.filtored.com
 
 ## Structure
 
-- `index.html` - Main HTML page
-- `style.css` - All styles
-- `script.js` - Email form handling and interactions
+- `index.html` - Homepage
+- `site.css` - Shared styles for every page (dark theme)
+- `pages.css` - Extra styles for the inner pages, loaded after `site.css`
+- `site.js` - Shared scripts: nav, animations, homepage demos, footer signup, cookie consent
+- `promo.js` - Promo banner and countdown
+- `<page>/index.html` - Inner pages (pricing, faq, contact, blog, patch-notes, privacy, terms)
+- `features/`, `download/`, `download.html` - Noindex redirects kept for old links
 - `patch-notes/index.html` - Release notes page
 - `patch-notes/feed.xml` - Generated RSS feed of the release notes
 - `tools/generate-patch-feed.js` - Regenerates `patch-notes/feed.xml` from the page
@@ -35,16 +39,13 @@ Don't change the `id` or date of a published entry - feed readers would re-post 
 ## Features
 
 - Responsive design (mobile, tablet, desktop)
-- Email signup form (ready to connect to backend)
-- Modern gradient background
-- Feature cards
-- Clean typography
+- Footer email signup posting to Formspree
+- PostHog analytics, opted out until the visitor accepts the cookie banner
 
-The features page has six YouTube-hosted video guides. Each guide's YouTube
-link and video ID are in `features/index.html`; update both when replacing a
-video. The player loads only after the visitor selects Play, and the original
-YouTube link remains available as a fallback. Preview frames are stored in
-`assets/tutorials/`. Videos are currently in English.
+The homepage "Feature guides" section has six YouTube-hosted video guides. Each
+guide's video ID is the `data-video` attribute of its `.guide-btn` in `index.html`.
+The player loads only after the visitor selects Play. Preview frames are
+`assets/v2/guide-*.jpg`. Videos are currently in English.
 
 ## Deployment Options
 
@@ -68,21 +69,16 @@ YouTube link remains available as a fallback. Preview frames are stored in
 1. Upload files via FTP to your hosting provider
 2. Point domain to hosting
 
-## Email Backend Integration
+## Email Signup
 
-The email form currently shows a success message. To actually collect emails:
-
-1. **Mailchimp**: Add Mailchimp form action URL
-2. **ConvertKit**: Use ConvertKit API
-3. **Custom Backend**: Uncomment fetch code in `script.js` and add your API endpoint
-4. **Firebase**: Use Firestore to store emails
-5. **Google Sheets**: Use Google Apps Script webhook
+The footer signup form posts to Formspree (`action` on `.foot-signup`); `site.js`
+submits it in the background and shows the status message.
 
 ## Customization
 
-- Colors: Edit CSS variables in `:root` section of `style.css`
-- Content: Edit text in `index.html`
-- Features: Add/remove feature cards in the `.features` section
+- Colors: Edit CSS variables in `:root` section of `site.css`
+- Content: Edit text in `index.html` or the page's `index.html`
+- Cache busting: pages load shared files with `?v=N`; bump N on every page after editing them
 
 ## Domain Setup
 

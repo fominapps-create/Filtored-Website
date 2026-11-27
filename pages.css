@@ -1,0 +1,46 @@
+/* Filtored inner pages.
+   Loaded after site.css, which supplies the nav, final CTA and footer. The pages' own <style>
+   blocks were written for the old light theme and its variables; those variables are remapped here
+   to the dark palette so the page layouts carry over unchanged. */
+
+:root {
+    --ink: var(--text);
+    --ink-soft: var(--muted);
+    --paper: var(--black);
+    --paper-deep: rgba(255, 255, 255, 0.05);
+    --accent-deep: #ff8a4a;
+    --surface: var(--glass);
+    --surface-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* soft orange glow and dot grid behind the page heading, like the homepage hero */
+body::before,
+body::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
+body::before {
+    left: 0; right: 0; top: 0; height: 1000px;
+    background: radial-gradient(min(600px, 80vw) 500px at 50% 80px, rgba(255, 106, 36, 0.2), rgba(255, 106, 36, 0.05) 60%, transparent);
+}
+body::after {
+    right: 0; top: 0; width: 55%; height: 520px;
+    background-image: radial-gradient(rgba(255, 170, 120, 0.22) 1.6px, transparent 2.2px);
+    background-size: 20px 20px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 85% 10%, #000, transparent);
+    mask-image: radial-gradient(ellipse 60% 70% at 85% 10%, #000, transparent);
+}
+
+/* page content keeps the old base reset; undo the homepage-only section and list rules */
+:where(main *) { margin: 0; padding: 0; }
+:where(main) section { position: static; padding: 0; overflow: visible; }
+:where(main) ul { list-style: disc; }
+:where(main) :where(h1, h2, h3, h4) { font-family: var(--display); letter-spacing: -0.02em; }
+:where(main) h1 { font-weight: 800; line-height: 1.06; letter-spacing: -0.035em; }
+:where(main) a { color: var(--accent); text-underline-offset: 3px; }
+:where(main) strong { color: var(--text); }
+::selection { background: var(--accent); color: var(--black); }
+
+.nav-menu a[aria-current="page"] { color: var(--text); }
+
+/* page heading: pill + display title, same as the homepage section heads */
+.page-head { display: flex; flex-direction: column; align-items: center; text-align: center; }
+/* page-specific "<wrapper> p" rules would otherwise restyle the pill, which is a <p> */
+.page-head .pill { margin-bottom: 1.2rem; max-width: none; color: var(--text); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.22em; line-height: 1.55; }
